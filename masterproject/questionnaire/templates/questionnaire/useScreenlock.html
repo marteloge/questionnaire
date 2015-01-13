@@ -1,0 +1,27 @@
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+    <h1>Step 10 - Use screenlock</h1>
+{% endblock %}
+
+{% block content %}
+    <img id="yes" src="/static/images/cat.jpg" width="200">
+    <img id="no" src="/static/images/cat.jpg" width="200">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.use_screenlock.as_hidden }} 
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
+
+{% block navigation %}
+{% endblock %}
+
+{% block javascript %}
+	<script type="text/javascript">
+        qs.bindForm({
+            'yes': 'Y',
+            'no': 'N'
+        }, 'id_use_screenlock');
+    </script>
+{% endblock %}

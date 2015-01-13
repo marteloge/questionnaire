@@ -1,0 +1,33 @@
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+    <h1>Step 11 - Screenlock</h1>
+{% endblock %}
+
+{% block content %}
+    <img id="pattern" src="/static/images/cat.jpg" width="200">
+    <img id="fingerprint" src="/static/images/cat.jpg" width="200">
+    <img id="PIN" src="/static/images/cat.jpg" width="200">
+    <img id="slide" src="/static/images/cat.jpg" width="200">
+    <img id="other" src="/static/images/cat.jpg" width="200">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.screenlock.as_hidden }} 
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
+
+{% block navigation %}
+{% endblock %}
+
+{% block javascript %}
+	<script type="text/javascript">
+        qs.bindForm({
+            'pattern': 'pattern',
+            'fingerprint': 'fingerprint',
+            'PIN':'PIN',
+            'slide':'slide',
+            'other':'other',
+        }, 'id_screenlock');
+    </script>
+{% endblock %}

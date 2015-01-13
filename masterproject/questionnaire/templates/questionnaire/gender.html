@@ -1,0 +1,27 @@
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+    <h1>Step 6 - Gender</h1>
+{% endblock %}
+
+{% block content %}
+    <img id="male" src="/static/images/cat.jpg" width="200">
+    <img id="female" src="/static/images/cat.jpg" width="200">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.gender.as_hidden }}
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
+
+{% block navigation %}
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        qs.bindForm({
+            'male': 'M',
+            'female': 'F'
+        }, 'id_gender');
+    </script>
+{% endblock %}

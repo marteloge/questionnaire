@@ -1,0 +1,27 @@
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+    <h1>Step 3 - Handedness</h1>
+{% endblock %}
+
+{% block content %}
+    <img id="left" src="/static/images/cat.jpg" width="200">
+    <img id="right" src="/static/images/cat.jpg" width="200">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.handedness.as_hidden }} 
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
+
+{% block navigation %}
+{% endblock %}
+
+{% block javascript %}
+	<script type="text/javascript">
+        qs.bindForm({
+            'left': 'L',
+            'right': 'R',
+        }, 'id_handedness');
+    </script>
+{% endblock %}

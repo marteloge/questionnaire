@@ -1,0 +1,40 @@
+{% load static %}
+<html>
+  <head>
+    <title>Questionnaire</title>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/patternLock.css">
+
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/dropdown.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/transition.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/flag-icon.min.css">
+
+    <script type="text/javascript" src="{{ STATIC_URL }}/js/qs.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/js/dropdown.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/js/transition.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/js/patternLock.js"></script>
+  </head>
+
+  <body>
+    <div id="header">
+      {% block header %}
+      {% endblock %}
+    </div>
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div id="navigation">
+      {% block navigation %}
+        <button type="button">Back</button>
+        <button type="button">Forward</button>
+      {% endblock %}
+    </div>
+
+    {% block javascript %}
+    {% endblock %}
+  </body>
+</html> 

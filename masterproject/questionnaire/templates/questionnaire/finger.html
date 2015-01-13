@@ -1,0 +1,27 @@
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+    <h1>Step 4 - Finger</h1>
+{% endblock %}
+
+{% block content %}
+	<img id="thumb" src="/static/images/cat.jpg" width="200">
+    <img id="forefinger" src="/static/images/cat.jpg" width="200">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.finger.as_hidden }} 
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
+
+{% block navigation %}
+{% endblock %}
+
+{% block javascript %}
+	<script type="text/javascript">
+        qs.bindForm({
+            'thumb': 'T',
+            'forefinger': 'F',
+        }, 'id_finger');
+    </script>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+    <h1>Step 1 - Hand Size</h1>
+{% endblock %}
+
+{% block content %}
+    <img id="small" src="/static/images/cat.jpg" width="200">
+    <img id="medium" src="/static/images/cat.jpg" width="200">
+    <img id="large" src="/static/images/cat.jpg" width="200">
+    <img id="xtralarge" src="/static/images/cat.jpg" width="200">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.handsize.as_hidden }} 
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
+
+{% block navigation %}
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        qs.bindForm({
+            'small': 'S',
+            'medium': 'M',
+            'large': 'L',
+            'xtralarge': 'XL'
+        }, 'id_handsize');
+    </script>
+{% endblock %}

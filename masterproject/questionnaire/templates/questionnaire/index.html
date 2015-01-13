@@ -1,1 +1,39 @@
-<h1>Index template</h1>
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+    <h1>Index</h1>
+{% endblock %}
+
+{% block content %}
+    <p>Velkommen!</p>
+    <div id="patternContainer"></div>
+
+{% endblock %}
+
+{% block navigation %}
+    <a href="add_handsize">Start questionnaire!</a>
+{% endblock %}
+
+{% block javascript %}
+
+    <script>
+        var lock = new PatternLock('#patternContainer',{
+          onDraw:function(pattern){
+            pattern = lock.getPattern();
+            if(pattern.length>=4){
+              alert("valid!");
+              lock.reset();
+            }
+            else{
+              alert("too short!");
+              lock.error();
+            }
+               
+          },
+          mapper: function(idx){
+            
+          }
+        });
+        
+  </script>
+{% endblock %}
