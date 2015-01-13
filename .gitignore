@@ -1,3 +1,9 @@
+# osx shit
+*.DS_Store
+
+# Django maps
+*/migrations
+
 
 *.pyc
 *.pyo
