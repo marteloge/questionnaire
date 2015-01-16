@@ -5,12 +5,23 @@
 {% endblock %}
 
 {% block content %}
-    <a href="add_nationality">Next</a>
+    <input type="text" id="age">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.age.as_hidden }} 
+        <input type="submit" value="Submit" class="btn" />
+    </form>
 {% endblock %}
 
 {% block navigation %}
 {% endblock %}
 
 {% block javascript %}
-
+	<script type="text/javascript">
+         $(document).ready(function(){
+        	$("#age").keyup(function(){
+            	$("#id_age").val($("#age").val());
+        	});
+    	});
+    </script>
 {% endblock %}

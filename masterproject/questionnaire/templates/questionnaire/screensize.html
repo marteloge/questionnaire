@@ -5,13 +5,15 @@
 {% endblock %}
 
 {% block content %}
-    <img id="small" src="/static/images/cat.jpg" width="200">
-    <img id="medium" src="/static/images/cat.jpg" width="200">
-    <img id="large" src="/static/images/cat.jpg" width="200">
+    <div class="icons-3">
+        <img id="screen-small" class="small" src="/static/images/icons/screen.png">
+        <img id="screen-medium" class="medium" src="/static/images/icons/screen.png">
+        <img id="screen-large" class="large" src="/static/images/icons/screen.png">
+    </div>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.screensize.as_hidden }} 
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" class="btn"/>
     </form>
 {% endblock %}
 
@@ -21,9 +23,9 @@
 {% block javascript %}
 	<script type="text/javascript">
         qs.bindForm({
-            'small': 'S',
-            'medium': 'M',
-            'large': 'L',
+            'screen-small': 'S',
+            'screen-medium': 'M',
+            'screen-large': 'L',
         }, 'id_screensize');
     </script>
 {% endblock %}

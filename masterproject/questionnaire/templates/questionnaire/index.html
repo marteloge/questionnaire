@@ -6,8 +6,6 @@
 
 {% block content %}
     <p>Velkommen!</p>
-    <div id="patternContainer"></div>
-
 {% endblock %}
 
 {% block navigation %}
@@ -16,24 +14,4 @@
 
 {% block javascript %}
 
-    <script>
-        var lock = new PatternLock('#patternContainer',{
-          onDraw:function(pattern){
-            pattern = lock.getPattern();
-            if(pattern.length>=4){
-              alert("valid!");
-              lock.reset();
-            }
-            else{
-              alert("too short!");
-              lock.error();
-            }
-               
-          },
-          mapper: function(idx){
-            
-          }
-        });
-        
-  </script>
 {% endblock %}

@@ -5,12 +5,14 @@
 {% endblock %}
 
 {% block content %}
-    <img id="left" src="/static/images/cat.jpg" width="200">
-    <img id="right" src="/static/images/cat.jpg" width="200">
+    <div class="icons-1">
+        <img id="left" src="/static/images/icons/handedness.png">
+        <img id="right" class="rotate-icon" src="/static/images/icons/handedness.png">
+    </div>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.handedness.as_hidden }} 
-        <input type="submit" value="Submit" />
+        <input class="btn" type="submit" value="Submit" />
     </form>
 {% endblock %}
 

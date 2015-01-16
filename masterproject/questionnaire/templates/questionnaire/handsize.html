@@ -1,18 +1,25 @@
 {% extends "questionnaire/base.html" %}
 
 {% block header %}
-    <h1>Step 1 - Hand Size</h1>
+  <h1>Step 1 - Hand Size</h1>
 {% endblock %}
 
 {% block content %}
-    <img id="small" src="/static/images/cat.jpg" width="200">
-    <img id="medium" src="/static/images/cat.jpg" width="200">
-    <img id="large" src="/static/images/cat.jpg" width="200">
-    <img id="xtralarge" src="/static/images/cat.jpg" width="200">
+    
+    <div id="answers">
+        <div class="icons-2">
+            <img id="hand-small" class="small" src="/static/images/icons/hand.png">
+            <img id="hand-medium" class="medium" src="/static/images/icons/hand.png">
+        </div>
+        <div class="icons-2">
+            <img id="hand-large" class="large" src="/static/images/icons/hand.png">
+            <img id="hand-xtralarge" class="xtralarge" src="/static/images/icons/hand.png">
+        </div>
+    </div>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.handsize.as_hidden }} 
-        <input type="submit" value="Submit" />
+        <input type="submit" class="btn" value="Submit" />
     </form>
 {% endblock %}
 
@@ -22,10 +29,10 @@
 {% block javascript %}
     <script type="text/javascript">
         qs.bindForm({
-            'small': 'S',
-            'medium': 'M',
-            'large': 'L',
-            'xtralarge': 'XL'
+            'hand-small': 'S',
+            'hand-medium': 'M',
+            'hand-large': 'L',
+            'hand-xtralarge': 'XL'
         }, 'id_handsize');
     </script>
 {% endblock %}

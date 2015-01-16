@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    <img id="yes" src="/static/images/cat.jpg" width="200">
-    <img id="no" src="/static/images/cat.jpg" width="200">
+    <div class="icons-1">
+        <img id="yes" src="/static/images/icons/yes4.png">
+        <img id="no" src="/static/images/icons/no2.png">
+    </div>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.use_screenlock.as_hidden }} 
@@ -15,6 +17,7 @@
 {% endblock %}
 
 {% block navigation %}
+
 {% endblock %}
 
 {% block javascript %}
