@@ -90,9 +90,17 @@ def add_gender(request):
     return render(request, 'questionnaire/gender.html', {'form': form, 'session': request.session['name']})
 
 def add_age(request):
-    model = Person
-    template_name = 'questionnaire/age.html'
-    return render(request, template_name, {'qnum': 1})
+    person = Person.objects.get(pk=request.session.session_key)
+    if request.method == 'POST':
+        choice=request.POST['age']
+        form=AgeForm(request.POST, instance=person)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('add_nationality')
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = AgeForm(instance=person)
+    return render(request, 'questionnaire/age.html', {'form': form, 'session': request.session['name']})
 
 def add_nationality(request):
     person = Person.objects.get(pk=request.session.session_key)
