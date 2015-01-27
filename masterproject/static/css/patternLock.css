@@ -6,7 +6,7 @@
 */
 
 
-.patt-holder{background:#3382c0;  -ms-touch-action: none;}
+.patt-holder{background:#F0EADF;  -ms-touch-action: none;}
 .patt-wrap{position:relative; cursor:pointer;}
 .patt-wrap ul, .patt-wrap li{
 	list-style: none;
@@ -16,22 +16,22 @@
 .patt-circ{
 	position:relative;
 	float: left;
-	border: 3px solid #000000;
+	border: 7px solid #282828;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
  }
 .patt-circ.hovered{
-	border:3px solid #009900;
+	border:7px solid #009900;
 } 
 
 .patt-error .patt-circ.hovered{
-	border:3px solid #BA1B26;
+	border:7px solid #BA1B26;
 }
 
 .patt-hidden .patt-circ.hovered{border:0;}
 
 .patt-dots{
-	background: #FFF;
+	background: #181818;
 	width: 10px;height: 10px;
 	border-radius:5px;
 	position:absolute;
