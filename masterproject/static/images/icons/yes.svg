@@ -1,40 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="32.296px" height="23.73px" viewBox="0 0 32.296 23.73" style="enable-background:new 0 0 32.296 23.73;"
-	 xml:space="preserve">
-<path style="fill:#000000;" d="M31.923,4.856L13.417,23.359c-0.496,0.494-1.299,0.494-1.793,0L0.371,12.032
-	c-0.494-0.496-0.494-1.302,0-1.795L3.06,7.55c0.496-0.495,1.299-0.495,1.793,0l7.678,7.729L27.439,0.37
-	c0.494-0.494,1.297-0.494,1.795,0l2.689,2.691C32.421,3.556,32.421,4.362,31.923,4.856z"/>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="25">
+    <desc iVinci="yes" version="4.5" gridStep="20" showGrid="no" snapToGrid="no" codePlatform="0"/>
+    <g id="Layer1" opacity="1">
+        <g id="Shape1">
+            <path id="shapePath1" d="M32.712,5.4915 L14.206,23.9945 C13.71,24.4885 12.907,24.4885 12.413,23.9945 L1.16,12.6675 C0.666,12.1715 0.666,11.3655 1.16,10.8725 L3.849,8.1855 C4.345,7.6905 5.148,7.6905 5.642,8.1855 L13.32,15.9145 L28.228,1.0055 C28.722,0.511501 29.525,0.511501 30.023,1.0055 L32.712,3.6965 C33.21,4.1915 33.21,4.9975 32.712,5.4915 Z" style="stroke:none;fill-rule:evenodd;fill:#008000;fill-opacity:1;"/>
+        </g>
+    </g>
 </svg>

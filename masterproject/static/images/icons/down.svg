@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-<path d="M344.839,289.077c-4.881-4.881-12.797-4.881-17.678,0L268.5,347.738V134.084c0-6.903-5.597-12.5-12.5-12.5
-	c-6.904,0-12.5,5.597-12.5,12.5v213.654l-58.661-58.659c-4.883-4.881-12.797-4.881-17.678,0c-4.882,4.882-4.882,12.796,0,17.678
-	l80,79.998c2.44,2.44,5.64,3.661,8.839,3.661s6.398-1.221,8.839-3.661l80-80C349.721,301.873,349.721,293.959,344.839,289.077z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="185" height="270"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none" class=""/>
+    <desc iVinci="yes" version="4.5" gridStep="20" showGrid="no" snapToGrid="no" codePlatform="0"/>
+    
+<g class="currentLayer"><title>Layer 1</title><g id="Layer1" opacity="1">
+        <g id="Shape1">
+            <path fill="#000000" id="shapePath1" d="M181.339,167.493 C176.458,162.612 168.542,162.612 163.661,167.493 L105,226.154 L105,12.5 C105,5.597 99.4035,0 92.5005,0 C85.5965,0 80.0005,5.597 80.0005,12.5 L80.0005,226.154 L21.3395,167.495 C16.4565,162.614 8.5425,162.614 3.66148,167.495 C-1.2205,172.377 -1.2205,180.291 3.66148,185.173 L83.6615,265.171 C86.1015,267.611 89.3015,268.832 92.5005,268.832 C95.6995,268.832 98.8985,267.611 101.339,265.171 L181.339,185.171 C186.221,180.289 186.221,172.375 181.339,167.493 Z"/>
+        </g>
+    </g></g></svg>
