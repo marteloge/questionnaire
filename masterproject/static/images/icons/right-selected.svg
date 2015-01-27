@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="270" height="185"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+    <desc iVinci="yes" version="4.5" gridStep="20" showGrid="no" snapToGrid="no" codePlatform="0"/>
+    
+<g class="currentLayer"><title>Layer 1</title><g id="Layer1" opacity="1">
+        <g id="Shape1">
+            <path fill="#008000" id="shapePath1" d="M265.171,83.6608 L185.171,3.66075 C180.29,-1.22025 172.374,-1.22025 167.493,3.66075 C162.611,8.54276 162.611,16.4568 167.493,21.3388 L226.154,79.9998 L12.5,79.9998 C5.597,79.9998 0,85.5968 0,92.4998 C0,99.4028 5.597,105 12.5,105 L226.154,105 L167.495,163.661 C162.613,168.543 162.613,176.457 167.495,181.339 C169.936,183.779 173.135,185 176.334,185 C179.533,185 182.732,183.779 185.173,181.339 L265.171,101.339 C270.053,96.4568 270.053,88.5428 265.171,83.6608 Z"/>
+        </g>
+    </g></g></svg>

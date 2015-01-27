@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="27">
+    <desc iVinci="yes" version="4.5" gridStep="20" showGrid="no" snapToGrid="no" codePlatform="0"/>
+    <g id="Layer1" opacity="1">
+        <g id="Shape1">
+            <path id="shapePath1" d="M12.267,2.864 C12.267,1.6 11.493,0 8.24,0 C6.905,0 3.231,0 3.231,0 L1.807,6.588 C1.807,6.588 4.514,6.588 7.029,6.588 C11.106,6.588 12.267,4.658 12.267,2.864 Z" style="stroke:none;fill-rule:nonzero;fill:#000000;fill-opacity:1;"/>
+        </g>
+        <g id="Shape2">
+            <path id="shapePath2" d="M25.76,2.864 C25.76,1.6 24.988,0 21.736,0 C20.4,0 16.726,0 16.726,0 L15.303,6.587 C15.303,6.587 18.009,6.587 20.522,6.587 C24.601,6.588 25.76,4.658 25.76,2.864 Z" style="stroke:none;fill-rule:nonzero;fill:#000000;fill-opacity:1;"/>
+        </g>
+        <g id="Shape3">
+            <path id="shapePath3" d="M10.46,12.779 C10.46,11.515 9.686,9.911 6.433,9.911 C5.098,9.911 1.424,9.911 1.424,9.911 L-2.38419e-06,16.503 C-2.38419e-06,16.503 2.707,16.503 5.22,16.503 C9.298,16.503 10.46,14.568 10.46,12.779 Z" style="stroke:none;fill-rule:nonzero;fill:#000000;fill-opacity:1;"/>
+        </g>
+        <g id="Shape4">
+            <path id="shapePath4" d="M23.953,12.779 C23.953,11.515 23.178,9.911 19.928,9.911 C18.591,9.911 14.919,9.911 14.919,9.911 L13.493,16.503 C13.493,16.503 16.2,16.503 18.715,16.503 C22.794,16.503 23.953,14.568 23.953,12.779 Z" style="stroke:none;fill-rule:nonzero;fill:#000000;fill-opacity:1;"/>
+        </g>
+        <g id="Shape5">
+            <path id="shapePath5" d="M38.07,8.758 C38.07,7.493 37.295,5.89 34.045,5.89 C32.708,5.89 29.036,5.89 29.036,5.89 L27.61,12.481 C27.61,12.481 30.319,12.481 32.83,12.481 C36.909,12.481 38.07,10.551 38.07,8.758 Z" style="stroke:none;fill-rule:nonzero;fill:#000000;fill-opacity:1;"/>
+        </g>
+        <g id="Shape6">
+            <path id="shapePath6" d="M36.124,19.081 C36.124,17.816 35.351,16.217 32.099,16.217 C30.764,16.217 27.09,16.217 27.09,16.217 L25.666,22.805 C25.666,22.805 28.371,22.805 30.886,22.805 C34.964,22.805 36.124,20.87 36.124,19.081 Z" style="stroke:none;fill-rule:nonzero;fill:#000000;fill-opacity:1;"/>
+        </g>
+        <g id="Shape7">
+            <path id="shapePath7" d="M22.014,23.103 C22.014,21.833 21.242,20.23 17.992,20.23 C16.654,20.23 12.98,20.23 12.98,20.23 L11.556,26.821 C11.556,26.821 14.263,26.821 16.776,26.821 C20.855,26.822 22.014,24.892 22.014,23.103 Z" style="stroke:none;fill-rule:nonzero;fill:#000000;fill-opacity:1;"/>
+        </g>
+    </g>
+</svg>

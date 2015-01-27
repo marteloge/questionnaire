@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="480" height="480">
+    <desc iVinci="yes" version="4.5" gridStep="20" showGrid="no" snapToGrid="no" codePlatform="0"/>
+    <g id="Layer1" opacity="1">
+        <g id="Shape1">
+            <path id="shapePath1" d="M0.175003,224 L0,67.963 L192,41.891 L192,224 L0.175003,224 M224,37.241 L479.936,0 L479.936,224 L224,224 L224,37.241 M479.999,256 L479.936,480 L224,443.992 L224,256 L479.999,256 M192,439.918 L0.156006,413.621 L0.145996,256 L192,256 L192,439.918 Z" style="stroke:none;fill-rule:nonzero;fill:#000000;fill-opacity:1;"/>
+        </g>
+    </g>
+</svg>
