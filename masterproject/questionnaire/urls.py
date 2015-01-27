@@ -3,7 +3,14 @@ from django.conf.urls import patterns, url
 from questionnaire import views
 
 urlpatterns = patterns('',
+    url(r'^rules', views.rules, name='rules'),
+    url(r'^training', views.training, name='training'),
+    url(r'^patterninformation', views.patterninformation, name='patterninformation'),
+    url(r'^pattern1', views.pattern1, name='pattern1'),
+    url(r'^pattern2', views.pattern2, name='pattern2'),
+    url(r'^pattern3', views.pattern3, name='pattern3'),
     url(r'^add_handsize', views.add_handsize, name='add_handsize'),
+    url(r'^nomobile', views.nomobile, name='nomobile'),
     url(r'^add_screensize', views.add_screensize, name='add_screensize'),
     url(r'^add_handedness', views.add_handedness, name='add_handedness'),
     url(r'^add_finger', views.add_finger, name='add_finger'),

@@ -1,5 +1,15 @@
 from django import forms
-from questionnaire.models import Person
+from questionnaire.models import Person, Password
+
+class TrainingForm(forms.ModelForm):
+	class Meta:
+		model = Password
+		fields = ('sequence', 'password_type',)
+
+class PatternForm(forms.ModelForm):
+	class Meta:
+		model = Password
+		fields = ('sequence',)
 
 class HandsizeForm(forms.ModelForm):
 	class Meta:
@@ -65,4 +75,3 @@ class ExperienceForm(forms.ModelForm):
 	class Meta:
 		model = Person
 		fields = ('experience',)
-

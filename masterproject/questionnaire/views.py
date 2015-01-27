@@ -6,6 +6,7 @@ from questionnaire.models import Person, Password
 from django.contrib.sessions.models import Session
 from django import forms
 from questionnaire.forms import *
+from django.forms.models import inlineformset_factory
 import sys
 
 # print >>sys.stderr, choice
@@ -13,156 +14,221 @@ import sys
 def index(request):
     model = Person
     template_name = 'questionnaire/index.html'
-    return render(request, template_name, {'qnum': 1})
+    return render(request, template_name, {'qnum': 0})
+
+def nomobile(request):
+    template_name = 'questionnaire/nomobile.html'
+    return render(request, template_name)
+
+def rules(request):
+    request.session.save()
+    person = Person.objects.get_or_create(pk=request.session.session_key)
+    return render(request, 'questionnaire/rules.html', {'qnum': 1})
+
+def training(request):
+    person_id = request.session.session_key
+    person = Person.objects.get(pk=person_id)
+    if request.method == 'POST':
+        password = Password(person_id=person_id, password_type='T')
+        form = PatternForm(request.POST, instance=person)
+        if form.is_valid():
+            password.sequence = request.POST['sequence']
+            password.save()
+            return HttpResponseRedirect('training')
+    else:
+        form = PatternForm(instance=person)
+    return render(request, 'questionnaire/training.html', {'form': form, 'qnum':2})
+
+def patterninformation(request):
+    person = Person.objects.get(pk=request.session.session_key)
+    return render(request, 'questionnaire/patterninformation.html', {'qnum':3})
+
+def pattern1(request):
+    person_id = request.session.session_key
+    person = Person.objects.get(pk=person_id)
+    if request.method == 'POST':
+        password, created = Password.objects.get_or_create(person_id=person_id, password_type='1')
+        form = PatternForm(request.POST, instance=person)
+        if form.is_valid():
+            password.sequence = request.POST['sequence']
+            password.save()
+            return HttpResponseRedirect('pattern2')
+    else:
+        form = PatternForm(instance=person)
+    return render(request, 'questionnaire/pattern1.html', {'form': form, 'qnum':4})
+
+def pattern2(request):
+    person_id = request.session.session_key
+    person = Person.objects.get(pk=person_id)
+    if request.method == 'POST':
+        password,created = Password.objects.get_or_create(person_id=person_id, password_type='2')
+        form = PatternForm(request.POST, instance=person)
+        if form.is_valid():
+            password.sequence = request.POST['sequence']
+            password.save()
+            return HttpResponseRedirect('pattern3')
+    else:
+        form = PatternForm(instance=person)
+    return render(request, 'questionnaire/pattern2.html', {'form': form, 'qnum':5})
+
+def pattern3(request):
+    person_id = request.session.session_key
+    person = Person.objects.get(pk=person_id)
+    if request.method == 'POST':
+        password,created = Password.objects.get_or_create(person_id=person_id, password_type='3')
+        form=PatternForm(request.POST, instance=person)
+        if form.is_valid():
+            password.sequence = request.POST['sequence']
+            password.save()
+            return HttpResponseRedirect('add_handsize')
+    else:
+        form = PatternForm(instance=person)
+    return render(request, 'questionnaire/pattern3.html', {'form': form, 'qnum':6})
 
 def add_handsize(request):
-    person, created = Person.objects.get_or_create(pk=request.session.session_key)
+    person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['handsize']
-        form=HandsizeForm(request.POST, instance=person)
+        form = HandsizeForm(request.POST, instance=person)
         if form.is_valid:
             form.save()
             return HttpResponseRedirect('add_screensize')
     else:
-        form=HandsizeForm(instance=person)
-    return render(request, 'questionnaire/handsize.html', {'form':form, 'session':request.session['name']})
+        form = HandsizeForm(instance=person)
+    return render(request, 'questionnaire/handsize.html', {'form':form, 'qnum':7})
 
 def add_screensize(request):
     person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['screensize']
-        form=ScreensizeForm(request.POST, instance=person)
+        form = ScreensizeForm(request.POST, instance=person)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('add_handedness')
-    # if a GET (or any other method) we'll create a blank form
     else:
         form = ScreensizeForm(instance=person)
-    return render(request, 'questionnaire/screensize.html', {'form': form, 'session': request.session['name']})
+    return render(request, 'questionnaire/screensize.html', {'form': form, 'qnum':8})
 
 def add_handedness(request):
     person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['handedness']
-        form=HandednessForm(request.POST, instance=person)
+        form = HandednessForm(request.POST, instance=person)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('add_finger')
     else:
         form = HandednessForm(instance=person)
-    return render(request, 'questionnaire/handedness.html', {'form': form, 'session': request.session['name']})
+    return render(request, 'questionnaire/handedness.html', {'form': form, 'qnum':9})
 
 def add_finger(request):
     person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['finger']
         form=FingerForm(request.POST, instance=person)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('add_reading')
     else:
         form = FingerForm(instance=person)
-    return render(request, 'questionnaire/finger.html', {'form': form, 'session': request.session['name']})
+    return render(request, 'questionnaire/finger.html', {'form': form, 'qnum':10})
 
 def add_reading(request):
     person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['reading']
-        form=ReadingForm(request.POST, instance=person)
+        form = ReadingForm(request.POST, instance=person)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('add_gender')
     else:
         form = ReadingForm(instance=person)
-    return render(request, 'questionnaire/reading.html', {'form': form, 'session': request.session['name']})
+    return render(request, 'questionnaire/reading.html', {'form': form, 'qnum':11})
 
 def add_gender(request):
     person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['gender']
-        form=GenderForm(request.POST, instance=person)
+        form = GenderForm(request.POST, instance=person)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('add_age')
-    # if a GET (or any other method) we'll create a blank form
     else:
         form = GenderForm(instance=person)
-    return render(request, 'questionnaire/gender.html', {'form': form, 'session': request.session['name']})
+    return render(request, 'questionnaire/gender.html', {'form': form, 'qnum':12})
 
 def add_age(request):
     person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['age']
-        form=AgeForm(request.POST, instance=person)
+        form = AgeForm(request.POST, instance=person)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('add_nationality')
-    # if a GET (or any other method) we'll create a blank form
     else:
         form = AgeForm(instance=person)
-    return render(request, 'questionnaire/age.html', {'form': form, 'session': request.session['name']})
+    return render(request, 'questionnaire/age.html', {'form': form, 'qnum':13})
 
 def add_nationality(request):
     person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['nationality']
-        form=NationalityForm(request.POST, instance=person)
+        form = NationalityForm(request.POST, instance=person)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('add_usedALP')
-    # if a GET (or any other method) we'll create a blank form
     else:
         form = NationalityForm(instance=person)
-    return render(request, 'questionnaire/nationality.html', {'form': form, 'session': request.session['name']})
+    return render(request, 'questionnaire/nationality.html', {'form': form, 'qnum':14})
 
 def add_usedALP(request):
     person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['used_ALP']
         form=UsedALPForm(request.POST, instance=person)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('add_useScreenlock')
     else:
         form = UsedALPForm(instance=person)
-    return render(request, 'questionnaire/usedALP.html', {'form': form, 'session': request.session['name']})
+    return render(request, 'questionnaire/usedALP.html', {'form': form, 'qnum':15})
 
 def add_useScreenlock(request):
     person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['use_screenlock']
-        form=UseScreenlockForm(request.POST, instance=person)
+        form = UseScreenlockForm(request.POST, instance=person)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('add_screenlock')
     else:
         form = UseScreenlockForm(instance=person)
-    return render(request, 'questionnaire/useScreenlock.html', {'form': form, 'session': request.session['name']})
+    return render(request, 'questionnaire/useScreenlock.html', {'form': form, 'qnum':16})
 
 def add_screenlock(request):
     person = Person.objects.get(pk=request.session.session_key)
     if request.method == 'POST':
-        choice=request.POST['screenlock']
-        form=ScreenlockForm(request.POST, instance=person)
+        form = ScreenlockForm(request.POST, instance=person)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('add_mobileOS')
     else:
         form = ScreenlockForm(instance=person)
-    return render(request, 'questionnaire/screenlock.html', {'form': form, 'session': request.session['name']})
+    return render(request, 'questionnaire/screenlock.html', {'form': form, 'qnum':17})
 
 def add_mobileOS(request):
-    model = Person
-    template_name = 'questionnaire/mobileOS.html'
-    return render(request, template_name, {'qnum': 1})
+    person = Person.objects.get(pk=request.session.session_key)
+    if request.method == 'POST':
+        form = OSForm(request.POST, instance=person)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('add_experience')
+    else:
+        form = OSForm(instance=person)
+    return render(request, 'questionnaire/mobileOS.html', {'form': form, 'qnum':18})
 
 def add_experience(request):
-    model = Person
-    template_name = 'questionnaire/experience.html'
-    return render(request, template_name, {'qnum': 1})
+    person = Person.objects.get(pk=request.session.session_key)
+    if request.method == 'POST':
+        form = ExperienceForm(request.POST, instance=person)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('finish')
+    else:
+        form = ExperienceForm(instance=person)
+    return render(request, 'questionnaire/experience.html', {'form': form, 'qnum':19})
 
 def finish(request):
     model = Person
     template_name = 'questionnaire/finish.html'
-    return render(request, template_name, {'qnum': 1})
-
+    return render(request, template_name, {'qnum': 20})
