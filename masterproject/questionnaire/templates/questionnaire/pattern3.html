@@ -1,0 +1,46 @@
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+  <div id="header" class="row">
+    <div class="col-xs-12">
+      <h1>Screen 6 - Pattern 3</h1>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div id="answers">  
+    <div class="row">
+      <div id="sequence" class="col-xs-12">
+        <div id="patternContainer"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <button id="retrypattern" type="submit" class="btn btn-primary">Retry</button>
+      </div>
+      <div class="col-xs-6">
+        <button id="submitpattern" type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </div>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.sequence.as_hidden }} 
+    <input id="btn-post" type="Submit" value="Add" />
+  </form>
+{% endblock %}
+
+{% block navigation %}
+  <div id="navigation" class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4"><h1>{{ qnum }} / 20 </h1></div>
+    <div class="col-xs-4"></div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  <script type="text/javascript">
+    addPattern();
+  </script>
+{% endblock %}

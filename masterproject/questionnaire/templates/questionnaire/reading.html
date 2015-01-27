@@ -1,37 +1,52 @@
 {% extends "questionnaire/base.html" %}
 
 {% block header %}
-    <h1>Step 5 - Reading Orientation</h1>
+  <div id="header" class="row">
+    <div class="col-xs-12">
+      <h1>Step 5 - Reading Orientation</h1>
+    </div>
+  </div>
 {% endblock %}
 
 {% block content %}
-    <div class="icons-1-3">
-        <img id="right" src="/static/images/icons/right.png">
+  <div id="answers">
+    <div class="row">
+      <div class="col-xs-12">
+        <img id="right" class="svg img-responsive icon-30" alt="Responsive image" src="/static/images/icons/right.svg"/>
+      </div>
     </div>
-    <div class="icons-1-3">
-        <img id="left" src="/static/images/icons/left.png">
+    <div class="row">
+      <div class="col-xs-12">
+        <img id="left" class="svg img-responsive icon-30" alt="Responsive image" src="/static/images/icons/left.svg"/>
+      </div>
     </div>
-    <div class="icons-1-3">
-        <img id="top" src="/static/images/icons/down.png">
+    <div class="row">
+      <div class="col-xs-12">
+        <img id="top" class="svg img-responsive icon-20" alt="Responsive image" src="/static/images/icons/down.svg"/>
+      </div>
     </div>
-
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.reading.as_hidden }} 
-        <input class="btn" type="submit" value="Submit" />
-    </form>
+  </div>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.reading.as_hidden }}
+    <input id="btn-post" type="Submit" class="btn big-btn btn-default btn-lg" value="Submit" />
+  </form>
 {% endblock %}
 
 {% block navigation %}
-
+  <div id="navigation" class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4"><h1> {{ qnum }} / 20 </h1></div>
+    <div class="col-xs-4"></div>
+  </div>
 {% endblock %}
 
 {% block javascript %}
-	<script type="text/javascript">
-        qs.bindForm({
-            'left': 'L',
-            'right': 'R',
-            'top': 'T'
-        }, 'id_reading');
-    </script>
+  <script type="text/javascript">
+    qs.bindForm({
+      'left': 'L',
+      'right': 'R',
+      'top': 'T'
+    }, 'id_reading');
+  </script>
 {% endblock %}

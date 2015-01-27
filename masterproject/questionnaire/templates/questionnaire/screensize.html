@@ -1,31 +1,44 @@
 {% extends "questionnaire/base.html" %}
 
 {% block header %}
-    <h1>Step 2 - ScreenSize</h1>
+  <div id="header" class="row">
+    <div class="col-xs-12">
+      <h1>Step 2 - ScreenSize</h1>
+    </div>
+  </div>    
 {% endblock %}
 
 {% block content %}
-    <div class="icons-3">
-        <img id="screen-small" class="small" src="/static/images/icons/screen.png">
-        <img id="screen-medium" class="medium" src="/static/images/icons/screen.png">
-        <img id="screen-large" class="large" src="/static/images/icons/screen.png">
+  <div id="answers">
+    <div class="row">
+      <div class="col-xs-12">
+        <img id="screen-small" class="svg img-responsive icon-20" alt="Responsive image" src="/static/images/icons/screen.svg"/>
+        <img id="screen-medium" class="svg img-responsive icon-25" alt="Responsive image" src="/static/images/icons/screen.svg"/>
+        <img id="screen-large" class="svg img-responsive icon-30" alt="Responsive image" src="/static/images/icons/screen.svg"/>
+      </div>
     </div>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.screensize.as_hidden }} 
-        <input type="submit" value="Submit" class="btn"/>
-    </form>
+  </div>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.screensize.as_hidden }}  
+    <input id="btn-post" type="Submit" class="btn big-btn btn-default btn-lg" value="Submit" />
+  </form>
 {% endblock %}
 
 {% block navigation %}
+  <div id="navigation" class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4"><h1>{{ qnum }} / 20</h1></div>
+    <div class="col-xs-4"></div>
+  </div>
 {% endblock %}
 
 {% block javascript %}
-	<script type="text/javascript">
-        qs.bindForm({
-            'screen-small': 'S',
-            'screen-medium': 'M',
-            'screen-large': 'L',
-        }, 'id_screensize');
-    </script>
+  <script type="text/javascript">
+    qs.bindForm({
+      'screen-small': 'S',
+      'screen-medium': 'M',
+      'screen-large': 'L',
+    }, 'id_screensize');
+  </script>
 {% endblock %}

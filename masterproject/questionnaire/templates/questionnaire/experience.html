@@ -1,16 +1,42 @@
 {% extends "questionnaire/base.html" %}
 
 {% block header %}
-    <h1>Step 13 - Experience</h1>
+  <div id="header" class="row">
+    <div class="col-xs-12">
+      <h1>Step 13 - Experience</h1>
+    </div>
+  </div>
 {% endblock %}
 
 {% block content %}
-    <a href="finish">Finish</a>
+  <div id="answers">
+    <div class="row">
+      <div class="col-xs-12">
+        <img id="yes" class="svg img-responsive icon-55" alt="Responsive image" src="/static/images/icons/yes.svg"/>
+        <img id="no" class="svg img-responsive icon-40" alt="Responsive image" src="/static/images/icons/no.svg"/>
+      </div>
+    </div>
+  </div>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.experience.as_hidden }}  
+    <input id="btn-post" type="Submit" value="Submit" />
+  </form>
 {% endblock %}
 
 {% block navigation %}
+  <div id="navigation" class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4"><h1> {{ qnum }} / 20 </h1></div>
+    <div class="col-xs-4"></div>
+  </div>
 {% endblock %}
 
 {% block javascript %}
-
+  <script type="text/javascript">
+    qs.bindForm({
+      'yes': 'Y',
+      'no': 'N'
+    }, 'id_experience');
+  </script>
 {% endblock %}

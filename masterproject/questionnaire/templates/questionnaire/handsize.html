@@ -1,38 +1,50 @@
 {% extends "questionnaire/base.html" %}
 
 {% block header %}
-  <h1>Step 1 - Hand Size</h1>
+  <div id="header" class="row">
+    <div class="col-xs-12">
+      <h1>Step 1 - What is the size of your hand?</h1>
+    </div>
+  </div>
 {% endblock %}
 
 {% block content %}
-    
-    <div id="answers">
-        <div class="icons-2">
-            <img id="hand-small" class="small" src="/static/images/icons/hand.png">
-            <img id="hand-medium" class="medium" src="/static/images/icons/hand.png">
-        </div>
-        <div class="icons-2">
-            <img id="hand-large" class="large" src="/static/images/icons/hand.png">
-            <img id="hand-xtralarge" class="xtralarge" src="/static/images/icons/hand.png">
-        </div>
+  <div id="answers">
+    <div class="row">
+      <div class="col-xs-12">
+        <img id="hand-small" class="svg img-responsive icon-25" alt="Responsive image" src="/static/images/icons/hand.svg"/>
+        <img id="hand-medium" class="svg img-responsive icon-35" alt="Responsive image" src="/static/images/icons/hand.svg"/>
+      </div>
     </div>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.handsize.as_hidden }} 
-        <input type="submit" class="btn" value="Submit" />
-    </form>
+    <div class="row">
+      <div class="col-xs-12">
+        <img id="hand-large" class="svg img-responsive icon-40" alt="Responsive image" src="/static/images/icons/hand.svg">
+        <img id="hand-xtralarge" class="svg img-responsive icon-50" alt="Responsive image" src="/static/images/icons/hand.svg">
+      </div>
+    </div>
+  </div>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.handsize.as_hidden }} 
+    <input id="btn-post" type="Submit" class="btn big-btn btn-default btn-lg" value="Submit" />
+  </form>
 {% endblock %}
 
 {% block navigation %}
+  <div id="navigation" class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4"><h1>{{ qnum }} / 20 </h1></div>
+    <div class="col-xs-4"></div>
+  </div>
 {% endblock %}
 
 {% block javascript %}
-    <script type="text/javascript">
-        qs.bindForm({
-            'hand-small': 'S',
-            'hand-medium': 'M',
-            'hand-large': 'L',
-            'hand-xtralarge': 'XL'
-        }, 'id_handsize');
-    </script>
+  <script type="text/javascript">
+    qs.bindForm({
+      'hand-small': 'S',
+      'hand-medium': 'M',
+      'hand-large': 'L',
+      'hand-xtralarge': 'XL'
+    }, 'id_handsize');      
+  </script>
 {% endblock %}

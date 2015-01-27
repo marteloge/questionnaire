@@ -1,276 +1,285 @@
 {% extends "questionnaire/base.html" %}
 
 {% block header %}
-    <h1>Step 8 - Country</h1>
+  <div id="header" class="row">
+    <div class="col-xs-12">
+      <h1>Step 8 - Country</h1>
+    </div>
+  </div>
 {% endblock %}
 
 {% block content %}
-	<div class="icons-1">
-    <div class="ui fluid search selection dropdown">
-        <input type="hidden" name="country">
-        <input class="search" tabindex="0">
-        <div class="default text">Select country</div>
-        <div class="menu" tabindex="-1">
-          	<div class="item" data-value="ad"><i class="flag-icon-ad flag-icon"></i>Andorra</div>
-		    <div class="item" data-value="ae"><i class="flag-icon-ae flag-icon"></i>United Arab Emirates</div>
-		    <div class="item" data-value="af"><i class="flag-icon-af flag-icon"></i>Afghanistan</div>
-		    <div class="item" data-value="ag"><i class="flag-icon-ag flag-icon"></i>Antigua</div>
-		    <div class="item" data-value="ai"><i class="flag-icon-ai flag-icon"></i>Anguilla</div>
-		    <div class="item" data-value="al"><i class="flag-icon-al flag-icon"></i>Albania</div>
-		    <div class="item" data-value="am"><i class="flag-icon-am flag-icon"></i>Armenia</div>
-		    <div class="item" data-value="ao"><i class="flag-icon-ao flag-icon"></i>Angola</div>
-		    <div class="item" data-value="ar"><i class="flag-icon-ar flag-icon"></i>Argentina</div>
-		    <div class="item" data-value="as"><i class="flag-icon-as flag-icon"></i>American Samoa</div>
-		    <div class="item" data-value="at"><i class="flag-icon-at flag-icon"></i>Austria</div>
-		    <div class="item" data-value="au"><i class="flag-icon-au flag-icon"></i>Australia</div>
-		    <div class="item" data-value="aw"><i class="flag-icon-aw flag-icon"></i>Aruba</div>
-		    <div class="item" data-value="ax"><i class="flag-icon-ax flag-icon"></i>Aland Islands</div>
-		    <div class="item" data-value="az"><i class="flag-icon-az flag-icon"></i>Azerbaijan</div>
-		    <div class="item" data-value="ba"><i class="flag-icon-ba flag-icon"></i>Bosnia</div>
-		    <div class="item" data-value="bb"><i class="flag-icon-bb flag-icon"></i>Barbados</div>
-		    <div class="item" data-value="bd"><i class="flag-icon-bd flag-icon"></i>Bangladesh</div>
-		    <div class="item" data-value="be"><i class="flag-icon-be flag-icon"></i>Belgium</div>
-		    <div class="item" data-value="bf"><i class="flag-icon-bf flag-icon"></i>Burkina Faso</div>
-		    <div class="item" data-value="bg"><i class="flag-icon-bg flag-icon"></i>Bulgaria</div>
-		    <div class="item" data-value="bh"><i class="flag-icon-bh flag-icon"></i>Bahrain</div>
-		    <div class="item" data-value="bi"><i class="flag-icon-bi flag-icon"></i>Burundi</div>
-		    <div class="item" data-value="bj"><i class="flag-icon-bj flag-icon"></i>Benin</div>
-		    <div class="item" data-value="bm"><i class="flag-icon-bm flag-icon"></i>Bermuda</div>
-		    <div class="item" data-value="bn"><i class="flag-icon-bn flag-icon"></i>Brunei</div>
-		    <div class="item" data-value="bo"><i class="flag-icon-bo flag-icon"></i>Bolivia</div>
-		    <div class="item" data-value="br"><i class="flag-icon-br flag-icon"></i>Brazil</div>
-		    <div class="item" data-value="bs"><i class="flag-icon-bs flag-icon"></i>Bahamas</div>
-		    <div class="item" data-value="bt"><i class="flag-icon-bt flag-icon"></i>Bhutan</div>
-		    <div class="item" data-value="bv"><i class="flag-icon-bv flag-icon"></i>Bouvet Island</div>
-		    <div class="item" data-value="bw"><i class="flag-icon-bw flag-icon"></i>Botswana</div>
-		    <div class="item" data-value="by"><i class="flag-icon-by flag-icon"></i>Belarus</div>
-		    <div class="item" data-value="bz"><i class="flag-icon-bz flag-icon"></i>Belize</div>
-		    <div class="item" data-value="ca"><i class="flag-icon-ca flag-icon"></i>Canada</div>
-		    <div class="item" data-value="cc"><i class="flag-icon-cc flag-icon"></i>Cocos Islands</div>
-		    <div class="item" data-value="cd"><i class="flag-icon-cd flag-icon"></i>Congo</div>
-		    <div class="item" data-value="cf"><i class="flag-icon-cf flag-icon"></i>Central African Republic</div>
-		    <div class="item" data-value="cg"><i class="flag-icon-cg flag-icon"></i>Congo Brazzaville</div>
-		    <div class="item" data-value="ch"><i class="flag-icon-ch flag-icon"></i>Switzerland</div>
-		    <div class="item" data-value="ci"><i class="flag-icon-ci flag-icon"></i>Cote Divoire</div>
-		    <div class="item" data-value="ck"><i class="flag-icon-ck flag-icon"></i>Cook Islands</div>
-		    <div class="item" data-value="cl"><i class="flag-icon-cl flag-icon"></i>Chile</div>
-		    <div class="item" data-value="cm"><i class="flag-icon-cm flag-icon"></i>Cameroon</div>
-		    <div class="item" data-value="cn"><i class="flag-icon-cn flag-icon"></i>China</div>
-		    <div class="item" data-value="co"><i class="flag-icon-co flag-icon"></i>Colombia</div>
-		    <div class="item" data-value="cr"><i class="flag-icon-cr flag-icon"></i>Costa Rica</div>
-		    <div class="item" data-value="cs"><i class="flag-icon-rs flag-icon"></i>Serbia</div>
-		    <div class="item" data-value="cu"><i class="flag-icon-cu flag-icon"></i>Cuba</div>
-		    <div class="item" data-value="cv"><i class="flag-icon-cv flag-icon"></i>Cape Verde</div>
-		    <div class="item" data-value="cx"><i class="flag-icon-cx flag-icon"></i>Christmas Island</div>
-		    <div class="item" data-value="cy"><i class="flag-icon-cy flag-icon"></i>Cyprus</div>
-		    <div class="item" data-value="cz"><i class="flag-icon-cz flag-icon"></i>Czech Republic</div>
-		    <div class="item" data-value="de"><i class="flag-icon-de flag-icon"></i>Germany</div>
-		    <div class="item" data-value="dj"><i class="flag-icon-dj flag-icon"></i>Djibouti</div>
-		    <div class="item" data-value="dk"><i class="flag-icon-dk flag-icon"></i>Denmark</div>
-		    <div class="item" data-value="dm"><i class="flag-icon-dm flag-icon"></i>Dominica</div>
-		    <div class="item" data-value="do"><i class="flag-icon-do flag-icon"></i>Dominican Republic</div>
-		    <div class="item" data-value="dz"><i class="flag-icon-dz flag-icon"></i>Algeria</div>
-		    <div class="item" data-value="ec"><i class="flag-icon-ec flag-icon"></i>Ecuador</div>
-		    <div class="item" data-value="ee"><i class="flag-icon-ee flag-icon"></i>Estonia</div>
-		    <div class="item" data-value="eg"><i class="flag-icon-eg flag-icon"></i>Egypt</div>
-		    <div class="item" data-value="eh"><i class="flag-icon-eh flag-icon"></i>Western Sahara</div>
-		    <div class="item" data-value="er"><i class="flag-icon-er flag-icon"></i>Eritrea</div>
-		    <div class="item" data-value="es"><i class="flag-icon-es flag-icon"></i>Spain</div>
-		    <div class="item" data-value="et"><i class="flag-icon-et flag-icon"></i>Ethiopia</div>
-		    <div class="item" data-value="fi"><i class="flag-icon-fi flag-icon"></i>Finland</div>
-		    <div class="item" data-value="fj"><i class="flag-icon-fj flag-icon"></i>Fiji</div>
-		    <div class="item" data-value="fk"><i class="flag-icon-fk flag-icon"></i>Falkland Islands</div>
-		    <div class="item" data-value="fm"><i class="flag-icon-fm flag-icon"></i>Micronesia</div>
-		    <div class="item" data-value="fo"><i class="flag-icon-fo flag-icon"></i>Faroe Islands</div>
-		    <div class="item" data-value="fr"><i class="flag-icon-fr flag-icon"></i>France</div>
-		    <div class="item" data-value="ga"><i class="flag-icon-ga flag-icon"></i>Gabon</div>
-		    <div class="item" data-value="gb"><i class="flag-icon-gb flag-icon"></i>England</div>
-		    <div class="item" data-value="gd"><i class="flag-icon-gd flag-icon"></i>Grenada</div>
-		    <div class="item" data-value="ge"><i class="flag-icon-ge flag-icon"></i>Georgia</div>
-		    <div class="item" data-value="gf"><i class="flag-icon-gf flag-icon"></i>French Guiana</div>
-		    <div class="item" data-value="gh"><i class="flag-icon-gh flag-icon"></i>Ghana</div>
-		    <div class="item" data-value="gi"><i class="flag-icon-gi flag-icon"></i>Gibraltar</div>
-		    <div class="item" data-value="gl"><i class="flag-icon-gl flag-icon"></i>Greenland</div>
-		    <div class="item" data-value="gm"><i class="flag-icon-gm flag-icon"></i>Gambia</div>
-		    <div class="item" data-value="gn"><i class="flag-icon-gn flag-icon"></i>Guinea</div>
-		    <div class="item" data-value="gp"><i class="flag-icon-gp flag-icon"></i>Guadeloupe</div>
-		    <div class="item" data-value="gq"><i class="flag-icon-gq flag-icon"></i>Equatorial Guinea</div>
-		    <div class="item" data-value="gr"><i class="flag-icon-gr flag-icon"></i>Greece</div>
-		    <div class="item" data-value="gs"><i class="flag-icon-gs flag-icon"></i>Sandwich Islands</div>
-		    <div class="item" data-value="gt"><i class="flag-icon-gt flag-icon"></i>Guatemala</div>
-		    <div class="item" data-value="gu"><i class="flag-icon-gu flag-icon"></i>Guam</div>
-		    <div class="item" data-value="gw"><i class="flag-icon-gw flag-icon"></i>Guinea-Bissau</div>
-		    <div class="item" data-value="gy"><i class="flag-icon-gy flag-icon"></i>Guyana</div>
-		    <div class="item" data-value="hk"><i class="flag-icon-hk flag-icon"></i>Hong Kong</div>
-		    <div class="item" data-value="hm"><i class="flag-icon-hm flag-icon"></i>Heard Island</div>
-		    <div class="item" data-value="hn"><i class="flag-icon-hn flag-icon"></i>Honduras</div>
-		    <div class="item" data-value="hr"><i class="flag-icon-hr flag-icon"></i>Croatia</div>
-		    <div class="item" data-value="ht"><i class="flag-icon-ht flag-icon"></i>Haiti</div>
-		    <div class="item" data-value="hu"><i class="flag-icon-hu flag-icon"></i>Hungary</div>
-		    <div class="item" data-value="id"><i class="flag-icon-id flag-icon"></i>Indonesia</div>
-		    <div class="item" data-value="ie"><i class="flag-icon-ie flag-icon"></i>Ireland</div>
-		    <div class="item" data-value="il"><i class="flag-icon-il flag-icon"></i>Israel</div>
-		    <div class="item" data-value="in"><i class="flag-icon-in flag-icon"></i>India</div>
-		    <div class="item" data-value="io"><i class="flag-icon-io flag-icon"></i>Indian Ocean Territory</div>
-		    <div class="item" data-value="iq"><i class="flag-icon-iq flag-icon"></i>Iraq</div>
-		    <div class="item" data-value="ir"><i class="flag-icon-ir flag-icon"></i>Iran</div>
-		    <div class="item" data-value="is"><i class="flag-icon-is flag-icon"></i>Iceland</div>
-		    <div class="item" data-value="it"><i class="flag-icon-it flag-icon"></i>Italy</div>
-		    <div class="item" data-value="jm"><i class="flag-icon-jm flag-icon"></i>Jamaica</div>
-		    <div class="item" data-value="jo"><i class="flag-icon-jo flag-icon"></i>Jordan</div>
-		    <div class="item" data-value="jp"><i class="flag-icon-jp flag-icon"></i>Japan</div>
-		    <div class="item" data-value="ke"><i class="flag-icon-ke flag-icon"></i>Kenya</div>
-		    <div class="item" data-value="kg"><i class="flag-icon-kg flag-icon"></i>Kyrgyzstan</div>
-		    <div class="item" data-value="kh"><i class="flag-icon-kh flag-icon"></i>Cambodia</div>
-		    <div class="item" data-value="ki"><i class="flag-icon-ki flag-icon"></i>Kiribati</div>
-		    <div class="item" data-value="km"><i class="flag-icon-km flag-icon"></i>Comoros</div>
-		    <div class="item" data-value="kn"><i class="flag-icon-kn flag-icon"></i>Saint Kitts and Nevis</div>
-		    <div class="item" data-value="kp"><i class="flag-icon-kp flag-icon"></i>North Korea</div>
-		    <div class="item" data-value="kr"><i class="flag-icon-kr flag-icon"></i>South Korea</div>
-		    <div class="item" data-value="kw"><i class="flag-icon-kw flag-icon"></i>Kuwait</div>
-		    <div class="item" data-value="ky"><i class="flag-icon-ky flag-icon"></i>Cayman Islands</div>
-		    <div class="item" data-value="kz"><i class="flag-icon-kz flag-icon"></i>Kazakhstan</div>
-		    <div class="item" data-value="la"><i class="flag-icon-la flag-icon"></i>Laos</div>
-		    <div class="item" data-value="lb"><i class="flag-icon-lb flag-icon"></i>Lebanon</div>
-		    <div class="item" data-value="lc"><i class="flag-icon-lc flag-icon"></i>Saint Lucia</div>
-		    <div class="item" data-value="li"><i class="flag-icon-li flag-icon"></i>Liechtenstein</div>
-		    <div class="item" data-value="lk"><i class="flag-icon-lk flag-icon"></i>Sri Lanka</div>
-		    <div class="item" data-value="lr"><i class="flag-icon-lr flag-icon"></i>Liberia</div>
-		    <div class="item" data-value="ls"><i class="flag-icon-ls flag-icon"></i>Lesotho</div>
-		    <div class="item" data-value="lt"><i class="flag-icon-lt flag-icon"></i>Lithuania</div>
-		    <div class="item" data-value="lu"><i class="flag-icon-lu flag-icon"></i>Luxembourg</div>
-		    <div class="item" data-value="lv"><i class="flag-icon-lv flag-icon"></i>Latvia</div>
-		    <div class="item" data-value="ly"><i class="flag-icon-ly flag-icon"></i>Libya</div>
-		    <div class="item" data-value="ma"><i class="flag-icon-ma flag-icon"></i>Morocco</div>
-		    <div class="item" data-value="mc"><i class="flag-icon-mc flag-icon"></i>Monaco</div>
-		    <div class="item" data-value="md"><i class="flag-icon-md flag-icon"></i>Moldova</div>
-		    <div class="item" data-value="me"><i class="flag-icon-me flag-icon"></i>Montenegro</div>
-		    <div class="item" data-value="mg"><i class="flag-icon-mg flag-icon"></i>Madagascar</div>
-		    <div class="item" data-value="mh"><i class="flag-icon-mh flag-icon"></i>Marshall Islands</div>
-		    <div class="item" data-value="mk"><i class="flag-icon-mk flag-icon"></i>MacEdonia</div>
-		    <div class="item" data-value="ml"><i class="flag-icon-ml flag-icon"></i>Mali</div>
-		    <div class="item" data-value="ar"><i class="flag-icon-ar flag-icon"></i>Burma</div>
-		    <div class="item" data-value="mn"><i class="flag-icon-mn flag-icon"></i>Mongolia</div>
-		    <div class="item" data-value="mo"><i class="flag-icon-mo flag-icon"></i>MacAu</div>
-		    <div class="item" data-value="mp"><i class="flag-icon-mp flag-icon"></i>Northern Mariana Islands</div>
-		    <div class="item" data-value="mq"><i class="flag-icon-mq flag-icon"></i>Martinique</div>
-		    <div class="item" data-value="mr"><i class="flag-icon-mr flag-icon"></i>Mauritania</div>
-		    <div class="item" data-value="ms"><i class="flag-icon-ms flag-icon"></i>Montserrat</div>
-		    <div class="item" data-value="mt"><i class="flag-icon-mt flag-icon"></i>Malta</div>
-		    <div class="item" data-value="mu"><i class="flag-icon-mu flag-icon"></i>Mauritius</div>
-		    <div class="item" data-value="mv"><i class="flag-icon-mv flag-icon"></i>Maldives</div>
-		    <div class="item" data-value="mw"><i class="flag-icon-mw flag-icon"></i>Malawi</div>
-		    <div class="item" data-value="mx"><i class="flag-icon-mx flag-icon"></i>Mexico</div>
-		    <div class="item" data-value="my"><i class="flag-icon-my flag-icon"></i>Malaysia</div>
-		    <div class="item" data-value="mz"><i class="flag-icon-mz flag-icon"></i>Mozambique</div>
-		    <div class="item" data-value="na"><i class="flag-icon-na flag-icon"></i>Namibia</div>
-		    <div class="item" data-value="nc"><i class="flag-icon-nc flag-icon"></i>New Caledonia</div>
-		    <div class="item" data-value="ne"><i class="flag-icon-ne flag-icon"></i>Niger</div>
-		    <div class="item" data-value="nf"><i class="flag-icon-nf flag-icon"></i>Norfolk Island</div>
-		    <div class="item" data-value="ng"><i class="flag-icon-ng flag-icon"></i>Nigeria</div>
-		    <div class="item" data-value="ni"><i class="flag-icon-ni flag-icon"></i>Nicaragua</div>
-		    <div class="item" data-value="nl"><i class="flag-icon-nl flag-icon"></i>Netherlands</div>
-		    <div class="item" data-value="no"><i class="flag-icon-no flag-icon"></i>Norway</div>
-		    <div class="item" data-value="np"><i class="flag-icon-np flag-icon"></i>Nepal</div>
-		    <div class="item" data-value="nr"><i class="flag-icon-nr flag-icon"></i>Nauru</div>
-		    <div class="item" data-value="nu"><i class="flag-icon-nu flag-icon"></i>Niue</div>
-		    <div class="item" data-value="nz"><i class="flag-icon-nz flag-icon"></i>New Zealand</div>
-		    <div class="item" data-value="om"><i class="flag-icon-om flag-icon"></i>Oman</div>
-		    <div class="item" data-value="pa"><i class="flag-icon-pa flag-icon"></i>Panama</div>
-		    <div class="item" data-value="pe"><i class="flag-icon-pe flag-icon"></i>Peru</div>
-		    <div class="item" data-value="pf"><i class="flag-icon-pf flag-icon"></i>French Polynesia</div>
-		    <div class="item" data-value="pg"><i class="flag-icon-pg flag-icon"></i>New Guinea</div>
-		    <div class="item" data-value="ph"><i class="flag-icon-ph flag-icon"></i>Philippines</div>
-		    <div class="item" data-value="pk"><i class="flag-icon-pk flag-icon"></i>Pakistan</div>
-		    <div class="item" data-value="pl"><i class="flag-icon-pl flag-icon"></i>Poland</div>
-		    <div class="item" data-value="pm"><i class="flag-icon-pm flag-icon"></i>Saint Pierre</div>
-		    <div class="item" data-value="pn"><i class="flag-icon-pn flag-icon"></i>Pitcairn Islands</div>
-		    <div class="item" data-value="pr"><i class="flag-icon-pr flag-icon"></i>Puerto Rico</div>
-		    <div class="item" data-value="ps"><i class="flag-icon-ps flag-icon"></i>Palestine</div>
-		    <div class="item" data-value="pt"><i class="flag-icon-pt flag-icon"></i>Portugal</div>
-		    <div class="item" data-value="pw"><i class="flag-icon-pw flag-icon"></i>Palau</div>
-		    <div class="item" data-value="py"><i class="flag-icon-py flag-icon"></i>Paraguay</div>
-		    <div class="item" data-value="qa"><i class="flag-icon-qa flag-icon"></i>Qatar</div>
-		    <div class="item" data-value="re"><i class="flag-icon-re flag-icon"></i>Reunion</div>
-		    <div class="item" data-value="ro"><i class="flag-icon-ro flag-icon"></i>Romania</div>
-		    <div class="item" data-value="ru"><i class="flag-icon-ru flag-icon"></i>Russia</div>
-		    <div class="item" data-value="rw"><i class="flag-icon-rw flag-icon"></i>Rwanda</div>
-		    <div class="item" data-value="sa"><i class="flag-icon-sa flag-icon"></i>Saudi Arabia</div>
-		    <div class="item" data-value="sb"><i class="flag-icon-sb flag-icon"></i>Solomon Islands</div>
-		    <div class="item" data-value="sc"><i class="flag-icon-sc flag-icon"></i>Seychelles</div>
-		    <div class="item" data-value="sd"><i class="flag-icon-sd flag-icon"></i>Sudan</div>
-		    <div class="item" data-value="se"><i class="flag-icon-se flag-icon"></i>Sweden</div>
-		    <div class="item" data-value="sg"><i class="flag-icon-sg flag-icon"></i>Singapore</div>
-		    <div class="item" data-value="sh"><i class="flag-icon-sh flag-icon"></i>Saint Helena</div>
-		    <div class="item" data-value="si"><i class="flag-icon-si flag-icon"></i>Slovenia</div>
-		    <div class="item" data-value="sj"><i class="flag-icon-sj flag-icon"></i>Svalbard, I Flag Jan Mayen</div>
-		    <div class="item" data-value="sk"><i class="flag-icon-sk flag-icon"></i>Slovakia</div>
-		    <div class="item" data-value="sl"><i class="flag-icon-sl flag-icon"></i>Sierra Leone</div>
-		    <div class="item" data-value="sm"><i class="flag-icon-sm flag-icon"></i>San Marino</div>
-		    <div class="item" data-value="sn"><i class="flag-icon-sn flag-icon"></i>Senegal</div>
-		    <div class="item" data-value="so"><i class="flag-icon-so flag-icon"></i>Somalia</div>
-		    <div class="item" data-value="sr"><i class="flag-icon-sr flag-icon"></i>Suriname</div>
-		    <div class="item" data-value="st"><i class="flag-icon-st flag-icon"></i>Sao Tome</div>
-		    <div class="item" data-value="sv"><i class="flag-icon-sv flag-icon"></i>El Salvador</div>
-		    <div class="item" data-value="sy"><i class="flag-icon-sy flag-icon"></i>Syria</div>
-		    <div class="item" data-value="sz"><i class="flag-icon-sz flag-icon"></i>Swaziland</div>
-		    <div class="item" data-value="tc"><i class="flag-icon-tc flag-icon"></i>Caicos Islands</div>
-		    <div class="item" data-value="td"><i class="flag-icon-td flag-icon"></i>Chad</div>
-		    <div class="item" data-value="tf"><i class="flag-icon-tf flag-icon"></i>French Territories</div>
-		    <div class="item" data-value="tg"><i class="flag-icon-tg flag-icon"></i>Togo</div>
-		    <div class="item" data-value="th"><i class="flag-icon-th flag-icon"></i>Thailand</div>
-		    <div class="item" data-value="tj"><i class="flag-icon-tj flag-icon"></i>Tajikistan</div>
-		    <div class="item" data-value="tk"><i class="flag-icon-tk flag-icon"></i>Tokelau</div>
-		    <div class="item" data-value="tl"><i class="flag-icon-tl flag-icon"></i>Timorleste</div>
-		    <div class="item" data-value="tm"><i class="flag-icon-tm flag-icon"></i>Turkmenistan</div>
-		    <div class="item" data-value="tn"><i class="flag-icon-tn flag-icon"></i>Tunisia</div>
-		    <div class="item" data-value="to"><i class="flag-icon-to flag-icon"></i>Tonga</div>
-		    <div class="item" data-value="tr"><i class="flag-icon-tr flag-icon"></i>Turkey</div>
-		    <div class="item" data-value="tt"><i class="flag-icon-tt flag-icon"></i>Trinidad</div>
-		    <div class="item" data-value="tv"><i class="flag-icon-tv flag-icon"></i>Tuvalu</div>
-		    <div class="item" data-value="tw"><i class="flag-icon-tw flag-icon"></i>Taiwan</div>
-		    <div class="item" data-value="tz"><i class="flag-icon-tz flag-icon"></i>Tanzania</div>
-		    <div class="item" data-value="ua"><i class="flag-icon-ua flag-icon"></i>Ukraine</div>
-		    <div class="item" data-value="ug"><i class="flag-icon-ug flag-icon"></i>Uganda</div>
-		    <div class="item" data-value="ug"><i class="flag-icon-ug flag-icon"></i>Uganda</div>
-		    <div class="item" data-value="um"><i class="flag-icon-um flag-icon"></i>Us Minor Islands</div>
-		    <div class="item" data-value="us"><i class="flag-icon-us flag-icon"></i>United States</div>
-		    <div class="item" data-value="uy"><i class="flag-icon-uy flag-icon"></i>Uruguay</div>
-		    <div class="item" data-value="uz"><i class="flag-icon-uz flag-icon"></i>Uzbekistan</div>
-		    <div class="item" data-value="va"><i class="flag-icon-va flag-icon"></i>Vatican City</div>
-		    <div class="item" data-value="vc"><i class="flag-icon-vc flag-icon"></i>Saint Vincent</div>
-		    <div class="item" data-value="ve"><i class="flag-icon-ve flag-icon"></i>Venezuela</div>
-		    <div class="item" data-value="vg"><i class="flag-icon-vg flag-icon"></i>British Virgin Islands</div>
-		    <div class="item" data-value="vi"><i class="flag-icon-vi flag-icon"></i>Us Virgin Islands</div>
-		    <div class="item" data-value="vn"><i class="flag-icon-vn flag-icon"></i>Vietnam</div>
-		    <div class="item" data-value="vu"><i class="flag-icon-vu flag-icon"></i>Vanuatu</div>
-		    <div class="item" data-value="wf"><i class="flag-icon-wf flag-icon"></i>Wallis and Futuna</div>
-		    <div class="item" data-value="ws"><i class="flag-icon-ws flag-icon"></i>Samoa</div>
-		    <div class="item" data-value="ye"><i class="flag-icon-ye flag-icon"></i>Yemen</div>
-		    <div class="item" data-value="yt"><i class="flag-icon-yt flag-icon"></i>Mayotte</div>
-		    <div class="item" data-value="za"><i class="flag-icon-za flag-icon"></i>South Africa</div>
-		    <div class="item" data-value="zm"><i class="flag-icon-zm flag-icon"></i>Zambia</div>
-		    <div class="item" data-value="zw"><i class="flag-icon-zw flag-icon"></i>Zimbabwe</div>
+  <div id="answers">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="icons-1">
+          <div class="ui fluid search selection dropdown">
+            <input type="hidden" name="country">
+            <input class="search" tabindex="0">
+            <div class="default text">Select country</div>
+            <div class="menu" tabindex="-1">
+            <div class="item" data-value="ad"><i class="flag-icon-ad flag-icon"></i>Andorra</div>
+            <div class="item" data-value="ae"><i class="flag-icon-ae flag-icon"></i>United Arab Emirates</div>
+            <div class="item" data-value="af"><i class="flag-icon-af flag-icon"></i>Afghanistan</div>
+            <div class="item" data-value="ag"><i class="flag-icon-ag flag-icon"></i>Antigua</div>
+            <div class="item" data-value="ai"><i class="flag-icon-ai flag-icon"></i>Anguilla</div>
+            <div class="item" data-value="al"><i class="flag-icon-al flag-icon"></i>Albania</div>
+            <div class="item" data-value="am"><i class="flag-icon-am flag-icon"></i>Armenia</div>
+            <div class="item" data-value="ao"><i class="flag-icon-ao flag-icon"></i>Angola</div>
+            <div class="item" data-value="ar"><i class="flag-icon-ar flag-icon"></i>Argentina</div>
+            <div class="item" data-value="as"><i class="flag-icon-as flag-icon"></i>American Samoa</div>
+            <div class="item" data-value="at"><i class="flag-icon-at flag-icon"></i>Austria</div>
+            <div class="item" data-value="au"><i class="flag-icon-au flag-icon"></i>Australia</div>
+            <div class="item" data-value="aw"><i class="flag-icon-aw flag-icon"></i>Aruba</div>
+            <div class="item" data-value="ax"><i class="flag-icon-ax flag-icon"></i>Aland Islands</div>
+            <div class="item" data-value="az"><i class="flag-icon-az flag-icon"></i>Azerbaijan</div>
+            <div class="item" data-value="ba"><i class="flag-icon-ba flag-icon"></i>Bosnia</div>
+            <div class="item" data-value="bb"><i class="flag-icon-bb flag-icon"></i>Barbados</div>
+            <div class="item" data-value="bd"><i class="flag-icon-bd flag-icon"></i>Bangladesh</div>
+            <div class="item" data-value="be"><i class="flag-icon-be flag-icon"></i>Belgium</div>
+            <div class="item" data-value="bf"><i class="flag-icon-bf flag-icon"></i>Burkina Faso</div>
+            <div class="item" data-value="bg"><i class="flag-icon-bg flag-icon"></i>Bulgaria</div>
+            <div class="item" data-value="bh"><i class="flag-icon-bh flag-icon"></i>Bahrain</div>
+            <div class="item" data-value="bi"><i class="flag-icon-bi flag-icon"></i>Burundi</div>
+            <div class="item" data-value="bj"><i class="flag-icon-bj flag-icon"></i>Benin</div>
+            <div class="item" data-value="bm"><i class="flag-icon-bm flag-icon"></i>Bermuda</div>
+            <div class="item" data-value="bn"><i class="flag-icon-bn flag-icon"></i>Brunei</div>
+            <div class="item" data-value="bo"><i class="flag-icon-bo flag-icon"></i>Bolivia</div>
+            <div class="item" data-value="br"><i class="flag-icon-br flag-icon"></i>Brazil</div>
+            <div class="item" data-value="bs"><i class="flag-icon-bs flag-icon"></i>Bahamas</div>
+            <div class="item" data-value="bt"><i class="flag-icon-bt flag-icon"></i>Bhutan</div>
+            <div class="item" data-value="bv"><i class="flag-icon-bv flag-icon"></i>Bouvet Island</div>
+            <div class="item" data-value="bw"><i class="flag-icon-bw flag-icon"></i>Botswana</div>
+            <div class="item" data-value="by"><i class="flag-icon-by flag-icon"></i>Belarus</div>
+            <div class="item" data-value="bz"><i class="flag-icon-bz flag-icon"></i>Belize</div>
+            <div class="item" data-value="ca"><i class="flag-icon-ca flag-icon"></i>Canada</div>
+            <div class="item" data-value="cc"><i class="flag-icon-cc flag-icon"></i>Cocos Islands</div>
+            <div class="item" data-value="cd"><i class="flag-icon-cd flag-icon"></i>Congo</div>
+            <div class="item" data-value="cf"><i class="flag-icon-cf flag-icon"></i>Central African Republic</div>
+            <div class="item" data-value="cg"><i class="flag-icon-cg flag-icon"></i>Congo Brazzaville</div>
+            <div class="item" data-value="ch"><i class="flag-icon-ch flag-icon"></i>Switzerland</div>
+            <div class="item" data-value="ci"><i class="flag-icon-ci flag-icon"></i>Cote Divoire</div>
+            <div class="item" data-value="ck"><i class="flag-icon-ck flag-icon"></i>Cook Islands</div>
+            <div class="item" data-value="cl"><i class="flag-icon-cl flag-icon"></i>Chile</div>
+            <div class="item" data-value="cm"><i class="flag-icon-cm flag-icon"></i>Cameroon</div>
+            <div class="item" data-value="cn"><i class="flag-icon-cn flag-icon"></i>China</div>
+            <div class="item" data-value="co"><i class="flag-icon-co flag-icon"></i>Colombia</div>
+            <div class="item" data-value="cr"><i class="flag-icon-cr flag-icon"></i>Costa Rica</div>
+            <div class="item" data-value="cs"><i class="flag-icon-rs flag-icon"></i>Serbia</div>
+            <div class="item" data-value="cu"><i class="flag-icon-cu flag-icon"></i>Cuba</div>
+            <div class="item" data-value="cv"><i class="flag-icon-cv flag-icon"></i>Cape Verde</div>
+            <div class="item" data-value="cx"><i class="flag-icon-cx flag-icon"></i>Christmas Island</div>
+            <div class="item" data-value="cy"><i class="flag-icon-cy flag-icon"></i>Cyprus</div>
+            <div class="item" data-value="cz"><i class="flag-icon-cz flag-icon"></i>Czech Republic</div>
+            <div class="item" data-value="de"><i class="flag-icon-de flag-icon"></i>Germany</div>
+            <div class="item" data-value="dj"><i class="flag-icon-dj flag-icon"></i>Djibouti</div>
+            <div class="item" data-value="dk"><i class="flag-icon-dk flag-icon"></i>Denmark</div>
+            <div class="item" data-value="dm"><i class="flag-icon-dm flag-icon"></i>Dominica</div>
+            <div class="item" data-value="do"><i class="flag-icon-do flag-icon"></i>Dominican Republic</div>
+            <div class="item" data-value="dz"><i class="flag-icon-dz flag-icon"></i>Algeria</div>
+            <div class="item" data-value="ec"><i class="flag-icon-ec flag-icon"></i>Ecuador</div>
+            <div class="item" data-value="ee"><i class="flag-icon-ee flag-icon"></i>Estonia</div>
+            <div class="item" data-value="eg"><i class="flag-icon-eg flag-icon"></i>Egypt</div>
+            <div class="item" data-value="eh"><i class="flag-icon-eh flag-icon"></i>Western Sahara</div>
+            <div class="item" data-value="er"><i class="flag-icon-er flag-icon"></i>Eritrea</div>
+            <div class="item" data-value="es"><i class="flag-icon-es flag-icon"></i>Spain</div>
+            <div class="item" data-value="et"><i class="flag-icon-et flag-icon"></i>Ethiopia</div>
+            <div class="item" data-value="fi"><i class="flag-icon-fi flag-icon"></i>Finland</div>
+            <div class="item" data-value="fj"><i class="flag-icon-fj flag-icon"></i>Fiji</div>
+            <div class="item" data-value="fk"><i class="flag-icon-fk flag-icon"></i>Falkland Islands</div>
+            <div class="item" data-value="fm"><i class="flag-icon-fm flag-icon"></i>Micronesia</div>
+            <div class="item" data-value="fo"><i class="flag-icon-fo flag-icon"></i>Faroe Islands</div>
+            <div class="item" data-value="fr"><i class="flag-icon-fr flag-icon"></i>France</div>
+            <div class="item" data-value="ga"><i class="flag-icon-ga flag-icon"></i>Gabon</div>
+            <div class="item" data-value="gb"><i class="flag-icon-gb flag-icon"></i>England</div>
+            <div class="item" data-value="gd"><i class="flag-icon-gd flag-icon"></i>Grenada</div>
+            <div class="item" data-value="ge"><i class="flag-icon-ge flag-icon"></i>Georgia</div>
+            <div class="item" data-value="gf"><i class="flag-icon-gf flag-icon"></i>French Guiana</div>
+            <div class="item" data-value="gh"><i class="flag-icon-gh flag-icon"></i>Ghana</div>
+            <div class="item" data-value="gi"><i class="flag-icon-gi flag-icon"></i>Gibraltar</div>
+            <div class="item" data-value="gl"><i class="flag-icon-gl flag-icon"></i>Greenland</div>
+            <div class="item" data-value="gm"><i class="flag-icon-gm flag-icon"></i>Gambia</div>
+            <div class="item" data-value="gn"><i class="flag-icon-gn flag-icon"></i>Guinea</div>
+            <div class="item" data-value="gp"><i class="flag-icon-gp flag-icon"></i>Guadeloupe</div>
+            <div class="item" data-value="gq"><i class="flag-icon-gq flag-icon"></i>Equatorial Guinea</div>
+            <div class="item" data-value="gr"><i class="flag-icon-gr flag-icon"></i>Greece</div>
+            <div class="item" data-value="gs"><i class="flag-icon-gs flag-icon"></i>Sandwich Islands</div>
+            <div class="item" data-value="gt"><i class="flag-icon-gt flag-icon"></i>Guatemala</div>
+            <div class="item" data-value="gu"><i class="flag-icon-gu flag-icon"></i>Guam</div>
+            <div class="item" data-value="gw"><i class="flag-icon-gw flag-icon"></i>Guinea-Bissau</div>
+            <div class="item" data-value="gy"><i class="flag-icon-gy flag-icon"></i>Guyana</div>
+            <div class="item" data-value="hk"><i class="flag-icon-hk flag-icon"></i>Hong Kong</div>
+            <div class="item" data-value="hm"><i class="flag-icon-hm flag-icon"></i>Heard Island</div>
+            <div class="item" data-value="hn"><i class="flag-icon-hn flag-icon"></i>Honduras</div>
+            <div class="item" data-value="hr"><i class="flag-icon-hr flag-icon"></i>Croatia</div>
+            <div class="item" data-value="ht"><i class="flag-icon-ht flag-icon"></i>Haiti</div>
+            <div class="item" data-value="hu"><i class="flag-icon-hu flag-icon"></i>Hungary</div>
+            <div class="item" data-value="id"><i class="flag-icon-id flag-icon"></i>Indonesia</div>
+            <div class="item" data-value="ie"><i class="flag-icon-ie flag-icon"></i>Ireland</div>
+            <div class="item" data-value="il"><i class="flag-icon-il flag-icon"></i>Israel</div>
+            <div class="item" data-value="in"><i class="flag-icon-in flag-icon"></i>India</div>
+            <div class="item" data-value="io"><i class="flag-icon-io flag-icon"></i>Indian Ocean Territory</div>
+            <div class="item" data-value="iq"><i class="flag-icon-iq flag-icon"></i>Iraq</div>
+            <div class="item" data-value="ir"><i class="flag-icon-ir flag-icon"></i>Iran</div>
+            <div class="item" data-value="is"><i class="flag-icon-is flag-icon"></i>Iceland</div>
+            <div class="item" data-value="it"><i class="flag-icon-it flag-icon"></i>Italy</div>
+            <div class="item" data-value="jm"><i class="flag-icon-jm flag-icon"></i>Jamaica</div>
+            <div class="item" data-value="jo"><i class="flag-icon-jo flag-icon"></i>Jordan</div>
+            <div class="item" data-value="jp"><i class="flag-icon-jp flag-icon"></i>Japan</div>
+            <div class="item" data-value="ke"><i class="flag-icon-ke flag-icon"></i>Kenya</div>
+            <div class="item" data-value="kg"><i class="flag-icon-kg flag-icon"></i>Kyrgyzstan</div>
+            <div class="item" data-value="kh"><i class="flag-icon-kh flag-icon"></i>Cambodia</div>
+            <div class="item" data-value="ki"><i class="flag-icon-ki flag-icon"></i>Kiribati</div>
+            <div class="item" data-value="km"><i class="flag-icon-km flag-icon"></i>Comoros</div>
+            <div class="item" data-value="kn"><i class="flag-icon-kn flag-icon"></i>Saint Kitts and Nevis</div>
+            <div class="item" data-value="kp"><i class="flag-icon-kp flag-icon"></i>North Korea</div>
+            <div class="item" data-value="kr"><i class="flag-icon-kr flag-icon"></i>South Korea</div>
+            <div class="item" data-value="kw"><i class="flag-icon-kw flag-icon"></i>Kuwait</div>
+            <div class="item" data-value="ky"><i class="flag-icon-ky flag-icon"></i>Cayman Islands</div>
+            <div class="item" data-value="kz"><i class="flag-icon-kz flag-icon"></i>Kazakhstan</div>
+            <div class="item" data-value="la"><i class="flag-icon-la flag-icon"></i>Laos</div>
+            <div class="item" data-value="lb"><i class="flag-icon-lb flag-icon"></i>Lebanon</div>
+            <div class="item" data-value="lc"><i class="flag-icon-lc flag-icon"></i>Saint Lucia</div>
+            <div class="item" data-value="li"><i class="flag-icon-li flag-icon"></i>Liechtenstein</div>
+            <div class="item" data-value="lk"><i class="flag-icon-lk flag-icon"></i>Sri Lanka</div>
+            <div class="item" data-value="lr"><i class="flag-icon-lr flag-icon"></i>Liberia</div>
+            <div class="item" data-value="ls"><i class="flag-icon-ls flag-icon"></i>Lesotho</div>
+            <div class="item" data-value="lt"><i class="flag-icon-lt flag-icon"></i>Lithuania</div>
+            <div class="item" data-value="lu"><i class="flag-icon-lu flag-icon"></i>Luxembourg</div>
+            <div class="item" data-value="lv"><i class="flag-icon-lv flag-icon"></i>Latvia</div>
+            <div class="item" data-value="ly"><i class="flag-icon-ly flag-icon"></i>Libya</div>
+            <div class="item" data-value="ma"><i class="flag-icon-ma flag-icon"></i>Morocco</div>
+            <div class="item" data-value="mc"><i class="flag-icon-mc flag-icon"></i>Monaco</div>
+            <div class="item" data-value="md"><i class="flag-icon-md flag-icon"></i>Moldova</div>
+            <div class="item" data-value="me"><i class="flag-icon-me flag-icon"></i>Montenegro</div>
+            <div class="item" data-value="mg"><i class="flag-icon-mg flag-icon"></i>Madagascar</div>
+            <div class="item" data-value="mh"><i class="flag-icon-mh flag-icon"></i>Marshall Islands</div>
+            <div class="item" data-value="mk"><i class="flag-icon-mk flag-icon"></i>MacEdonia</div>
+            <div class="item" data-value="ml"><i class="flag-icon-ml flag-icon"></i>Mali</div>
+            <div class="item" data-value="ar"><i class="flag-icon-ar flag-icon"></i>Burma</div>
+            <div class="item" data-value="mn"><i class="flag-icon-mn flag-icon"></i>Mongolia</div>
+            <div class="item" data-value="mo"><i class="flag-icon-mo flag-icon"></i>MacAu</div>
+            <div class="item" data-value="mp"><i class="flag-icon-mp flag-icon"></i>Northern Mariana Islands</div>
+            <div class="item" data-value="mq"><i class="flag-icon-mq flag-icon"></i>Martinique</div>
+            <div class="item" data-value="mr"><i class="flag-icon-mr flag-icon"></i>Mauritania</div>
+            <div class="item" data-value="ms"><i class="flag-icon-ms flag-icon"></i>Montserrat</div>
+            <div class="item" data-value="mt"><i class="flag-icon-mt flag-icon"></i>Malta</div>
+            <div class="item" data-value="mu"><i class="flag-icon-mu flag-icon"></i>Mauritius</div>
+            <div class="item" data-value="mv"><i class="flag-icon-mv flag-icon"></i>Maldives</div>
+            <div class="item" data-value="mw"><i class="flag-icon-mw flag-icon"></i>Malawi</div>
+            <div class="item" data-value="mx"><i class="flag-icon-mx flag-icon"></i>Mexico</div>
+            <div class="item" data-value="my"><i class="flag-icon-my flag-icon"></i>Malaysia</div>
+            <div class="item" data-value="mz"><i class="flag-icon-mz flag-icon"></i>Mozambique</div>
+            <div class="item" data-value="na"><i class="flag-icon-na flag-icon"></i>Namibia</div>
+            <div class="item" data-value="nc"><i class="flag-icon-nc flag-icon"></i>New Caledonia</div>
+            <div class="item" data-value="ne"><i class="flag-icon-ne flag-icon"></i>Niger</div>
+            <div class="item" data-value="nf"><i class="flag-icon-nf flag-icon"></i>Norfolk Island</div>
+            <div class="item" data-value="ng"><i class="flag-icon-ng flag-icon"></i>Nigeria</div>
+            <div class="item" data-value="ni"><i class="flag-icon-ni flag-icon"></i>Nicaragua</div>
+            <div class="item" data-value="nl"><i class="flag-icon-nl flag-icon"></i>Netherlands</div>
+            <div class="item" data-value="no"><i class="flag-icon-no flag-icon"></i>Norway</div>
+            <div class="item" data-value="np"><i class="flag-icon-np flag-icon"></i>Nepal</div>
+            <div class="item" data-value="nr"><i class="flag-icon-nr flag-icon"></i>Nauru</div>
+            <div class="item" data-value="nu"><i class="flag-icon-nu flag-icon"></i>Niue</div>
+            <div class="item" data-value="nz"><i class="flag-icon-nz flag-icon"></i>New Zealand</div>
+            <div class="item" data-value="om"><i class="flag-icon-om flag-icon"></i>Oman</div>
+            <div class="item" data-value="pa"><i class="flag-icon-pa flag-icon"></i>Panama</div>
+            <div class="item" data-value="pe"><i class="flag-icon-pe flag-icon"></i>Peru</div>
+            <div class="item" data-value="pf"><i class="flag-icon-pf flag-icon"></i>French Polynesia</div>
+            <div class="item" data-value="pg"><i class="flag-icon-pg flag-icon"></i>New Guinea</div>
+            <div class="item" data-value="ph"><i class="flag-icon-ph flag-icon"></i>Philippines</div>
+            <div class="item" data-value="pk"><i class="flag-icon-pk flag-icon"></i>Pakistan</div>
+            <div class="item" data-value="pl"><i class="flag-icon-pl flag-icon"></i>Poland</div>
+            <div class="item" data-value="pm"><i class="flag-icon-pm flag-icon"></i>Saint Pierre</div>
+            <div class="item" data-value="pn"><i class="flag-icon-pn flag-icon"></i>Pitcairn Islands</div>
+            <div class="item" data-value="pr"><i class="flag-icon-pr flag-icon"></i>Puerto Rico</div>
+            <div class="item" data-value="ps"><i class="flag-icon-ps flag-icon"></i>Palestine</div>
+            <div class="item" data-value="pt"><i class="flag-icon-pt flag-icon"></i>Portugal</div>
+            <div class="item" data-value="pw"><i class="flag-icon-pw flag-icon"></i>Palau</div>
+            <div class="item" data-value="py"><i class="flag-icon-py flag-icon"></i>Paraguay</div>
+            <div class="item" data-value="qa"><i class="flag-icon-qa flag-icon"></i>Qatar</div>
+            <div class="item" data-value="re"><i class="flag-icon-re flag-icon"></i>Reunion</div>
+            <div class="item" data-value="ro"><i class="flag-icon-ro flag-icon"></i>Romania</div>
+            <div class="item" data-value="ru"><i class="flag-icon-ru flag-icon"></i>Russia</div>
+            <div class="item" data-value="rw"><i class="flag-icon-rw flag-icon"></i>Rwanda</div>
+            <div class="item" data-value="sa"><i class="flag-icon-sa flag-icon"></i>Saudi Arabia</div>
+            <div class="item" data-value="sb"><i class="flag-icon-sb flag-icon"></i>Solomon Islands</div>
+            <div class="item" data-value="sc"><i class="flag-icon-sc flag-icon"></i>Seychelles</div>
+            <div class="item" data-value="sd"><i class="flag-icon-sd flag-icon"></i>Sudan</div>
+            <div class="item" data-value="se"><i class="flag-icon-se flag-icon"></i>Sweden</div>
+            <div class="item" data-value="sg"><i class="flag-icon-sg flag-icon"></i>Singapore</div>
+            <div class="item" data-value="sh"><i class="flag-icon-sh flag-icon"></i>Saint Helena</div>
+            <div class="item" data-value="si"><i class="flag-icon-si flag-icon"></i>Slovenia</div>
+            <div class="item" data-value="sj"><i class="flag-icon-sj flag-icon"></i>Svalbard, I Flag Jan Mayen</div>
+            <div class="item" data-value="sk"><i class="flag-icon-sk flag-icon"></i>Slovakia</div>
+            <div class="item" data-value="sl"><i class="flag-icon-sl flag-icon"></i>Sierra Leone</div>
+            <div class="item" data-value="sm"><i class="flag-icon-sm flag-icon"></i>San Marino</div>
+            <div class="item" data-value="sn"><i class="flag-icon-sn flag-icon"></i>Senegal</div>
+            <div class="item" data-value="so"><i class="flag-icon-so flag-icon"></i>Somalia</div>
+            <div class="item" data-value="sr"><i class="flag-icon-sr flag-icon"></i>Suriname</div>
+            <div class="item" data-value="st"><i class="flag-icon-st flag-icon"></i>Sao Tome</div>
+            <div class="item" data-value="sv"><i class="flag-icon-sv flag-icon"></i>El Salvador</div>
+            <div class="item" data-value="sy"><i class="flag-icon-sy flag-icon"></i>Syria</div>
+            <div class="item" data-value="sz"><i class="flag-icon-sz flag-icon"></i>Swaziland</div>
+            <div class="item" data-value="tc"><i class="flag-icon-tc flag-icon"></i>Caicos Islands</div>
+            <div class="item" data-value="td"><i class="flag-icon-td flag-icon"></i>Chad</div>
+            <div class="item" data-value="tf"><i class="flag-icon-tf flag-icon"></i>French Territories</div>
+            <div class="item" data-value="tg"><i class="flag-icon-tg flag-icon"></i>Togo</div>
+            <div class="item" data-value="th"><i class="flag-icon-th flag-icon"></i>Thailand</div>
+            <div class="item" data-value="tj"><i class="flag-icon-tj flag-icon"></i>Tajikistan</div>
+            <div class="item" data-value="tk"><i class="flag-icon-tk flag-icon"></i>Tokelau</div>
+            <div class="item" data-value="tl"><i class="flag-icon-tl flag-icon"></i>Timorleste</div>
+            <div class="item" data-value="tm"><i class="flag-icon-tm flag-icon"></i>Turkmenistan</div>
+            <div class="item" data-value="tn"><i class="flag-icon-tn flag-icon"></i>Tunisia</div>
+            <div class="item" data-value="to"><i class="flag-icon-to flag-icon"></i>Tonga</div>
+            <div class="item" data-value="tr"><i class="flag-icon-tr flag-icon"></i>Turkey</div>
+            <div class="item" data-value="tt"><i class="flag-icon-tt flag-icon"></i>Trinidad</div>
+            <div class="item" data-value="tv"><i class="flag-icon-tv flag-icon"></i>Tuvalu</div>
+            <div class="item" data-value="tw"><i class="flag-icon-tw flag-icon"></i>Taiwan</div>
+            <div class="item" data-value="tz"><i class="flag-icon-tz flag-icon"></i>Tanzania</div>
+            <div class="item" data-value="ua"><i class="flag-icon-ua flag-icon"></i>Ukraine</div>
+            <div class="item" data-value="ug"><i class="flag-icon-ug flag-icon"></i>Uganda</div>
+            <div class="item" data-value="ug"><i class="flag-icon-ug flag-icon"></i>Uganda</div>
+            <div class="item" data-value="um"><i class="flag-icon-um flag-icon"></i>Us Minor Islands</div>
+            <div class="item" data-value="us"><i class="flag-icon-us flag-icon"></i>United States</div>
+            <div class="item" data-value="uy"><i class="flag-icon-uy flag-icon"></i>Uruguay</div>
+            <div class="item" data-value="uz"><i class="flag-icon-uz flag-icon"></i>Uzbekistan</div>
+            <div class="item" data-value="va"><i class="flag-icon-va flag-icon"></i>Vatican City</div>
+            <div class="item" data-value="vc"><i class="flag-icon-vc flag-icon"></i>Saint Vincent</div>
+            <div class="item" data-value="ve"><i class="flag-icon-ve flag-icon"></i>Venezuela</div>
+            <div class="item" data-value="vg"><i class="flag-icon-vg flag-icon"></i>British Virgin Islands</div>
+            <div class="item" data-value="vi"><i class="flag-icon-vi flag-icon"></i>Us Virgin Islands</div>
+            <div class="item" data-value="vn"><i class="flag-icon-vn flag-icon"></i>Vietnam</div>
+            <div class="item" data-value="vu"><i class="flag-icon-vu flag-icon"></i>Vanuatu</div>
+            <div class="item" data-value="wf"><i class="flag-icon-wf flag-icon"></i>Wallis and Futuna</div>
+            <div class="item" data-value="ws"><i class="flag-icon-ws flag-icon"></i>Samoa</div>
+            <div class="item" data-value="ye"><i class="flag-icon-ye flag-icon"></i>Yemen</div>
+            <div class="item" data-value="yt"><i class="flag-icon-yt flag-icon"></i>Mayotte</div>
+            <div class="item" data-value="za"><i class="flag-icon-za flag-icon"></i>South Africa</div>
+            <div class="item" data-value="zm"><i class="flag-icon-zm flag-icon"></i>Zambia</div>
+            <div class="item" data-value="zw"><i class="flag-icon-zw flag-icon"></i>Zimbabwe</div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.nationality.as_hidden }} 
-        <input type="submit" value="Submit" class="btn" />
-    </form>
+  </div>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.nationality.as_hidden }} 
+    <input type="submit" value="Submit" class="btn" />
+  </form>
 {% endblock %}
 
 {% block navigation %}
 {% endblock %}
 
 {% block javascript %}
-	<script type="text/javascript">
-
+  <script type="text/javascript">
     $('.dropdown').dropdown({
-        onChange: function(val) {
-        	$('#id_nationality').val(val);	
-        }
-    });	
-    </script>
+      onChange: function(val) {
+        $('#id_nationality').val(val);  
+      }
+    }); 
+  </script>
 {% endblock %}

@@ -1,29 +1,42 @@
 {% extends "questionnaire/base.html" %}
 
 {% block header %}
-    <h1>Step 3 - Handedness</h1>
+  <div id="header" class="row">
+    <div class="col-xs-12">
+      <h1>Step 3 - Handedness</h1>
+    </div>
+  </div>
 {% endblock %}
 
 {% block content %}
-    <div class="icons-1">
-        <img id="left" src="/static/images/icons/handedness.png">
-        <img id="right" class="rotate-icon" src="/static/images/icons/handedness.png">
+  <div id="answers">
+    <div class="row">
+      <div class="col-xs-12">
+        <img id="left" class="svg img-responsive icon-45" alt="Responsive image" src="/static/images/icons/handedness-left.svg"/>
+        <img id="right" class="svg img-responsive icon-45" alt="Responsive image" src="/static/images/icons/handedness-right.svg"/>
+      </div>
     </div>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.handedness.as_hidden }} 
-        <input class="btn" type="submit" value="Submit" />
-    </form>
+  </div>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.handedness.as_hidden }} 
+    <input id="btn-post" type="Submit" value="Submit" />
+  </form>
 {% endblock %}
 
 {% block navigation %}
+  <div id="navigation" class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4"><h1> {{ qnum }} / 20 </h1></div>
+    <div class="col-xs-4"></div>
+  </div>
 {% endblock %}
 
 {% block javascript %}
 	<script type="text/javascript">
-        qs.bindForm({
-            'left': 'L',
-            'right': 'R',
-        }, 'id_handedness');
-    </script>
+    qs.bindForm({
+      'left': 'L',
+      'right': 'R',
+    }, 'id_handedness');
+  </script>
 {% endblock %}

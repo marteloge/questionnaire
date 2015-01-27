@@ -3,7 +3,7 @@
 {% block header %}
   <div id="header" class="row">
     <div class="col-xs-12">
-      <h1>Step 7 - Age</h1>
+      <h1>Screen 3 - Pattern Information</h1>
     </div>
   </div>
 {% endblock %}
@@ -12,27 +12,29 @@
   <div id="answers">
     <div class="row">
       <div class="col-xs-12">
-        <input type="text" id="age">
+        <p>Information about the patterns to create</p>
+        <h3>Pattern 1</h3>
+        <h3>Pattern 2</h3>
+        <h3>Pattern 3</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">          
+        <a href="pattern1" role="button" class="btn btn-success">Create patterns</a>
       </div>
     </div>
   </div>
-  <form action="" method="post">
-    {% csrf_token %}
-    {{ form.age.as_hidden }} 
-    <input type="submit" value="Submit" class="btn" />
-  </form>
 {% endblock %}
 
 {% block navigation %}
   <div id="navigation" class="row">
     <div class="col-xs-4"></div>
-    <div class="col-xs-4"><h1>{{ qnum }} / 20</h1></div>
+    <div class="col-xs-4"><h1>{{ qnum }} / 20 </h1></div>
     <div class="col-xs-4"></div>
   </div>
 {% endblock %}
 
 {% block javascript %}
-  <script type="text/javascript">
-    addAge();
-  </script>
+    <script type="text/javascript">
+    </script>
 {% endblock %}
