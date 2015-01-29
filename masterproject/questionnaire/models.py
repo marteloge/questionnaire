@@ -71,7 +71,9 @@ class Person(models.Model):
 	experience = models.CharField(max_length=1, default=0, choices=YESNO_CHOICES)
 	session_id = models.CharField(max_length=40, primary_key=True)
 	age = models.IntegerField(max_length=2, default=0)
-
+	actual_screenwidth = models.IntegerField(max_length=4, default=0)
+	actual_screenheight = models.IntegerField(max_length=4, default=0)
+	
 	def __unicode__(self):
 		return "Person " + str(self.session_id)
 

@@ -19,7 +19,7 @@ class HandsizeForm(forms.ModelForm):
 class ScreensizeForm(forms.ModelForm):
 	class Meta:
 		model = Person
-		fields = ('screensize',)
+		fields = ('screensize','actual_screenwidth', 'actual_screenheight',)
 
 class HandednessForm(forms.ModelForm):
 	class Meta:
