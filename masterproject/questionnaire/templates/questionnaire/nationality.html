@@ -263,7 +263,17 @@
         </div>
       </div>
     </div>
+    {% if messages %}
+      <div class="row">
+        <div class="col-xs-12">
+          {% for message in messages %}
+            <div{% if message.tags == "error" %} class="btn-full-width alert alert-danger margin-top-5" {% endif %}>{{ message }}</div>
+          {% endfor %}
+        </div>
+      </div>
+  {% endif %}
   </div>
+  
   <div class="dropdown-btn-box">
     <div class="row">
       <div class="col-xs-12" >
@@ -284,7 +294,7 @@
 {% block navigation %}
     <div id="navigation" class="row">
     <div class="col-xs-4"></div>
-    <div class="col-xs-4"><h1>{{ qnum }} / 20</h1></div>
+    <div class="col-xs-4"><h1>{{ qnum }} / 13</h1></div>
     <div class="col-xs-4"></div>
   </div>
 {% endblock %}
@@ -292,9 +302,9 @@
 {% block javascript %}
   <script type="text/javascript">
       $('.dropdown').dropdown({
-      onChange: function(val) {
-        $('#id_nationality').val(val);  
-      }
+        onChange: function(val) {
+          $('#id_nationality').val(val);  
+        },
       });
       $('#submit_nationality').click(function() {
           $('#btn-post').click();
