@@ -34,7 +34,10 @@ def training(request):
         if form.is_valid():
             password.sequence = request.POST['sequence']
             password.save()
-            return HttpResponseRedirect('training')
+            if 'continue' in request.POST:
+                return HttpResponseRedirect('patterninformation')
+            elif 'retry' in request.POST:
+                return HttpResponseRedirect('training')
     else:
         form = PatternForm(instance=person)
     return render(request, 'questionnaire/training.html', {'form': form, 'qnum':2})

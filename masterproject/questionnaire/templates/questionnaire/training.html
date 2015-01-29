@@ -17,18 +17,19 @@
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <button id="retrypattern_post" type="submit" class="btn btn-primary">Retry</button>
+        <button id="retry" type="submit" class="btn-full-width btn btn-primary">Retry</button>
       </div>
       <div class="col-xs-6">
-        <button id="continue" type="submit" class="btn btn-success">Continue</button>
+        <button id="continue" type="submit" class="btn-full-width btn btn-success">Continue</button>
       </div>
     </div>
-    <form action="" method="post">
+  </div>
+  <form action="" method="post">
       {% csrf_token %}
       {{ form.sequence.as_hidden }} 
-      <input id="btn-post" type="Submit" value="Add" />
-    </form>
-  </div>
+      <input id="btn-post-retry" type="Submit" value="submit" name="retry" />
+      <input id="btn-post-continue" type="Submit" value="submit" name="continue" />
+  </form>
 {% endblock %}
 
 {% block navigation %}

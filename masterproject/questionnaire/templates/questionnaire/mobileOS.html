@@ -3,59 +3,64 @@
 {% block header %}
   <div id="header" class="row">
     <div class="col-xs-12">
-      <h1>Step 12 - Mobile OS</h1>
+      <h1>Is this the mobile operating system on your smartphone?</h1>
     </div>
   </div>
 {% endblock %}
 
 {% block content %}
-  <div id="answers">
+  <div id="answers" class="margin-top-15">
     <div id="os_found">
-      <div class="row">
-        <div class="col-xs-12">
-          <img id="mobileOS" class="svg img-responsive icon-45" alt="Responsive image" src=""/>
+        <div class="row">
+          <div class="col-xs-12">
+            <img id="mobileOS" class="svg img-responsive icon-45" alt="Responsive image" src=""/>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <img id="yes" class="svg img-responsive icon-26" alt="Responsive image" src="/static/images/icons/yes.svg"/>
-          <img id="no" class="svg img-responsive icon-20" alt="Responsive image" src="/static/images/icons/no.svg"/>
-          <img id="unknown" class="svg img-responsive icon-14" alt="Responsive image" src="/static/images/icons/question.svg"/>
+        <div class="row">
+          <div class="col-xs-12 margin-top-10">
+            <img id="yes" class="svg img-responsive icon-26" alt="Responsive image" src="/static/images/icons/yes.svg"/>
+            <img id="no" class="svg img-responsive icon-20" alt="Responsive image" src="/static/images/icons/no.svg"/>
+            <img id="unknown" class="svg img-responsive icon-14" alt="Responsive image" src="/static/images/icons/question.svg"/>
+          </div>
         </div>
-      </div>
     </div>
 
     <div id="os_notfound">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="ui fluid search selection dropdown">
-            <input type="hidden" name="os">
-            <input class="search" tabindex="0">
-            <div class="default text">Select Mobile OS</div>
-            <div class="menu" tabindex="-1">
-              <div class="item" data-value="android">Android</div>
-              <div class="item" data-value="ios">iOS</div>
-              <div class="item" data-value="windows">Windows</div>
-              <div class="item" data-value="blackberry">Blackberry</div>
-              <div class="item" data-value="other">Other</div>
+      <div class="dropdown-list-box">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="ui fluid search selection dropdown">
+              <input type="hidden" name="os">
+              <input class="search" tabindex="0">
+              <div class="default text">Select Mobile OS</div>
+              <div class="menu" tabindex="-1">
+                <div class="item text" data-value="android">Android</div>
+                <div class="item" data-value="ios">iOS</div>
+                <div class="item" data-value="windows">Windows</div>
+                <div class="item" data-value="blackberry">Blackberry</div>
+                <div class="item" data-value="other">Other</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <button id="submitOS" type="submit" class="btn btn-success">Submit</button>
+      <div class="dropdown-btn-box">
+        <div class="row">
+          <div class="col-xs-12">
+            <button id="submitOS" type="submit" class="btn btn-success">Submit</button>
+          </div>
         </div>
       </div>
-       
     </div>
 
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.mobileOS.as_hidden }} 
+      <input id="btn-post" type="Submit" class="btn big-btn btn-default btn-lg" value="Submit" />
+    </form>
   </div>
-  <form action="" method="post">
-    {% csrf_token %}
-    {{ form.mobileOS.as_hidden }} 
-    <input id="btn-post" type="Submit" class="btn big-btn btn-default btn-lg" value="Submit" />
-  </form>
+
+  
 {% endblock %}
 
 {% block navigation %}
@@ -70,19 +75,19 @@
   <script type="text/javascript">
     getMobileOperatingSystem();
     qs.bindForm({
-      'android': 'Anroid',
-      'ios': 'iOS',
-      'windows': 'Windows',
-      'blackberry': 'Blackberry',
-      'no_android': 'No Android',
-      'no_ios': 'No iOS',
-      'no_windows': 'No Windows',
-      'no_blackberry': 'No Blackberry',
-      'unknown_android': 'Unknown Android',
-      'unknown_ios': 'Unknown iOS',
-      'unknown_windows': 'Unknown Windows',
-      'unknown_blackberry': 'Unknown Blackberry',
-      'other': 'Other',
+      'android': 'android',
+      'ios': 'ios',
+      'windows': 'windows',
+      'blackberry': 'blackberry',
+      'no_android': 'no_android',
+      'no_ios': 'no_ios',
+      'no_windows': 'no_windows',
+      'no_blackberry': 'no_blackberry',
+      'unknown_android': 'unknown_android',
+      'unknown_ios': 'unknown_ios',
+      'unknown_windows': 'unknown_windows',
+      'unknown_blackberry': 'unknown_blackberry',
+      'other': 'other',
     }, 'id_mobileOS'); 
 
   </script>

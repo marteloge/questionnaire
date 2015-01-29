@@ -3,7 +3,7 @@
 {% block header %}
   <div id="header" class="row">
     <div class="col-xs-12">
-      <h1>Step 7 - Age</h1>
+      <h1>What is your age?</h1>
     </div>
   </div>
 {% endblock %}
@@ -12,14 +12,20 @@
   <div id="answers">
     <div class="row">
       <div class="col-xs-12">
-        <input type="text" id="age">
+        <input type="text" id="age" class="btn-full-width" placeholder="Your age">
       </div>
     </div>
   </div>
+  <div class="row dropdown-btn-box">
+    <div class="col-xs-12">
+      <button id="submitAge" type="submit" class="btn btn-success btn-full-width">Continue</button>
+    </div>
+  </div>
+
   <form action="" method="post">
     {% csrf_token %}
     {{ form.age.as_hidden }} 
-    <input type="submit" value="Submit" class="btn" />
+    <input id="btn-post" type="submit" value="Submit" class="btn" />
   </form>
 {% endblock %}
 

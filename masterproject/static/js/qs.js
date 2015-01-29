@@ -1,5 +1,5 @@
 var qs = qs || {};
-qs.bindForm = function(bindings, id, src1, src2) {
+qs.bindForm = function(bindings, id) {
   
   var createHandler = function(key, value) {
     $("#"+key).click(function() { // klikker på bilde
@@ -18,8 +18,9 @@ qs.bindForm = function(bindings, id, src1, src2) {
       $(this).attr("src",src_selected);
 
       //Fader ut skjermen
-      $( "#wrapper" ).fadeOut( "slow", function() {
+      $( "#wrapper").fadeOut( "slow", function() {
         $("#btn-post").click();
+        console.log("Klikk");
       });
     });
   };
@@ -36,18 +37,13 @@ function addPattern() {
         $('#retrypattern').click(function() {
           lock.reset();
         });
-        $('#submitpattern').click(function() {
-          $('#id_sequence').val(pattern);
-          $('#btn-post').click();
-        });
-        $('#retrypattern_post').click(function() {
-          $('#id_sequence').val(pattern);
-          $('#btn-post').click();
-        });
         $('#continue').click(function() {
           $('#id_sequence').val(pattern);
-          $('#btn-post').click();
-          window.location.replace("patterninformation");
+          $('#btn-post-continue').click();
+        });
+        $('#retry').click(function() {
+          $('#id_sequence').val(pattern);
+          $('#btn-post-retry').click();
         });
       }
       else{
@@ -135,4 +131,7 @@ function addAge() {
   $("#age").keyup(function(){
     $("#id_age").val($("#age").val());
   });
+  $('#submitAge').click(function() {
+      $('#btn-post').click();
+    });
 }

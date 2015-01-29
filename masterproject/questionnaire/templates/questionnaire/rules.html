@@ -3,7 +3,7 @@
 {% block header %}
   <div id="header" class="row">
     <div class="col-xs-12">
-      <h1>Screen 1 - Rules</h1>
+      <h1>The Android Unlock Pattern</h1>
     </div>
   </div>
 {% endblock %}
@@ -12,19 +12,11 @@
   <div id="answers">
     <div class="row">
       <div class="col-xs-12">
-        <p>Rules</p>
-        <p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-6">          
-        <a href="training" role="button" class="btn btn-success">Start training</a>
-      </div>
-      <div class="col-xs-6">          
-        <a href="patterninformation" role="button" class="btn btn-default">Skip training</a>
+        <h2>The rules</h2>
+        <ul>
+          <li><h3>Connect at least 4 dots</h3></li>
+          <li><h3>Do not visit the same node twice</h3></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -32,9 +24,12 @@
 
 {% block navigation %}
   <div id="navigation" class="row">
-    <div class="col-xs-4"></div>
-    <div class="col-xs-4"><h1> {{ qnum }} / 20 </h1></div>
-    <div class="col-xs-4"></div>
+    <div class="col-xs-6">
+      <a href="training" role="button" class="btn-full-width btn btn-success">Start training</a>
+    </div>
+    <div class="col-xs-6">
+      <a href="patterninformation" role="button" class="btn-full-width btn btn-default">Skip training</a>
+    </div>
   </div>
 {% endblock %}
 

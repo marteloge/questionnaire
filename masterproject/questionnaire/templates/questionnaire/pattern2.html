@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
- <div id="answers">
+  <div id="answers">
     <div class="row">
       <div id="sequence" class="col-xs-12">
         <div id="patternContainer"></div>
@@ -17,17 +17,17 @@
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <button id="retrypattern" type="submit" class="btn btn-primary">Retry</button>
+        <button id="retrypattern" type="submit" class="btn-full-width btn btn-primary">Retry</button>
       </div>
       <div class="col-xs-6">
-        <button id="submitpattern" type="submit" class="btn btn-success">Submit</button>
+        <button id="continue" type="submit" class="btn-full-width btn btn-success">Continue</button>
       </div>
     </div>
   </div>
   <form action="" method="post">
     {% csrf_token %}
     {{ form.sequence.as_hidden }} 
-    <input id="btn-post" type="Submit" value="Add" />
+    <input id="btn-post-continue" type="Submit" value="submit" />
   </form>
 {% endblock %}
 

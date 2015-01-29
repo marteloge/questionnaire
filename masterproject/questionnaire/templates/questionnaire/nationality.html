@@ -3,13 +3,13 @@
 {% block header %}
   <div id="header" class="row">
     <div class="col-xs-12">
-      <h1>Step 8 - Country</h1>
+      <h1>In which country do you live?</h1>
     </div>
   </div>
 {% endblock %}
 
 {% block content %}
-  <div id="answers">
+  <div class="dropdown-list-box">
     <div class="row">
       <div class="col-xs-12">
         <div class="icons-1">
@@ -264,22 +264,40 @@
       </div>
     </div>
   </div>
+  <div class="dropdown-btn-box">
+    <div class="row">
+      <div class="col-xs-12" >
+        <button id="submit_nationality" type="submit" class="btn btn-success btn-full-width">Submit</button>
+      </div>
+    </div>
+  </div>
+
+    
+
   <form action="" method="post">
     {% csrf_token %}
     {{ form.nationality.as_hidden }} 
-    <input type="submit" value="Submit" class="btn" />
+    <input id="btn-post" type="submit" value="Submit" class="btn" />
   </form>
 {% endblock %}
 
 {% block navigation %}
+    <div id="navigation" class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4"><h1>{{ qnum }} / 20</h1></div>
+    <div class="col-xs-4"></div>
+  </div>
 {% endblock %}
 
 {% block javascript %}
   <script type="text/javascript">
-    $('.dropdown').dropdown({
+      $('.dropdown').dropdown({
       onChange: function(val) {
         $('#id_nationality').val(val);  
       }
-    }); 
+      });
+      $('#submit_nationality').click(function() {
+          $('#btn-post').click();
+      });
   </script>
 {% endblock %}
