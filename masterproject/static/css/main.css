@@ -65,7 +65,8 @@ html, body{
 }
 
 .ui.search.dropdown .menu {
-	max-height: 400px;
+	max-height: 500px;
+
 }
 
 i.flag-icon {
@@ -135,7 +136,12 @@ i.flag-icon {
 }
 
 #age{
-	font-size: 70px;
+	font-size: 100px;
+	text-align: center;
+}
+
+.alert-danger {
+	font-size: 30px;
 }
 
 @media only screen and (max-device-width : 320px) and (max-device-height: 480px){
@@ -146,7 +152,7 @@ i.flag-icon {
 		margin-top: 30%;
 	}
 	.btn {
-		font-size: 50px;
+		font-size: 45px;
 	}
 }
 
@@ -172,7 +178,7 @@ i.flag-icon {
 	}
 
 	.btn {
-		font-size: 60px;
+		font-size: 55px;
 	}
 }
 

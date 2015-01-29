@@ -124,7 +124,6 @@ function getDevice() {
   else {
     window.location.replace("/nomobile");
   }
-
 };
 
 function addAge() {
@@ -134,4 +133,17 @@ function addAge() {
   $('#submitAge').click(function() {
       $('#btn-post').click();
     });
+}
+
+function setScreenSize() {
+  $('#id_actual_screenheight').val(screen.width);
+  $('#id_actual_screenwidth').val(screen.height);
+  // $(window).width()
+}
+
+function setValue(id_component, id_input){
+  if(id_input!='0') {
+    var value = id_input.val();
+    id_component.val(value);
+  }
 }
