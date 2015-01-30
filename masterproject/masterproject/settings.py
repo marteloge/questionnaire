@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'questionnaire',
+    'mobi',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -47,6 +48,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'mobi.middleware.MobileDetectionMiddleware',
 )
 
 ROOT_URLCONF = 'masterproject.urls'
@@ -91,4 +93,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 SESSION_SAVE_EVERY_REQUEST = True
 
 QUESTIONS_COUNT = 20
+
+MOBI_DETECT_TABLET = True
 
