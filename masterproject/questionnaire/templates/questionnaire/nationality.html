@@ -1,7 +1,7 @@
 {% extends "questionnaire/base.html" %}
 
 {% block header %}
-  <div id="header" class="row">
+  <div id="header" class="row margin-top-10">
     <div class="col-xs-12">
       <h1>In which country do you live?</h1>
     </div>
@@ -12,7 +12,7 @@
   <div class="dropdown-list-box">
     <div class="row">
       <div class="col-xs-12">
-        <div class="icons-1">
+        <div class="icons-1 margin-top-15">
           <div class="ui fluid search selection dropdown">
             <input type="hidden" name="country">
             <input class="search" tabindex="0">
@@ -261,29 +261,25 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    {% if messages %}
-      <div class="row">
-        <div class="col-xs-12">
-          {% for message in messages %}
-            <div{% if message.tags == "error" %} class="btn-full-width alert alert-danger margin-top-5" {% endif %}>{{ message }}</div>
-          {% endfor %}
+        <div class="dropdown-btn-box">
+          <div class="row">
+            <div class="col-xs-12" >
+              <button id="submit_nationality" type="submit" class="margin-top-5 btn btn-success btn-full-width">Submit</button>
+            </div>
+          </div>
         </div>
-      </div>
-  {% endif %}
-  </div>
-  
-  <div class="dropdown-btn-box">
-    <div class="row">
-      <div class="col-xs-12" >
-        <button id="submit_nationality" type="submit" class="btn btn-success btn-full-width">Submit</button>
+        {% if messages %}
+          <div class="row">
+            <div class="col-xs-12">
+              {% for message in messages %}
+                <div{% if message.tags == "error" %} class="btn-full-width alert alert-danger margin-top-5" {% endif %}>{{ message }}</div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
-
-    
-
   <form action="" method="post">
     {% csrf_token %}
     {{ form.nationality.as_hidden }} 
@@ -292,7 +288,7 @@
 {% endblock %}
 
 {% block navigation %}
-    <div id="navigation" class="row">
+  <div id="navigation" class="row">
     <div class="col-xs-4"></div>
     <div class="col-xs-4"><h1>{{ qnum }} / 13</h1></div>
     <div class="col-xs-4"></div>
