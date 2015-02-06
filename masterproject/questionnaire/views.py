@@ -17,8 +17,9 @@ def index(request):
     template_name = 'questionnaire/index.html'
     sys.stderr, request.mobile
     if request.mobile and not request.tablet:
-        return render(request, 'questionnaire/index.html')
-    return render(request, 'questionnaire/nomobile.html')
+        return render(request, 'questionnaire/index.html', {'mobile': True})
+    else:
+        return render(request, 'questionnaire/index.html', {'mobile': False})
 
 def nomobile(request):
     template_name = 'questionnaire/nomobile.html'
