@@ -8,7 +8,7 @@ prod:
 ifeq ($(ENV), production)
 	git fetch && git reset --hard origin/master
 	cd masterproject && venv/bin/python manage.py migrate
-	cd masterproject && venv/bin/python manage.py collectstatic
+	cd masterproject && venv/bin/python manage.py collectstatic --noinput
 	sudo supervisorctl restart survey
 	@cd $(shell pwd)
 else
