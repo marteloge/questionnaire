@@ -17,11 +17,11 @@ html, body{
 	padding-top: 10%;
 }
 #content-module {
-	height: 70%;
+	height: 65%;
 	padding-top: 10%;
 }
 #navigation-module {
-	height: 10%;
+	height: 15%;
 }
 #answers {
 	min-height: 80%;
@@ -99,7 +99,7 @@ i.fa {font-size: 140px;}
 	h2 {font-size: 45px;}
 	h3 {font-size: 35px;}
 	p {margin-bottom: 10%;}
-	#patternContainer {margin-top: 20%;}
+	#patternContainer {margin-top: 10%;}
 	.btn {font-size: 45px;}
 	#answers {margin-top: 10%;}
 	#soscial-sharing {margin-top: 5%;}
@@ -110,7 +110,7 @@ i.fa {font-size: 140px;}
 	h2 {font-size: 45px;}
 	h3 {font-size: 35px;}
 	p {margin-bottom: 10%;}
-	#patternContainer {margin-top: 50%;}
+	#patternContainer {margin-top: 10%;}
 	.btn {font-size: 55px;}
 	#answers {margin-top: 10%;}
 	#soscial-sharing {margin-top: 5%;}
@@ -121,7 +121,7 @@ i.fa {font-size: 140px;}
 	h2 {font-size: 45px;}
 	h3 {font-size: 35px;}
 	p {margin-bottom: 10%;}
-	#patternContainer {margin-top: 45%;}
+	#patternContainer {margin-top: 10%;}
 	.btn {font-size: 55px;}
 	#answers {margin-top: 10%;}
 	#soscial-sharing {margin-top: 5%;}
