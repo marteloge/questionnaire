@@ -194,11 +194,11 @@ def add_age(request):
             form = AgeForm(request.POST, instance=person)
             if form.is_valid():
                 age = request.POST['age']
-                if age.isdigit() and 5<=int(age)<= 99:
+                if age.isdigit() and 16<=int(age)<= 99:
                     form.save()
                     return HttpResponseRedirect('add_nationality')
                 else:
-                    messages.error(request, 'This is not a valid age')
+                    messages.error(request, age + ' is not a valid age. The age must be between 16 and 99.')
                     return HttpResponseRedirect('add_age')
             else:
                 messages.error(request, 'This is not a valid input. Only numbers accepted!')
