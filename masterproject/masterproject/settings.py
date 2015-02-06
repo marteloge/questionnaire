@@ -22,8 +22,6 @@ SECRET_KEY = '=u3#(0_$g%e%0mblb@gnhvv-36_xdf#^czv+pi4lq(--m!d2ks'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
@@ -90,9 +88,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
+REF_URL = 'http://localhost:8000/'
+
 SESSION_SAVE_EVERY_REQUEST = True
 
 QUESTIONS_COUNT = 20
 
 MOBI_DETECT_TABLET = True
+
+try: 
+    from instance_settings import *
+except ImportError:
+    pass
+
+TEMPLATE_DEBUG = DEBUG
 

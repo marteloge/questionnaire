@@ -1,9 +1,7 @@
 # osx shit
 *.DS_Store
 
-# Django maps
-*/migrations
-
+masterproject/masterproject/instance_settings.py
 
 *.pyc
 *.pyo
@@ -65,4 +63,5 @@ docs/_build/
 
 # PyBuilder
 target/
->>>>>>> 7153285094a7313aeb3fac8498e4221d6bde26b7
+
+
