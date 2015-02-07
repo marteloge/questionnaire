@@ -16,16 +16,16 @@
 .patt-circ{
 	position:relative;
 	float: left;
-	border: 7px solid #282828;
+	border: 4px solid #282828;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
  }
 .patt-circ.hovered{
-	border:7px solid #009900;
+	border:5px solid #009900;
 } 
 
 .patt-error .patt-circ.hovered{
-	border:7px solid #BA1B26;
+	border:5px solid #BA1B26;
 }
 
 .patt-hidden .patt-circ.hovered{border:0;}
