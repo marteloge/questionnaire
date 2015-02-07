@@ -20,7 +20,6 @@ qs.bindForm = function(bindings, id) {
       //Fader ut skjermen
       $( "#wrapper").fadeOut( "slow", function() {
         $("#btn-post").click();
-        console.log("Klikk");
       });
     });
   };
@@ -39,7 +38,9 @@ function addPattern() {
         });
         $('#continue').click(function() {
           $('#id_sequence').val(pattern);
-          $('#btn-post-continue').click();
+          $( "#wrapper").fadeOut( "slow", function() {
+            $('#btn-post-continue').click();
+          });
         });
         $('#retry').click(function() {
           $('#id_sequence').val(pattern);
@@ -115,35 +116,15 @@ function getMobileOperatingSystem() {
     }
 };
 
-function getDevice() {
-  var md = new MobileDetect(window.navigator.userAgent);
-  if(md.phone() || md.mobile()){}
-  else if(md.tablet()){
-    window.location.replace("/nomobile");
-  }
-  else {
-    window.location.replace("/nomobile");
-  }
-};
-
 function addAge() {
-  $("#age").keyup(function(){
-    $("#id_age").val($("#age").val());
-  });
-  $('#submitAge').click(function() {
+    $('#submitAge').click(function() {
+      $("#id_age").val($("#age").val());
       $('#btn-post').click();
     });
-}
+};
 
 function setScreenSize() {
   $('#id_actual_screenheight').val(screen.width);
   $('#id_actual_screenwidth').val(screen.height);
   // $(window).width()
-}
-
-function setValue(id_component, id_input){
-  if(id_input!='0') {
-    var value = id_input.val();
-    id_component.val(value);
-  }
-}
+};
