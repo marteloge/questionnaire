@@ -29,6 +29,24 @@ qs.bindForm = function(bindings, id) {
 };
 
 function addPattern() {
+  var radius;
+  var margin = 8;
+
+  if(screen.width<=320){
+    radius = 32;
+  }
+  else if (screen.width<=360){
+    radius = 35;
+    margin = 9;
+  }
+  else if (screen.width<=375){
+    radius = 40;
+    margin = 9;
+  }
+  else {
+    radius = 45;
+  }
+
   var lock = new PatternLock('#patternContainer', {
     onDraw:function(pattern){
       pattern = lock.getPattern();
@@ -54,8 +72,8 @@ function addPattern() {
         });
       }
     },
-    radius: 80,
-    margin: 30,
+    radius: radius,
+    margin: margin,
   });
 };
 
