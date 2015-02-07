@@ -40,11 +40,13 @@
 
 {% block javascript %}
   <script type="text/javascript">
-    qs.bindForm({
-      'hand-small': 'S',
-      'hand-medium': 'M',
-      'hand-large': 'L',
-      'hand-xtralarge': 'XL'
-    }, 'id_handsize');      
+    $( document ).ready(function() {
+      qs.bindForm({
+        'hand-small': 'S',
+        'hand-medium': 'M',
+        'hand-large': 'L',
+        'hand-xtralarge': 'XL'
+        }, 'id_handsize');
+    });   
   </script>
 {% endblock %}

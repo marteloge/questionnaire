@@ -49,12 +49,14 @@
 
 {% block javascript %}
   <script type="text/javascript">
-    qs.bindForm({
-      'pattern': 'pattern',
-      'fingerprint': 'fingerprint',
-      'PIN':'PIN',
-      'slide':'slide',
-      'other':'other',
-    }, 'id_screenlock');
+    $( document ).ready(function() {
+      qs.bindForm({
+        'pattern': 'pattern',
+        'fingerprint': 'fingerprint',
+        'PIN':'PIN',
+        'slide':'slide',
+        'other':'other',
+      }, 'id_screenlock');
+    });
   </script>
 {% endblock %}

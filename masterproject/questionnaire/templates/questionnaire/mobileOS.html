@@ -73,8 +73,9 @@
 
 {% block javascript %}
   <script type="text/javascript">
-    getMobileOperatingSystem();
-    qs.bindForm({
+    $( document ).ready(function() {
+      getMobileOperatingSystem();
+      qs.bindForm({
       'android': 'android',
       'ios': 'ios',
       'windows': 'windows',
@@ -89,6 +90,6 @@
       'unknown_blackberry': 'unknown_blackberry',
       'other': 'other',
     }, 'id_mobileOS'); 
-
+    });
   </script>
 {% endblock %}

@@ -34,9 +34,11 @@
 
 {% block javascript %}
 	<script type="text/javascript">
-    qs.bindForm({
+    $( document ).ready(function() {
+      qs.bindForm({
       'left': 'L',
       'right': 'R',
-    }, 'id_handedness');
+      }, 'id_handedness');
+    });
   </script>
 {% endblock %}

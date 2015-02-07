@@ -43,10 +43,12 @@
 
 {% block javascript %}
   <script type="text/javascript">
-    qs.bindForm({
-      'left': 'L',
-      'right': 'R',
-      'top': 'T'
-    }, 'id_reading');
+    $( document ).ready(function() {
+      qs.bindForm({
+        'left': 'L',
+        'right': 'R',
+        'top': 'T'
+      }, 'id_reading');
+    });
   </script>
 {% endblock %}

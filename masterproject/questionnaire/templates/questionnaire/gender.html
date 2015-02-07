@@ -34,9 +34,11 @@
 
 {% block javascript %}
   <script type="text/javascript">
-    qs.bindForm({
+  $( document ).ready(function() {
+      qs.bindForm({
       'male': 'M',
       'female': 'F'
-    }, 'id_gender');
+      }, 'id_gender');
+    });
   </script>
 {% endblock %}

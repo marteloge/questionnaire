@@ -33,9 +33,11 @@
 
 {% block javascript %}
   <script type="text/javascript">
-    qs.bindForm({
-      'yes': 'Y',
-      'no': 'N'
-    }, 'id_use_screenlock');
+    $( document ).ready(function() {
+      qs.bindForm({
+        'yes': 'Y',
+        'no': 'N'
+      }, 'id_use_screenlock');
+    });
   </script>
 {% endblock %}

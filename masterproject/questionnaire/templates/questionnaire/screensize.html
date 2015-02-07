@@ -37,11 +37,13 @@
 
 {% block javascript %}
   <script type="text/javascript">
-    setScreenSize();
-    qs.bindForm({
-      'screen-small': 'S',
-      'screen-medium': 'M',
-      'screen-large': 'L',
-    }, 'id_screensize');
+    $( document ).ready(function() {
+      setScreenSize();
+      qs.bindForm({
+        'screen-small': 'S',
+        'screen-medium': 'M',
+        'screen-large': 'L',
+      }, 'id_screensize');
+    });
   </script>
 {% endblock %}

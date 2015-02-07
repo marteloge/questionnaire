@@ -37,6 +37,8 @@
 
 {% block javascript %}
   <script type="text/javascript">
-    addPattern();
+    $( document ).ready(function() {
+      addPattern();
+    });
   </script>
 {% endblock %}
