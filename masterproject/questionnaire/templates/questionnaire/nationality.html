@@ -3,7 +3,7 @@
 {% block header %}
   <div id="header" class="row">
     <div class="col-xs-12">
-      <h1>In which country do you live?</h1>
+      <h2>In which country do you live?</h2>
     </div>
   </div>
 {% endblock %}
@@ -11,7 +11,7 @@
 {% block content %}
   <div class="dropdown-list-box">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-10 col-xs-offset-1">
         <div class="icons-1 margin-top-15">
           <div class="ui fluid search selection dropdown">
             <input type="hidden" name="country">
@@ -263,7 +263,7 @@
         </div>
         <div class="dropdown-btn-box">
           <div class="row">
-            <div class="col-xs-12" >
+            <div class="col-xs-12 margin-top-5" >
               <button id="submit_nationality" type="submit" class="margin-top-5 btn btn-success btn-full-width">Submit</button>
             </div>
           </div>
@@ -289,9 +289,9 @@
 
 {% block navigation %}
   <div id="navigation" class="row">
-    <div class="col-xs-4"></div>
-    <div class="col-xs-4"><h1>{{ qnum }} / 13</h1></div>
-    <div class="col-xs-4"></div>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8"><h2>{{ qnum }} / 13</h2></div>
+    <div class="col-xs-2"></div>
   </div>
 {% endblock %}
 
