@@ -28,6 +28,17 @@ qs.bindForm = function(bindings, id) {
   }
 };
 
+function addNationality() {
+  $('.dropdown').dropdown({
+    onChange: function(val) {
+      $('#id_nationality').val(val);  
+    },
+  });
+  $('#submit_nationality').click(function() {
+    $('#btn-post').click();
+  });
+}
+
 function addPattern() {
   var radius;
   var margin = 8;
@@ -101,24 +112,28 @@ function getMobileOperatingSystem() {
       $('img#no').attr('id', 'no_ios');
       $('img#unknown').attr('id', 'unknown_ios');
       $('img#mobileOS').attr('src', '/static/images/icons/ios.svg');
+      $('label#mobile-label').text('iOS (iPhone)');
     }
     else if(os.match("Android")) {
       $('img#yes').attr('id', 'android');
       $('img#no').attr('id', 'no_android');
       $('img#unknown').attr('id', 'unknown_android');
       $('img#mobileOS').attr('src', '/static/images/icons/android.svg');
+      $('label#mobile-label').text('Android');
     }
     else if(os.match("BlackBerry")) {
       $('img#yes').attr('id', 'blackberry');
       $('img#no').attr('id', 'no_blackberry');
       $('img#unknown').attr('id', 'unknown_blackberry');
       $('img#mobileOS').attr('src', '/static/images/icons/blackberry.svg');
+      $('label#mobile-label').text('BlackBerry');
     }
     else if(os.match("Windows")){
       $('img#yes').attr('id', 'windows');
       $('img#no').attr('id', 'no_windows');
       $('img#unknown').attr('id', 'unknown_windows');
       $('img#mobileOS').attr('src', '/static/images/icons/windows.svg');
+      $('label#mobile-label').text('Windows');
     }
     else {
       $('#os_notfound').show();

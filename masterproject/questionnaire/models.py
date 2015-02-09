@@ -39,6 +39,7 @@ SCREENLOCK_CHOICES = (
     ('PIN', 'PIN'),
     ('slide', 'slide'),
     ('other', 'other'),
+    ('password', 'password'),
 )
 MOBILEOS_CHOICES = (
 	('android', 'Anroid'),
