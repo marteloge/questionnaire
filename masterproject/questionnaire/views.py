@@ -63,7 +63,7 @@ def patterninformation(request):
 def pattern1(request):
     person_id = request.session.session_key
     person = Person.objects.get(pk=person_id)
-    
+
     if request.mobile and not request.tablet:
         if request.method == 'POST':
             password, created = Password.objects.get_or_create(person_id=person_id, password_type='1')
@@ -214,8 +214,8 @@ def add_nationality(request):
         if request.method == 'POST':
             form = NationalityForm(request.POST, instance=person)
             if form.is_valid():
-                if request.POST['nationality']=='0':
-                    messages.error(request, 'You need to select your country')
+                if (request.POST['nationality']=='0') or (request.POST['nationality']==0):
+                    messages.error(request, 'You need to select your country before you can continue')
                     return HttpResponseRedirect('add_nationality')
                 else:
                     form.save()
