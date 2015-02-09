@@ -8,6 +8,7 @@ from django import forms
 from questionnaire.forms import *
 from django.forms.models import inlineformset_factory
 from django.contrib import messages
+from django.core.urlresolvers import resolve
 import sys
 
 # print >>sys.stderr, choice
@@ -15,11 +16,16 @@ import sys
 def index(request):
     model = Person
     template_name = 'questionnaire/index.html'
-    sys.stderr, request.mobile
-    if request.mobile and not request.tablet:
-        return render(request, 'questionnaire/index.html', {'mobile': True})
+    host = request.get_host().split('.')
+    if(host[0]=='www' or host[0]=='marteloge'):
+        return render(request, 'questionnaire/about.html')
+    elif(host[0]=='survey'):
+        if request.mobile and not request.tablet:
+            return render(request, 'questionnaire/index.html', {'mobile': True})
+        else:
+            return render(request, 'questionnaire/index.html', {'mobile': False})
     else:
-        return render(request, 'questionnaire/index.html', {'mobile': False})
+        return render(request, 'questionnaire/404.html', {'mobile': False})
 
 def nomobile(request):
     template_name = 'questionnaire/nomobile.html'
