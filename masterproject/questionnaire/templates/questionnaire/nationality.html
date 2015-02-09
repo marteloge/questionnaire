@@ -298,14 +298,7 @@
 {% block javascript %}
   <script type="text/javascript">
     $( document ).ready(function() {
-      $('.dropdown').dropdown({
-        onChange: function(val) {
-          $('#id_nationality').val(val);  
-        },
-      });
-      $('#submit_nationality').click(function() {
-          $('#btn-post').click();
-      });
+      addNationality();
     });
   </script>
 {% endblock %}
