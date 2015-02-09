@@ -10,12 +10,31 @@
 
 {% block content %}
   <div id="answers" class="margin-top-20">
+
+    {% if hand == 'R' %}
     <div class="row">
       <div class="col-xs-12">
-        <img id="forefinger" class="svg img-responsive icon-45 margin-right-5" alt="Responsive image" src="/static/images/icons/forefinger.svg"/>
-        <img id="thumb" class="svg img-responsive icon-45" alt="Responsive image" src="/static/images/icons/thumb.svg"/>
+        <img id="forefinger" class="svg img-responsive icon-45 margin-right-5" alt="Responsive image" src="/static/images/icons/forefinger-right.svg"/>
+        <img id="thumb" class="svg img-responsive icon-45" alt="Responsive image" src="/static/images/icons/thumb-right.svg"/>
       </div>
     </div>
+    {% endif %}
+    {% if hand == 'L' %}
+    <div class="row">
+      <div class="col-xs-12">
+        <img id="forefinger" class="svg img-responsive icon-45 margin-right-5" alt="Responsive image" src="/static/images/icons/forefinger-left.svg"/>
+        <img id="thumb" class="svg img-responsive icon-45" alt="Responsive image" src="/static/images/icons/thumb-left.svg"/>
+      </div>
+    </div>
+    {% endif %}
+    {% if hand == 0 %}
+    <div class="row">
+      <div class="col-xs-12">
+        <img id="forefinger" class="svg img-responsive icon-45 margin-right-5" alt="Responsive image" src="/static/images/icons/forefinger-right.svg"/>
+        <img id="thumb" class="svg img-responsive icon-45" alt="Responsive image" src="/static/images/icons/thumb-right.svg"/>
+      </div>
+    </div>
+    {% endif %}
   </div>
   <form action="" method="post">
     {% csrf_token %}

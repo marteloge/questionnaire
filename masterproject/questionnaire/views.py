@@ -158,7 +158,7 @@ def add_finger(request):
                 return HttpResponseRedirect('add_reading')
         else:
             form = FingerForm(instance=person)
-            return render(request, 'questionnaire/finger.html', {'form': form, 'qnum':4})
+            return render(request, 'questionnaire/finger.html', {'form': form, 'qnum':4, 'hand':person.handedness})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_reading(request):
