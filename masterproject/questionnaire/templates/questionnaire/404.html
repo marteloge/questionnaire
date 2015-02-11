@@ -3,16 +3,27 @@
 {% block header %}
   <div id="header" class="row">
     <div class="col-xs-12">
-      <h2>Sorry, something happend! (404)</h2>
+      <h2>Page not found!</h2>
     </div>
   </div>
 {% endblock %}
 
 {% block content %}
+  <div id="answers" class="margin-top-10">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>The page you accessed is not a valid page. </h3>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
 
 {% block navigation %}
+  <div id="navigation" class="row">
+    <div class="col-xs-12">
+      <a href="contact" role="button" class="btn-full-width btn btn-success">Contact information</a>
+    </div>
+  </div>
 {% endblock %}
 
-{% block javascript %}
-{% endblock %}
