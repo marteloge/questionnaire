@@ -3,13 +3,6 @@ body {
     margin-top: 50px;
     background-color: #F0EADF;
 }
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/Pacifico.woff') format('woff2'),
-  url('/fonts/Pacifico.ttf') format('truetype');
-}
 
 .fa{color: #CA6D6C;}
 .fa:hover{color: #AC3F3E;}
