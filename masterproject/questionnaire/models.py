@@ -2,38 +2,46 @@ from django.db import models
 from django.contrib.sessions.models import Session 
 
 HANDSIZE_CHOICES = (
+	('0', 'default'),
     ('S', 'Small'),
     ('M', 'Medium'),
     ('L', 'Large'),
     ('XL', 'XtraLarge'),
 )
 SCREENSICE_CHOICES = (
+	('0', 'default'),
     ('S', 'Small'),
     ('M', 'Medium'),
     ('L', 'Large'),
 )
 FINGER_CHOICES = (
+	('0', 'default'),
 	('F', 'Forefinger'),
     ('T', 'Thumb'),
 )
 READING_CHOICES = (
+	('0', 'default'),
 	('L', 'Left'),
     ('R', 'Right'),
     ('T', 'Top'),
 )
 GENDER_CHOICES = (
+	('0', 'default'),
 	('M', 'Male'),
     ('F', 'Female'),
 )
 HANDEDNESS_CHOICES = (
+	('0', 'default'),
 	('L', 'Left'),
     ('R', 'Right'),
 )
 YESNO_CHOICES = (
+	('0', 'default'),
 	('Y', 'Yes'),
     ('N', 'No'),
 )
 SCREENLOCK_CHOICES = (
+	('0', 'default'),
 	('pattern', 'pattern'),
     ('fingerprint', 'fingerprint'),
     ('PIN', 'PIN'),
@@ -42,6 +50,7 @@ SCREENLOCK_CHOICES = (
     ('password', 'password'),
 )
 MOBILEOS_CHOICES = (
+	('0', 'default'),
 	('android', 'Anroid'),
     ('ios', 'iOS'),
     ('windows', 'Windows'),
