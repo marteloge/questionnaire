@@ -24,5 +24,6 @@ urlpatterns = patterns('',
     url(r'^add_mobileOS', views.add_mobileOS, name='add_mobileOS'),
     url(r'^add_experience', views.add_experience, name='add_experience'),
     url(r'^finish', views.finish, name='finish'),
-    url(r'', views.index, name='index'),
+    url(r'^contact', views.contact, name='contact'),
+    url(r'^$', views.index, name='index'),
 )

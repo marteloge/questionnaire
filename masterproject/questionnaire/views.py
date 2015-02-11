@@ -9,13 +9,19 @@ from questionnaire.forms import *
 from django.forms.models import inlineformset_factory
 from django.contrib import messages
 from django.core.urlresolvers import resolve
+from django.http import HttpResponse
 import sys
 
 # print >>sys.stderr, choice
 
+def custom_404(request):
+    return render(request, 'questionnaire/404.html')
+
+def custom_500(request):
+    return render(request, 'questionnaire/500.html')
+
 def index(request):
     model = Person
-    template_name = 'questionnaire/index.html'
     host = request.get_host().split('.')
     if(host[0]=='www' or host[0]=='marteloge'):
         return render(request, 'questionnaire/about.html')
@@ -25,7 +31,10 @@ def index(request):
         else:
             return render(request, 'questionnaire/index.html', {'mobile': False})
     else:
-        return render(request, 'questionnaire/404.html', {'mobile': False})
+        return render(request, 'questionnaire/404.html')
+
+def contact(request):
+    return HttpResponseRedirect('http://marteloge.no')
 
 def nomobile(request):
     template_name = 'questionnaire/nomobile.html'
