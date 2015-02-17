@@ -168,12 +168,16 @@ label#mobile-label {font-size: 20px;}
 	.ui.dropdown .menu>.item {font-size: 20px;}
 	.ui.search.dropdown .menu {max-height: 300px;}
 	.flag-icon {margin-right: 10px;}
+	.alert-danger {font-size: 15px;}
+
 }
 
 @media only screen and (min-device-width : 600px){
 	h1 {font-size: 30px;}
 	h2 {font-size: 25px;}
 	h3 {font-size: 20px;}
+	p {font-size: 16px}
+	.alert-danger {font-size: 15px;}
 	.btn {
 		font-size: 25px;
 	}
