@@ -149,3 +149,13 @@ function setScreenSize() {
   $('#id_actual_screenwidth').val(screen.height);
   // $(window).width()
 };
+
+function fixedFooter() {
+  $("#age").focus(function(){
+    $('#navigation').hide();
+  });
+  $("#age").blur(function(){
+    $('#navigation').show();
+  });
+};
+
