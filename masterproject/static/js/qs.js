@@ -37,7 +37,7 @@ function addNationality() {
       $('#navigation').hide();
     },
     onHide: function() {
-      $('#content-module').click();
+      $(document.activeElement).blur();
       $('#navigation').show();
     },
   });
