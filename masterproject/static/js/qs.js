@@ -31,7 +31,11 @@ qs.bindForm = function(bindings, id) {
 function addNationality() {
   $('.dropdown').dropdown({
     onChange: function(val) {
-      $('#id_nationality').val(val);  
+      $('#id_nationality').val(val);
+      $('#navigation').show();
+    },
+    onShow: function() {
+      $('#navigation').hide();
     },
   });
   $('#submit_nationality').click(function() {
