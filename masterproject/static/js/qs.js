@@ -40,23 +40,11 @@ function addNationality() {
 }
 
 function addPattern() {
-  var radius;
-  var margin = 8;
+  var radius = 0.6*(screen.width/8);
+  var margin = 0.2*(screen.width/4);
 
-  if(screen.width<=320){
-    radius = 32;
-  }
-  else if (screen.width<=360){
-    radius = 35;
-    margin = 9;
-  }
-  else if (screen.width<=375){
-    radius = 40;
-    margin = 9;
-  }
-  else {
-    radius = 45;
-  }
+  console.log(radius);
+  console.log(margin);
 
   var lock = new PatternLock('#patternContainer', {
     onDraw:function(pattern){
