@@ -60,7 +60,7 @@ form {
 }
 
 .fixed {
-	position: fixed;
+	position: absolute;
 }
 
 #patternlist {text-align: left;}
