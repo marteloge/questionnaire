@@ -1,6 +1,7 @@
 html, body{
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
 	margin: 0px; 
 	padding: 0px;
    	text-align:center;
@@ -42,13 +43,14 @@ form {
 	padding-left: 5%;
 	padding-right: 5%;
 }
+
 #sequence {
 	position:absolute; 
 	bottom:0;
-	padding-bottom: 5%;
 }
-#patternContainer {
-	margin: auto;
+#patternContainer { 
+	margin: auto; 
+	width: 100%;
 }
 
 #patternlist {text-align: left;}
