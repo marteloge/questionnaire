@@ -11,8 +11,14 @@ from django.contrib import messages
 from django.core.urlresolvers import resolve
 from django.http import HttpResponse
 import sys
+import random
+
 
 # print >>sys.stderr, choice
+
+def calculate_pattern(order):
+    orders = [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+    return orders[order-1]
 
 def custom_404(request):
     return render(request, 'questionnaire/404.html')
@@ -21,6 +27,11 @@ def custom_500(request):
     return render(request, 'questionnaire/500.html')
 
 def index(request):
+    # if request.mobile and not request.tablet:
+    #     return render(request, 'questionnaire/index.html', {'mobile': True})
+    # else:
+    #     return render(request, 'questionnaire/about.html', {'mobile': False})
+
     model = Person
     host = request.get_host().split('.')
     if(host[0]=='www' or host[0]=='marteloge'):
@@ -46,6 +57,9 @@ def rules(request):
         person, created = Person.objects.get_or_create(pk=request.session.session_key)
         if created:
             request.session.set_expiry(43200)
+            random_order = random.randint(1,6)
+            person.pattern_order = random_order
+            person.save()
         return render(request, 'questionnaire/rules.html')
     return render(request, 'questionnaire/nomobile.html')
     
@@ -78,10 +92,12 @@ def patterninformation(request):
 def pattern1(request):
     person_id = request.session.session_key
     person = Person.objects.get(pk=person_id)
+    order = calculate_pattern(person.pattern_order)
+    view_number = order[0]
 
     if request.mobile and not request.tablet:
         if request.method == 'POST':
-            password, created = Password.objects.get_or_create(person_id=person_id, password_type='1')
+            password, created = Password.objects.get_or_create(person_id=person_id, password_type=view_number)
             form = PatternForm(request.POST, instance=person)
             if form.is_valid():
                 password.sequence = request.POST['sequence']
@@ -89,15 +105,17 @@ def pattern1(request):
                 return HttpResponseRedirect('pattern2')
         else:
             form = PatternForm(instance=person)
-            return render(request, 'questionnaire/pattern1.html', {'form': form})
+            return render(request, 'questionnaire/pattern'+str(view_number)+'.html', {'form': form})
     return render(request, 'questionnaire/nomobile.html')
 
 def pattern2(request):
     person_id = request.session.session_key
     person = Person.objects.get(pk=person_id)
+    order = calculate_pattern(person.pattern_order)
+    view_number = order[1]
     if request.mobile and not request.tablet:
         if request.method == 'POST':
-            password,created = Password.objects.get_or_create(person_id=person_id, password_type='2')
+            password,created = Password.objects.get_or_create(person_id=person_id, password_type=view_number)
             form = PatternForm(request.POST, instance=person)
             if form.is_valid():
                 password.sequence = request.POST['sequence']
@@ -105,15 +123,17 @@ def pattern2(request):
                 return HttpResponseRedirect('pattern3')
         else:
             form = PatternForm(instance=person)
-            return render(request, 'questionnaire/pattern2.html', {'form': form})
+            return render(request, 'questionnaire/pattern'+str(view_number)+'.html', {'form': form})
     return render(request, 'questionnaire/nomobile.html')
 
 def pattern3(request):
     person_id = request.session.session_key
     person = Person.objects.get(pk=person_id)
+    order = calculate_pattern(person.pattern_order)
+    view_number = order[2]
     if request.mobile and not request.tablet:
         if request.method == 'POST':
-            password,created = Password.objects.get_or_create(person_id=person_id, password_type='3')
+            password,created = Password.objects.get_or_create(person_id=person_id, password_type=view_number)
             form=PatternForm(request.POST, instance=person)
             if form.is_valid():
                 password.sequence = request.POST['sequence']
@@ -121,7 +141,7 @@ def pattern3(request):
                 return HttpResponseRedirect('add_handsize')
         else:
             form = PatternForm(instance=person)
-            return render(request, 'questionnaire/pattern3.html', {'form': form})
+            return render(request, 'questionnaire/pattern'+str(view_number)+'.html', {'form': form})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_handsize(request):

@@ -2,25 +2,25 @@ from django.db import models
 from django.contrib.sessions.models import Session 
 
 HANDSIZE_CHOICES = (
-	('0', 'default'),
-    ('S', 'Small'),
-    ('M', 'Medium'),
-    ('L', 'Large'),
-    ('XL', 'XtraLarge'),
+	('default', '0'),
+    ('Small', 'S'),
+    ('Medium', 'M'),
+    ('Large', 'L'),
+    ('XtraLarge', 'XL'),
 )
 SCREENSICE_CHOICES = (
-	('0', 'default'),
-    ('S', 'Small'),
-    ('M', 'Medium'),
-    ('L', 'Large'),
+	('default', '0'),
+    ('Small', 'S'),
+    ('Medium', 'M'),
+    ('Large', 'L'),
 )
 FINGER_CHOICES = (
-	('0', 'default'),
-	('F', 'Forefinger'),
-    ('T', 'Thumb'),
+	('default', '0'),
+	('Forefinger', 'F'),
+    ('Thumb', 'T'),
 )
 READING_CHOICES = (
-	('0', 'default'),
+	('default', '0'),
 	('L', 'Left'),
     ('R', 'Right'),
     ('T', 'Top'),
@@ -83,6 +83,7 @@ class Person(models.Model):
 	age = models.IntegerField(max_length=2, default=0)
 	actual_screenwidth = models.IntegerField(max_length=4, default=0)
 	actual_screenheight = models.IntegerField(max_length=4, default=0)
+	pattern_order = models.IntegerField(max_length=1, default=0)
 	
 	def __unicode__(self):
 		return "Person " + str(self.session_id)
