@@ -47,10 +47,10 @@ form {
 	bottom:0;
 	padding-bottom: 5%;
 }
-#patternContainer { 
-	margin: auto; 
-	width: 100%;
+#patternContainer {
+	margin: auto;
 }
+
 #patternlist {text-align: left;}
 #os_notfound {height: 100%;}
 #os_found {height: 100%;}
@@ -122,7 +122,7 @@ label#mobile-label {font-size: 20px;}
 	h1 {font-size: 25px;}
 	h2 {font-size: 20px;}
 	h3 {font-size: 15px;}
-	p {font-size: 13px}
+	p {font-size: 11px}
 	.btn {
 		font-size: 15px;
 	}
@@ -139,7 +139,7 @@ label#mobile-label {font-size: 20px;}
 	h1 {font-size: 25px;}
 	h2 {font-size: 20px;}
 	h3 {font-size: 15px;}
-	p {font-size: 14px}
+	p {font-size: 11px}
 	.btn {
 		font-size: 15px;
 	}
