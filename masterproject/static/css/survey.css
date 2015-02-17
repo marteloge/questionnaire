@@ -59,6 +59,10 @@ form {
 	padding-bottom: 10%;
 }
 
+.fixed {
+	position: fixed;
+}
+
 #patternlist {text-align: left;}
 #os_notfound {height: 100%;}
 #os_found {height: 100%;}
