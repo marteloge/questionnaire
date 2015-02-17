@@ -32,12 +32,10 @@ function addNationality() {
   $('.dropdown').dropdown({
     onChange: function(val) {
       $('#id_nationality').val(val);
+      $('#content-module').click();
     },
     onShow: function() {
       $('#navigation').hide();
-    },
-    onHide: function() {
-      $('#navigation').show();
     },
   });
   $('#submit_nationality').click(function() {
