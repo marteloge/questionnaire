@@ -2,25 +2,25 @@ from django.db import models
 from django.contrib.sessions.models import Session 
 
 HANDSIZE_CHOICES = (
-	('default', '0'),
-    ('Small', 'S'),
-    ('Medium', 'M'),
-    ('Large', 'L'),
-    ('XtraLarge', 'XL'),
+	('0', 'default'),
+    ('S', 'Small'),
+    ('M', 'Medium'),
+    ('L', 'Large'),
+    ('XL', 'XtraLarge'),
 )
 SCREENSICE_CHOICES = (
-	('default', '0'),
-    ('Small', 'S'),
-    ('Medium', 'M'),
-    ('Large', 'L'),
+	('0', 'default'),
+    ('S', 'Small'),
+    ('M', 'Medium'),
+    ('L', 'Large'),
 )
 FINGER_CHOICES = (
-	('default', '0'),
-	('Forefinger', 'F'),
-    ('Thumb', 'T'),
+	('0', 'default'),
+	('F', 'Forefinger'),
+    ('T', 'Thumb'),
 )
 READING_CHOICES = (
-	('default', '0'),
+	('0', 'default'),
 	('L', 'Left'),
     ('R', 'Right'),
     ('T', 'Top'),
