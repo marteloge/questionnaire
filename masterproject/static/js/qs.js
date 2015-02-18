@@ -51,6 +51,14 @@ function addPattern() {
   var radius = 0.6*(screen.width/8);
   var margin = 0.2*(screen.width/4);
 
+  var patternheight = radius*6 + margin*8;
+  var availHeight = document.getElementById('content-module').clientHeight;
+
+  if(patternheight > availHeight){
+    radius = radius - radius*((patternheight/availHeight)-1);
+    margin = margin - margin*((patternheight/availHeight)-1);
+  }
+
   $('#continue').attr("disabled", true);
   $('#retry').attr("disabled", true);
   $('#retrypattern').attr("disabled", true);
