@@ -78,6 +78,9 @@ function addPattern() {
           $('#id_sequence').val(pattern);
           $('#id_time').val(end-start);
           $('#btn-post-retry').click();
+          $('#continue').attr("disabled", true);
+          $('#retry').attr("disabled", true);
+          $('#retrypattern').attr("disabled", true);
         });
       }
       else{
