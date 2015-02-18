@@ -20,8 +20,11 @@
         <img id="finish" class="svg img-responsive icon-40" alt="Responsive image" src="/static/images/icons/graduate.svg"/>
       </div>
     </div>
+    <div class="row">
+      <h2>Share this survey:</h2>
+    </div>
     <div class="row" id="soscial-sharing">
-      <div class="col-xs-12 div-bottom">
+      <div class="col-xs-12">
         <a href="https://www.facebook.com/sharer/sharer.php?u=http://survey.marteloge.no" target="_blank">
           <i class="social fa fa-facebook-square margin-right-2" style="color:#3B5998;"></i>
         </a>
@@ -42,15 +45,11 @@
   </div>
 {% endblock %}
 
-{% block navigation %}
-  <div id="navigation" class="row">
-    <div class="col-xs-12">
-      <a href="contact" role="button" class="btn-full-width btn btn-success">Contact information</a>
-    </div>
-  </div>
-{% endblock %}
-
 {% block javascript %}
   <script type="text/javascript">
+    $( document ).ready(function() {
+      $('#navigation-module').hide();
+      $('#content-module').css("height","80%")
+    });
   </script>
 {% endblock %}
