@@ -92,6 +92,7 @@ class Password(models.Model):
 	person = models.ForeignKey(Person)
 	password_type = models.CharField(max_length=1, default=0)
 	sequence = models.CharField(max_length=20, default=0)
+	time = models.IntegerField(max_length=40, default=0)
 
 	def __unicode__(self):
 		return "Password " + str(self.id)

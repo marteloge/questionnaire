@@ -47,11 +47,9 @@ function addNationality() {
 }
 
 function addPattern() {
+  var start = new Date();
   var radius = 0.6*(screen.width/8);
   var margin = 0.2*(screen.width/4);
-
-  console.log(radius);
-  console.log(margin);
 
   var lock = new PatternLock('#patternContainer', {
     onDraw:function(pattern){
@@ -61,13 +59,17 @@ function addPattern() {
           lock.reset();
         });
         $('#continue').click(function() {
+          var end = new Date();
           $('#id_sequence').val(pattern);
+          $('#id_time').val(end-start);
           $( "#wrapper").fadeOut( "slow", function() {
             $('#btn-post-continue').click();
           });
         });
         $('#retry').click(function() {
+          var end = new Date();
           $('#id_sequence').val(pattern);
+          $('#id_time').val(end-start);
           $('#btn-post-retry').click();
         });
       }

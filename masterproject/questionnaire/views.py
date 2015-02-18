@@ -27,22 +27,10 @@ def custom_500(request):
     return render(request, 'questionnaire/500.html')
 
 def index(request):
-    # if request.mobile and not request.tablet:
-    #     return render(request, 'questionnaire/index.html', {'mobile': True})
-    # else:
-    #     return render(request, 'questionnaire/about.html', {'mobile': False})
-
-    model = Person
-    host = request.get_host().split('.')
-    if(host[0]=='www' or host[0]=='marteloge'):
-        return render(request, 'questionnaire/about.html')
-    elif(host[0]=='survey'):
-        if request.mobile and not request.tablet:
-            return render(request, 'questionnaire/index.html', {'mobile': True})
-        else:
-            return render(request, 'questionnaire/index.html', {'mobile': False})
+    if request.mobile and not request.tablet:
+        return render(request, 'questionnaire/index.html', {'mobile': True})
     else:
-        return render(request, 'questionnaire/404.html')
+        return render(request, 'questionnaire/about.html', {'mobile': False})
 
 def contact(request):
     return HttpResponseRedirect('http://marteloge.no')
@@ -73,6 +61,7 @@ def training(request):
             form = PatternForm(request.POST, instance=person)
             if form.is_valid():
                 password.sequence = request.POST['sequence']
+                password.time = request.POST['time']
                 password.save()
                 if 'continue' in request.POST:
                     return HttpResponseRedirect('patterninformation')
@@ -101,6 +90,7 @@ def pattern1(request):
             form = PatternForm(request.POST, instance=person)
             if form.is_valid():
                 password.sequence = request.POST['sequence']
+                password.time = request.POST['time']
                 password.save()
                 return HttpResponseRedirect('pattern2')
         else:
@@ -119,6 +109,7 @@ def pattern2(request):
             form = PatternForm(request.POST, instance=person)
             if form.is_valid():
                 password.sequence = request.POST['sequence']
+                password.time = request.POST['time']
                 password.save()
                 return HttpResponseRedirect('pattern3')
         else:
@@ -137,6 +128,7 @@ def pattern3(request):
             form=PatternForm(request.POST, instance=person)
             if form.is_valid():
                 password.sequence = request.POST['sequence']
+                password.time = request.POST['time']
                 password.save()
                 return HttpResponseRedirect('add_handsize')
         else:

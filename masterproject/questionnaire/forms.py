@@ -9,7 +9,7 @@ class TrainingForm(forms.ModelForm):
 class PatternForm(forms.ModelForm):
 	class Meta:
 		model = Password
-		fields = ('sequence',)
+		fields = ('sequence', 'time',)
 
 class HandsizeForm(forms.ModelForm):
 	class Meta:

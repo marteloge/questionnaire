@@ -21,7 +21,8 @@
   </div> 
   <form action="" method="post">
     {% csrf_token %}
-    {{ form.sequence.as_hidden }} 
+    {{ form.sequence.as_hidden }}
+    {{ form.time.as_hidden }}
     <input id="btn-post-continue" type="submit" value="Submit" />
   </form>
 {% endblock %}
