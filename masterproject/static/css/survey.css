@@ -132,7 +132,7 @@ label#mobile-label {font-size: 20px;}
 /* MEDIA QUERIES */
 @media only screen and (max-device-width : 320px) and (max-device-height: 480px){
 	h1 {font-size: 25px;}
-	h2 {font-size: 20px;}
+	h2 {font-size: 18px;}
 	h3 {font-size: 15px;}
 	p {font-size: 11px}
 	.btn {
