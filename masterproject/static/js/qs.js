@@ -81,6 +81,9 @@ function addPattern() {
         lock.error();
         $('#retrypattern').click(function() {
           lock.reset();
+          $('#continue').attr("disabled", true);
+          $('#retry').attr("disabled", true);
+          $('#retrypattern').attr("disabled", true);
         });
       }
     },
