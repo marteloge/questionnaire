@@ -58,7 +58,7 @@ function addPattern() {
   var lock = new PatternLock('#patternContainer', {
     onDraw:function(pattern){
       pattern = lock.getPattern();
-      if(pattern.length>=4){
+      if(pattern.length>=4 && validatePattern(pattern)==true){
         $('#retrypattern').click(function() {
           lock.reset();
         });
@@ -171,5 +171,51 @@ function fixedFooter() {
   $("#age").blur(function(){
     $('#navigation').show();
   });
+};
+
+var between = function between(n1, n2) {
+ 
+  /* base case */
+  if (n1 === n2) {
+    return null;
+  }
+  
+  /* decrease to make null-index */
+  --n1;
+  --n2;
+  
+  /* calculate the average of the two numbers */
+  avg = (n1 + n2) / 2
+ 
+ 
+  /* check if same row or column */
+  if ((Math.floor(n1 / 3) == Math.floor(n2 / 3)) || n1 % 3 == n2 % 3) {
+    /* it's on the same row/column, if average is whole number, return it */
+    if (avg === Math.floor(avg)) {
+      return avg + 1;
+    } else {
+      return null;
+    }
+  } else if (avg === Math.floor(avg)) {
+    /* if average is whole number and not on row or column, we're on the diagonal */
+    /* if the distance between the columns is larger than 1, the average is in between */
+    if (Math.abs(n1 % 3 - n2 % 3) > 1) {
+      return avg + 1
+    }
+  }
+  return null;
+ 
+}
+var validatePattern = function validatePattern(pattern) {
+  var visited = [];
+  var b;
+  for (var i = 0; i < pattern.length - 1; ++i) {
+    visited.push(pattern[i]);
+    b = between(pattern[i], pattern[i + 1]);
+    if (b !== null && visited.indexOf(b) == -1) {
+      return false;
+    }
+  }
+  return true;
 };
 
