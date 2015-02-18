@@ -91,6 +91,12 @@ function addPattern() {
           $('#retry').attr("disabled", true);
           $('#retrypattern').attr("disabled", true);
         });
+        $('#retry').click(function() {
+          lock.reset();
+          $('#continue').attr("disabled", true);
+          $('#retry').attr("disabled", true);
+          $('#retrypattern').attr("disabled", true);
+        });
       }
     },
     radius: radius,
