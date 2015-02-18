@@ -18,6 +18,7 @@ FINGER_CHOICES = (
 	('0', 'default'),
 	('F', 'Forefinger'),
     ('T', 'Thumb'),
+    ('O', 'Other'),
 )
 READING_CHOICES = (
 	('0', 'default'),
