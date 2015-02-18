@@ -149,7 +149,7 @@ label#mobile-label {font-size: 20px;}
 }
 @media only screen and (max-device-width : 320px) and (min-device-height: 481px){
 	h1 {font-size: 25px;}
-	h2 {font-size: 20px;}
+	h2 {font-size: 18px;}
 	h3 {font-size: 15px;}
 	p {font-size: 11px}
 	.btn {
@@ -166,7 +166,7 @@ label#mobile-label {font-size: 20px;}
 
 @media only screen and (min-device-width : 360px){
 	h1 {font-size: 30px;}
-	h2 {font-size: 25px;}
+	h2 {font-size: 22px;}
 	h3 {font-size: 20px;}
 	p {font-size: 13px}
 	.btn {
