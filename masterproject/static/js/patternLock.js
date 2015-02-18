@@ -44,8 +44,6 @@
         };
     }
 
-
-
     var startHandler = function (e, obj) {
             e.preventDefault();
             var iObj = objectHolder[obj.token];
@@ -66,6 +64,24 @@
             });
             $(document).one(touchEnd, function () {
                 endHandler.call(this, e, obj);
+
+                // enable and disable continue button
+                if(iObj.patternAry.length>=4){
+                    $('#continue').attr("disabled", false);
+                }
+                else{
+                    $('#continue').attr("disabled", true);
+                }
+                
+                // enable and disable retry button
+                if(iObj.patternAry==0){
+                    $('#retry').attr("disabled", true);
+                    $('#retrypattern').attr("disabled", true);
+                }
+                else{
+                    $('#retry').attr("disabled", false);
+                    $('#retrypattern').attr("disabled", false);
+                }
             });
             //set pattern offset
             var wrap = iObj.holder.find('.patt-wrap'),
@@ -88,7 +104,6 @@
                 posObj = iObj.getIdxFromPoint(x, y),
                 idx = posObj.idx,
                 pattId = iObj.mapperFunc(idx) || idx;
-
 
             if (patternAry.length > 0) {
                 var laMove = getLengthAngle(iObj.lineX1, posObj.x, iObj.lineY1, posObj.y);
@@ -148,8 +163,6 @@
 
             //to remove last line
             iObj.line.remove();
-
-
 
             if (iObj.rightPattern) {
                 if (pattern == iObj.rightPattern) {
@@ -221,6 +234,7 @@
 
         //adding a mapper function  
         var mapper = option.mapper;
+
         if (typeof mapper == "object") {
             iObj.mapperFunc = function (idx) {
                 return mapper[idx];

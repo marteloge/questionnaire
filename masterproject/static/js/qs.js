@@ -51,6 +51,10 @@ function addPattern() {
   var radius = 0.6*(screen.width/8);
   var margin = 0.2*(screen.width/4);
 
+  $('#continue').attr("disabled", true);
+  $('#retry').attr("disabled", true);
+  $('#retrypattern').attr("disabled", true);
+
   var lock = new PatternLock('#patternContainer', {
     onDraw:function(pattern){
       pattern = lock.getPattern();
@@ -83,7 +87,8 @@ function addPattern() {
     radius: radius,
     margin: margin,
   });
-};
+
+}
 
 //AndroidOS, BlackBerryOS, PalmOS, SymbianOS, WindowsMobileOS, WindowsPhoneOS, iOS, MeeGoOS, MaemoOS, JavaOS, webOS, badaOS, BREWOS
 function getMobileOperatingSystem() {
