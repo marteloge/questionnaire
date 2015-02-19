@@ -60,6 +60,14 @@ function retypePattern() {
   }
 
   $('#correct').attr("disabled", true);
+  $('#correct').click(function() {
+    $( "#wrapper").fadeOut( "slow", function() {
+      $('#btn-post-correct').click();
+    });
+  });
+  $('#back').click(function() {
+    $('#btn-post-back').click();
+  });
 
   var lock = new PatternLock('#patternContainer', {
     onDraw:function(pattern){
@@ -81,14 +89,6 @@ function retypePattern() {
         $('#message').text('Connect at least 4 dots');
         $('#correct').attr("disabled", true);
       }
-      $('#correct').click(function() {
-        $( "#wrapper").fadeOut( "slow", function() {
-          $('#btn-post-correct').click();
-        });
-      });
-      $('#back').click(function() {
-        $('#btn-post-back').click();
-      });
     },
     radius: radius,
     margin: margin,
