@@ -1,15 +1,14 @@
 /*
-    patternLock.js v 0.4.0
+    patternLock.js v 0.4.1
     Author: Sudhanshu Yadav
     Copyright (c) 2013 Sudhanshu Yadav - ignitersworld.com , released under the MIT license.
-    Demo and documentaion on: ignitersworld.com/lab/patternLock.html
+    Demo on: ignitersworld.com/lab/patternLock.html
 */
 ;(function ($, window, document, undefined) {
     "use strict";
 
     var nullFunc = function () {},
         objectHolder = {};
-
 
     //internal functions
     function readyDom(iObj) {
@@ -48,7 +47,7 @@
             e.preventDefault();
             var iObj = objectHolder[obj.token];
 
-            if(iObj.disabled) return;
+            if (iObj.disabled) return;
 
             //check if pattern is visible or not
             if (!iObj.option.patternVisible) {
@@ -64,9 +63,8 @@
             });
             $(document).one(touchEnd, function () {
                 endHandler.call(this, e, obj);
-
-                // enable and disable continue button
-                if(iObj.patternAry.length>=4 && validatePattern(iObj.patternAry)==true){
+                  // enable and disable continue button
+                if(iObj.patternAry.length>=4){
                     $('#continue').attr("disabled", false);
                 }
                 else{
@@ -94,7 +92,6 @@
             obj.reset();
 
         },
-
         moveHandler = function (e, obj) {
             e.preventDefault();
             var x = e.pageX || e.originalEvent.touches[0].pageX,
@@ -107,6 +104,7 @@
                 idx = posObj.idx,
                 pattId = iObj.mapperFunc(idx) || idx;
 
+
             if (patternAry.length > 0) {
                 var laMove = getLengthAngle(iObj.lineX1, posObj.x, iObj.lineY1, posObj.y);
                 iObj.line.css({
@@ -118,6 +116,34 @@
             if (idx) {
                 if (patternAry.indexOf(pattId) == -1) {
                     var elm = $(li[idx - 1]);
+
+                    //check and mark if any points are in middle of previous point and current point, if it does check them
+                    if (iObj.lastPosObj) {
+                        var lastPosObj = iObj.lastPosObj,
+                            ip = lastPosObj.i,
+                            jp = lastPosObj.j,
+                            iDiff = Math.abs(posObj.i - ip),
+                            jDiff = Math.abs(posObj.j - jp);
+
+                        while (((iDiff == 0 && jDiff > 1) || (jDiff == 0 && iDiff > 1) || (jDiff == iDiff && jDiff > 1)) && !(jp == posObj.j && ip == posObj.i)) {
+                            ip = iDiff ? Math.min(posObj.i, ip) + 1 : ip;
+                            jp = jDiff ? Math.min(posObj.j, jp) + 1 : jp;
+                            iDiff = Math.abs(posObj.i - ip);
+                            jDiff = Math.abs(posObj.j - jp);
+
+                            var nextIdx = (jp - 1) * iObj.option.matrix[1] + ip,
+                                nextPattId = iObj.mapperFunc(nextIdx) || nextIdx;
+
+                            if (patternAry.indexOf(nextPattId) == -1) {
+                                $(li[nextIdx - 1]).addClass('hovered');
+                                //push pattern on array
+                                patternAry.push(nextPattId);
+                            }
+
+                        }
+                    }
+
+                    //add the current element on pattern
                     elm.addClass('hovered');
                     //push pattern on array
                     patternAry.push(pattId);
@@ -148,7 +174,9 @@
                     iObj.holder.append(line);
                     if (!lineOnMove) iObj.line.hide();
                 }
+                iObj.lastPosObj = posObj;
             }
+
 
         },
         endHandler = function (e, obj) {
@@ -165,6 +193,8 @@
 
             //to remove last line
             iObj.line.remove();
+
+
 
             if (iObj.rightPattern) {
                 if (pattern == iObj.rightPattern) {
@@ -219,7 +249,6 @@
         option = iObj.option = $.extend({}, PatternLock.defaults, option);
         readyDom(iObj);
 
-
         //add class on holder
         holder.addClass('patt-holder');
 
@@ -227,7 +256,7 @@
         if (holder.css('position') == "static") holder.css('position', 'relative');
 
         //assign event
-        holder.on( "touchstart mousedown", function (e) {
+        holder.on("touchstart mousedown", function (e) {
             startHandler.call(this, e, self);
         });
 
@@ -236,7 +265,6 @@
 
         //adding a mapper function  
         var mapper = option.mapper;
-
         if (typeof mapper == "object") {
             iObj.mapperFunc = function (idx) {
                 return mapper[idx];
@@ -274,7 +302,7 @@
             return objectHolder[this.token].patternAry.join('');
         },
         //method to draw a pattern dynamically
-        setPattern : function(pattern){
+        setPattern: function (pattern) {
             var iObj = objectHolder[this.token],
                 option = iObj.option,
                 matrix = option.matrix,
@@ -282,29 +310,39 @@
                 radius = option.radius;
 
             //allow to set password manually only when enable set pattern option is true
-            if(!option.enableSetPattern) return;
+            if (!option.enableSetPattern) return;
 
             this.reset();
             iObj.wrapLeft = 0;
             iObj.wrapTop = 0;
-            
-            for (var i = 0; i < pattern.length; i++){
+
+            for (var i = 0; i < pattern.length; i++) {
                 var idx = pattern[i] - 1,
-                    x = idx % matrix [1],
-                    y = Math.floor(idx/matrix [1]),
+                    x = idx % matrix[1],
+                    y = Math.floor(idx / matrix[1]),
                     pageX = x * (2 * margin + 2 * radius) + 2 * margin + radius,
                     pageY = y * (2 * margin + 2 * radius) + 2 * margin + radius;
-                
-                 moveHandler.call(null, {pageX:pageX, pageY: pageY, preventDefault: nullFunc, originalEvent:{touches:[{pageX:pageX, pageY: pageY}]}}, this);    
-                    
+
+                moveHandler.call(null, {
+                    pageX: pageX,
+                    pageY: pageY,
+                    preventDefault: nullFunc,
+                    originalEvent: {
+                        touches: [{
+                            pageX: pageX,
+                            pageY: pageY
+                        }]
+                    }
+                }, this);
+
             }
         },
         //to temprory enable disable plugin
-        enable : function(){
+        enable: function () {
             var iObj = objectHolder[this.token];
             iObj.disabled = false;
         },
-        disable : function(){
+        disable: function () {
             var iObj = objectHolder[this.token];
             iObj.disabled = true;
         },
@@ -317,6 +355,9 @@
 
             //add/reset a array which capture pattern
             iObj.patternAry = [];
+
+            //remove last Obj
+            iObj.lastPosObj = null;
 
             //remove error class if added
             iObj.holder.removeClass('patt-error');
@@ -335,53 +376,13 @@
         }
     };
 
-
     PatternLock.defaults = {
         matrix: [3, 3],
         margin: 20,
         radius: 25,
         patternVisible: true,
         lineOnMove: true,
-        enableSetPattern : false
-    };
-    var between = function between(n1, n2) {
-      /* base case */
-      if (n1 === n2) { return null;}
-      /* decrease to make null-index */
-      --n1;
-      --n2;
-      /* calculate the average of the two numbers */
-      avg = (n1 + n2) / 2
-      /* check if same row or column */
-      if ((Math.floor(n1 / 3) == Math.floor(n2 / 3)) || n1 % 3 == n2 % 3) {
-        /* it's on the same row/column, if average is whole number, return it */
-        if (avg === Math.floor(avg)) {
-          return avg + 1;
-        } else {
-          return null;
-        }
-      } else if (avg === Math.floor(avg)) {
-        /* if average is whole number and not on row or column, we're on the diagonal */
-        /* if the distance between the columns is larger than 1, the average is in between */
-        if (Math.abs(n1 % 3 - n2 % 3) > 1) {
-          return avg + 1
-        }
-      }
-      return null;
-    }
-    var validatePattern = function validatePattern(pattern) {
-      var visited = [];
-      var b;
-      for (var i = 0; i < pattern.length - 1; ++i) {
-        visited.push(pattern[i]);
-        b = between(pattern[i], pattern[i + 1]);
-        if (b !== null && visited.indexOf(b) == -1) {
-          return false;
-          console.log("FALSE");
-        }
-      }
-      return true;
-      console.log("TRUE");
+        enableSetPattern: false
     };
 
     window.PatternLock = PatternLock;

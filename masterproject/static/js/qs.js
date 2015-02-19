@@ -69,7 +69,7 @@ function addPattern() {
       $('#message').removeClass('hidden');
       $('#message').text('Pattern recorded');
       
-      if(pattern.length>=4 && validatePattern(pattern.split(''))){
+      if(pattern.length>=4){
         $('#retrypattern').click(function() {
           lock.reset();
           $('#message').addClass('hidden');
@@ -98,12 +98,7 @@ function addPattern() {
       else {
         lock.error();
         
-        if(validatePattern(pattern.split(''))==false){
-          $('#message').text('Some of the selected dots was not recorded. Please retype the pattern :)');
-        }
-        else {
-          $('#message').text('Connect at least 4 dots');
-        }
+        $('#message').text('Connect at least 4 dots');
         $('#message').removeClass('hidden');
         
         $('#retrypattern').click(function() {
@@ -211,55 +206,3 @@ function fixedFooter() {
     $('#navigation').show();
   });
 };
-
-var between = function between(n1, n2) {
- 
-  /* base case */
-  if (n1 === n2) {
-    return null;
-  }
-  
-  /* decrease to make null-index */
-  --n1;
-  --n2;
-  
-  /* calculate the average of the two numbers */
-  avg = (n1 + n2) / 2
- 
- 
-  /* check if same row or column */
-  if ((Math.floor(n1 / 3) == Math.floor(n2 / 3)) || n1 % 3 == n2 % 3) {
-    /* it's on the same row/column, if average is whole number, return it */
-    if (avg === Math.floor(avg)) {
-      return avg + 1;
-    } else {
-      return null;
-    }
-  } else if (avg === Math.floor(avg)) {
-    /* if average is whole number and not on row or column, we're on the diagonal */
-    /* if the distance between the columns is larger than 1, the average is in between */
-    if (Math.abs(n1 % 3 - n2 % 3) > 1) {
-      return avg + 1
-    }
-  }
-  return null;
- 
-}
-var validatePattern = function validatePattern(pattern) {
-  /* make sure everything is integers */ 
-  var p = [];
-  for (var i = 0; i < pattern.length; ++i) {
-    p.push(parseInt(pattern[i]));
-  }
-  var visited = [];
-  var b;
-  for (var i = 0; i < p.length - 1; ++i) {
-    visited.push(p[i]);
-    b = between(p[i], p[i + 1]);
-    if (b !== null && visited.indexOf(b) == -1) {
-      return false;
-    }
-  }
-  return true;
-};
-
