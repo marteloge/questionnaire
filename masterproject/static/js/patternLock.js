@@ -75,6 +75,7 @@
 
                 // enable and disable retry button
                 if(iObj.patternAry==0){
+                    $('#message').addClass('hidden');
                     $('#retry').attr("disabled", true);
                     $('#retrypattern').attr("disabled", true);
                 }
@@ -376,9 +377,11 @@
         b = between(pattern[i], pattern[i + 1]);
         if (b !== null && visited.indexOf(b) == -1) {
           return false;
+          console.log("FALSE");
         }
       }
       return true;
+      console.log("TRUE");
     };
 
     window.PatternLock = PatternLock;

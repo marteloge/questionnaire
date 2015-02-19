@@ -36,6 +36,10 @@ form {
 	width: 100%;
 }
 
+.hidden{
+	visibility: hidden;
+}
+
 /* SITE SPECIFIC STYLING */
 /* Created content-module to relative to be able to put patterns to bottom */
 #content-module {

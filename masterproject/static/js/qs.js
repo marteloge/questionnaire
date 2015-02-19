@@ -66,9 +66,13 @@ function addPattern() {
   var lock = new PatternLock('#patternContainer', {
     onDraw:function(pattern){
       pattern = lock.getPattern();
-      if(pattern.length>=4 && validatePattern(pattern)==true){
+      $('#message').removeClass('hidden');
+      $('#message').text('Pattern recorded');
+      
+      if(pattern.length>=4 && validatePattern(pattern.split(''))){
         $('#retrypattern').click(function() {
           lock.reset();
+          $('#message').addClass('hidden');
           $('#continue').attr("disabled", true);
           $('#retry').attr("disabled", true);
           $('#retrypattern').attr("disabled", true);
@@ -91,16 +95,28 @@ function addPattern() {
           $('#retrypattern').attr("disabled", true);
         });
       }
-      else{
+      else {
         lock.error();
+        
+        if(validatePattern(pattern.split(''))==false){
+          $('#message').text('Some of the selected dots was not recorded. Please retype the pattern :)');
+        }
+        else {
+          $('#message').text('Connect at least 4 dots');
+        }
+        $('#message').removeClass('hidden');
+        
         $('#retrypattern').click(function() {
           lock.reset();
+          $('#message').addClass('hidden');
+
           $('#continue').attr("disabled", true);
           $('#retry').attr("disabled", true);
           $('#retrypattern').attr("disabled", true);
         });
         $('#retry').click(function() {
           lock.reset();
+          $('#message').addClass('hidden');
           $('#continue').attr("disabled", true);
           $('#retry').attr("disabled", true);
           $('#retrypattern').attr("disabled", true);
@@ -230,11 +246,16 @@ var between = function between(n1, n2) {
  
 }
 var validatePattern = function validatePattern(pattern) {
+  /* make sure everything is integers */ 
+  var p = [];
+  for (var i = 0; i < pattern.length; ++i) {
+    p.push(parseInt(pattern[i]));
+  }
   var visited = [];
   var b;
-  for (var i = 0; i < pattern.length - 1; ++i) {
-    visited.push(pattern[i]);
-    b = between(pattern[i], pattern[i + 1]);
+  for (var i = 0; i < p.length - 1; ++i) {
+    visited.push(p[i]);
+    b = between(p[i], p[i + 1]);
     if (b !== null && visited.indexOf(b) == -1) {
       return false;
     }
