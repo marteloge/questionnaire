@@ -46,6 +46,56 @@ function addNationality() {
   });
 }
 
+function retypePattern() {
+  var start = new Date();
+  var radius = 0.6*(screen.width/8);
+  var margin = 0.2*(screen.width/4);
+
+  var patternheight = radius*6 + margin*8;
+  var availHeight = document.getElementById('content-module').clientHeight;
+
+  if(patternheight > availHeight){
+    radius = radius - radius*((patternheight/availHeight)-1);
+    margin = margin - margin*((patternheight/availHeight)-1);
+  }
+
+  $('#correct').attr("disabled", true);
+
+  var lock = new PatternLock('#patternContainer', {
+    onDraw:function(pattern){
+      pattern = lock.getPattern();
+      $('#message').removeClass('hidden');
+      
+      if(pattern>=4){
+        if($('#pattern').val() == pattern){
+          $('#message').text('Correct!');
+          $('#correct').attr("disabled", false);
+          $('#id_sequence').val(pattern);
+        }
+        else{
+          $('#message').text('Not the same pattern. Go back if you dont remember.');
+          $('#correct').attr("disabled", true);
+        }
+      }
+      else {
+        $('#message').text('Connect at least 4 dots');
+        $('#correct').attr("disabled", true);
+      }
+      $('#correct').click(function() {
+        $( "#wrapper").fadeOut( "slow", function() {
+          $('#btn-post-correct').click();
+        });
+      });
+      $('#back').click(function() {
+        $('#btn-post-back').click();
+      });
+    },
+    radius: radius,
+    margin: margin,
+  });
+}
+
+
 function addPattern() {
   var start = new Date();
   var radius = 0.6*(screen.width/8);
@@ -67,9 +117,9 @@ function addPattern() {
     onDraw:function(pattern){
       pattern = lock.getPattern();
       $('#message').removeClass('hidden');
-      $('#message').text('Pattern recorded');
       
       if(pattern.length>=4){
+        $('#message').text('Pattern recorded');
         $('#retrypattern').click(function() {
           lock.reset();
           $('#message').addClass('hidden');
@@ -81,9 +131,7 @@ function addPattern() {
           var end = new Date();
           $('#id_sequence').val(pattern);
           $('#id_time').val(end-start);
-          $( "#wrapper").fadeOut( "slow", function() {
-            $('#btn-post-continue').click();
-          });
+          $('#btn-post-continue').click();
         });
         $('#retry').click(function() {
           var end = new Date();
@@ -97,14 +145,10 @@ function addPattern() {
       }
       else {
         lock.error();
-        
-        $('#message').text('Connect at least 4 dots');
-        $('#message').removeClass('hidden');
-        
+        $('#message').text('Connect at least 4 dots');        
         $('#retrypattern').click(function() {
           lock.reset();
           $('#message').addClass('hidden');
-
           $('#continue').attr("disabled", true);
           $('#retry').attr("disabled", true);
           $('#retrypattern').attr("disabled", true);

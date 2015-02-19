@@ -1,0 +1,54 @@
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+  <div id="header" class="row">
+    <div class="col-xs-2 margin-top-5 col-xs-offset-1">
+      <i class="fa fa-credit-card"></i>
+    </div>
+    <div class="col-xs-8">
+      <h2 class="align-left">Retype the pattern for banking account</h2>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div id="answers">
+    <div class="row">
+      <div class="col-xs-12">        
+        <label id="message" class="hidden"></label>
+      </div>
+    </div>
+    <div class="row">
+      <div id="sequence" class="col-xs-12">
+        <div id="patternContainer"></div>
+      </div>
+    </div>
+  </div> 
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.sequence.as_hidden }}
+    {{ form.time.as_hidden }}
+    <input id="btn-post-correct" type="submit" value="Submit" name="correct" />
+    <input id="btn-post-back" type="Submit" value="submit" name="back" />
+  </form>
+  <input type="number" id="pattern" class="hidden" value="{{pattern}}">
+{% endblock %}
+
+{% block navigation %}
+  <div class="row">
+    <div class="col-xs-6">
+      <button id="back" type="submit" name="back" class="btn-full-width btn btn-primary">Back</button>
+    </div>
+    <div class="col-xs-6">
+      <button id="correct" type="submit" name="correct" class="btn-full-width btn btn-success">Continue</button>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  <script type="text/javascript">
+    $( document ).ready(function() {
+      retypePattern();
+    });
+  </script>
+{% endblock %}

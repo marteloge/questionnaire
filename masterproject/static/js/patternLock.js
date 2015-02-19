@@ -69,6 +69,7 @@
                 }
                 else{
                     $('#continue').attr("disabled", true);
+                    $('#correct').attr("disabled", true);
                 }
 
                 // enable and disable retry button
@@ -76,6 +77,7 @@
                     $('#message').addClass('hidden');
                     $('#retry').attr("disabled", true);
                     $('#retrypattern').attr("disabled", true);
+                    $('#correct').attr("disabled", true);
                 }
                 else{
                     $('#retry').attr("disabled", false);

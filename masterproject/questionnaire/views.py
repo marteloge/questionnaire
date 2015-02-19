@@ -106,10 +106,35 @@ def pattern1(request):
                 password.sequence = request.POST['sequence']
                 password.time = request.POST['time']
                 password.save()
-                return HttpResponseRedirect('pattern2')
+                return HttpResponseRedirect('retype_pattern1')
         else:
             form = PatternForm(instance=person)
             return render(request, 'questionnaire/pattern'+str(view_number)+'.html', {'form': form})
+    return render(request, 'questionnaire/nomobile.html')
+
+def retype_pattern1(request):
+    person_id = request.session.session_key
+    person = Person.objects.get(pk=person_id)
+    order = calculate_pattern(person.pattern_order)
+    view_number = order[0]
+    password = Password.objects.get(person_id=person_id, password_type=view_number)
+
+    if request.mobile and not request.tablet:
+        if request.method == 'POST':
+            form = PatternForm(request.POST, instance=person)
+            if 'correct' in request.POST:
+                if form.is_valid() and (password.sequence == request.POST['sequence']):
+                    print >>sys.stderr, 'correct'
+                    return HttpResponseRedirect('pattern2')
+                else:
+                    messages.error(request, 'Type the same pattern, or go back to create a new if you dont remember.')
+                    return HttpResponseRedirect('retype_pattern1')
+            elif 'back' in request.POST:
+                print >>sys.stderr, 'back'
+                return HttpResponseRedirect('pattern1')
+        else:
+            form = PatternForm(instance=person)
+            return render(request, 'questionnaire/retype'+str(view_number)+'.html', {'form': form, 'pattern': password.sequence})
     return render(request, 'questionnaire/nomobile.html')
 
 def pattern2(request):
@@ -125,10 +150,33 @@ def pattern2(request):
                 password.sequence = request.POST['sequence']
                 password.time = request.POST['time']
                 password.save()
-                return HttpResponseRedirect('pattern3')
+                return HttpResponseRedirect('retype_pattern2')
         else:
             form = PatternForm(instance=person)
             return render(request, 'questionnaire/pattern'+str(view_number)+'.html', {'form': form})
+    return render(request, 'questionnaire/nomobile.html')
+
+def retype_pattern2(request):
+    person_id = request.session.session_key
+    person = Person.objects.get(pk=person_id)
+    order = calculate_pattern(person.pattern_order)
+    view_number = order[1]
+    password = Password.objects.get(person_id=person_id, password_type=view_number)
+
+    if request.mobile and not request.tablet:
+        if request.method == 'POST':
+            form = PatternForm(request.POST, instance=person)
+            if 'correct' in request.POST:
+                if form.is_valid() and (password.sequence == request.POST['sequence']):
+                    return HttpResponseRedirect('pattern3')
+                else:
+                    messages.error(request, 'Type the same pattern, or go back to create a new if you dont remember.')
+                    return HttpResponseRedirect('retype_pattern2')
+            elif 'back' in request.POST:
+                return HttpResponseRedirect('pattern2')
+        else:
+            form = PatternForm(instance=person)
+            return render(request, 'questionnaire/retype'+str(view_number)+'.html', {'form': form, 'pattern': password.sequence})
     return render(request, 'questionnaire/nomobile.html')
 
 def pattern3(request):
@@ -144,10 +192,33 @@ def pattern3(request):
                 password.sequence = request.POST['sequence']
                 password.time = request.POST['time']
                 password.save()
-                return HttpResponseRedirect('add_handsize')
+                return HttpResponseRedirect('retype_pattern3')
         else:
             form = PatternForm(instance=person)
             return render(request, 'questionnaire/pattern'+str(view_number)+'.html', {'form': form})
+    return render(request, 'questionnaire/nomobile.html')
+
+def retype_pattern3(request):
+    person_id = request.session.session_key
+    person = Person.objects.get(pk=person_id)
+    order = calculate_pattern(person.pattern_order)
+    view_number = order[2]
+    password = Password.objects.get(person_id=person_id, password_type=view_number)
+
+    if request.mobile and not request.tablet:
+        if request.method == 'POST':
+            form = PatternForm(request.POST, instance=person)
+            if 'correct' in request.POST:
+                if form.is_valid() and (password.sequence == request.POST['sequence']):
+                    return HttpResponseRedirect('add_handsize')
+                else:
+                    messages.error(request, 'Type the same pattern, or go back to create a new if you dont remember.')
+                    return HttpResponseRedirect('retype_pattern3')
+            elif 'back' in request.POST:
+                return HttpResponseRedirect('pattern3')
+        else:
+            form = PatternForm(instance=person)
+            return render(request, 'questionnaire/retype3.html', {'form': form, 'pattern': password.sequence})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_handsize(request):
