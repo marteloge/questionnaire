@@ -124,13 +124,11 @@ def retype_pattern1(request):
             form = PatternForm(request.POST, instance=person)
             if 'correct' in request.POST:
                 if form.is_valid() and (password.sequence == request.POST['sequence']):
-                    print >>sys.stderr, 'correct'
                     return HttpResponseRedirect('pattern2')
                 else:
                     messages.error(request, 'Type the same pattern, or go back to create a new if you dont remember.')
                     return HttpResponseRedirect('retype_pattern1')
             elif 'back' in request.POST:
-                print >>sys.stderr, 'back'
                 return HttpResponseRedirect('pattern1')
         else:
             form = PatternForm(instance=person)
@@ -218,7 +216,7 @@ def retype_pattern3(request):
                 return HttpResponseRedirect('pattern3')
         else:
             form = PatternForm(instance=person)
-            return render(request, 'questionnaire/retype3.html', {'form': form, 'pattern': password.sequence})
+            return render(request, 'questionnaire/retype'+str(view_number)+'.html', {'form': form, 'pattern': password.sequence})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_handsize(request):

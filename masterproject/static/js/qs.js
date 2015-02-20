@@ -74,27 +74,22 @@ function retypePattern() {
       pattern = lock.getPattern();
       $('#message').removeClass('hidden');
       
-      if(pattern>=4){
-        if($('#pattern').val() == pattern){
+      if(pattern>=4 && $('#pattern').val() == pattern){
           $('#message').text('Correct!');
           $('#correct').attr("disabled", false);
           $('#id_sequence').val(pattern);
-        }
-        else{
-          $('#message').text('Not the same pattern. Go back if you dont remember.');
-          $('#correct').attr("disabled", true);
-        }
       }
       else {
-        $('#message').text('Connect at least 4 dots');
+        lock.error();
+        $('#message').text('Not the same pattern.');
         $('#correct').attr("disabled", true);
+
       }
     },
     radius: radius,
     margin: margin,
   });
 }
-
 
 function addPattern() {
   var start = new Date();
@@ -237,8 +232,8 @@ function addAge() {
 };
 
 function setScreenSize() {
-  $('#id_actual_screenheight').val(screen.width);
-  $('#id_actual_screenwidth').val(screen.height);
+  $('#id_actual_screenheight').val(screen.height);
+  $('#id_actual_screenwidth').val(screen.width);
   // $(window).width()
 };
 
