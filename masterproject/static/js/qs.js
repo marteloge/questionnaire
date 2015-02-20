@@ -29,16 +29,21 @@ qs.bindForm = function(bindings, id) {
 };
 
 function addNationality() {
+  $('#submit_nationality').attr("disabled", true);
   $('.dropdown').dropdown({
     onChange: function(val) {
       $('#id_nationality').val(val);
+      $('#submit_nationality').attr("disabled", false);
     },
     onShow: function() {
       $('#navigation').hide();
+      $('#submit_nationality').attr("disabled", true);
+
     },
     onHide: function() {
       $(document.activeElement).blur();
       $('#navigation').show();
+      $('#submit_nationality').attr("disabled", false);
     },
   });
   $('#submit_nationality').click(function() {
