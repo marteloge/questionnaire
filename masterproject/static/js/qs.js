@@ -28,27 +28,23 @@ qs.bindForm = function(bindings, id) {
   }
 };
 
-function addNationality() {
+function addCountry() {
   $('#submit_nationality').attr("disabled", true);
-  $('.dropdown').dropdown({
-    onChange: function(val) {
-      $('#id_nationality').val(val);
-      $('#submit_nationality').attr("disabled", false);
-    },
-    onShow: function() {
-      $('#navigation').hide();
-      $('#submit_nationality').attr("disabled", true);
+  $('#id_nationality').val('');
 
-    },
-    onHide: function() {
-      $(document.activeElement).blur();
-      $('#navigation').show();
-      $('#submit_nationality').attr("disabled", false);
-    },
+  $(".select").select2({
+    placeholder: "Select your country",
   });
+
+  $('#country').change(function() {
+    $('#id_nationality').val($("#country").val());
+    $('#submit_nationality').attr("disabled", false);
+  });
+
   $('#submit_nationality').click(function() {
     $('#btn-post').click();
   });
+
 }
 
 function retypePattern() {
