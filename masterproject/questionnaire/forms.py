@@ -26,6 +26,11 @@ class HandednessForm(forms.ModelForm):
 		model = Person
 		fields = ('handedness',)
 
+class Handedness2Form(forms.ModelForm):
+	class Meta:
+		model = Person
+		fields = ('handedness2',)
+
 class FingerForm(forms.ModelForm):
 	class Meta:
 		model = Person

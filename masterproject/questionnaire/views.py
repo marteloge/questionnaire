@@ -226,10 +226,23 @@ def add_handsize(request):
             form = HandsizeForm(request.POST, instance=person)
             if form.is_valid:
                 form.save()
-                return HttpResponseRedirect('add_screensize')
+                return HttpResponseRedirect('add_handedness2')
         else:
             form = HandsizeForm(instance=person)
             return render(request, 'questionnaire/handsize.html', {'form':form, 'qnum':1})
+    return render(request, 'questionnaire/nomobile.html')
+
+def add_handedness2(request):
+    person = Person.objects.get(pk=request.session.session_key)
+    if request.mobile and not request.tablet:
+        if request.method == 'POST':
+            form = Handedness2Form(request.POST, instance=person)
+            if form.is_valid():
+                form.save()
+                return HttpResponseRedirect('add_screensize')
+        else:
+            form = Handedness2Form(instance=person)
+            return render(request, 'questionnaire/handedness2.html', {'form': form, 'qnum':2})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_screensize(request):
@@ -242,7 +255,7 @@ def add_screensize(request):
                 return HttpResponseRedirect('add_handedness')
         else:
             form = ScreensizeForm(instance=person)
-            return render(request, 'questionnaire/screensize.html', {'form': form, 'qnum':2})
+            return render(request, 'questionnaire/screensize.html', {'form': form, 'qnum':3})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_handedness(request):
@@ -255,7 +268,7 @@ def add_handedness(request):
                 return HttpResponseRedirect('add_finger')
         else:
             form = HandednessForm(instance=person)
-            return render(request, 'questionnaire/handedness.html', {'form': form, 'qnum':3})
+            return render(request, 'questionnaire/handedness.html', {'form': form, 'qnum':4})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_finger(request):
@@ -268,7 +281,7 @@ def add_finger(request):
                 return HttpResponseRedirect('add_reading')
         else:
             form = FingerForm(instance=person)
-            return render(request, 'questionnaire/finger.html', {'form': form, 'qnum':4, 'hand':person.handedness})
+            return render(request, 'questionnaire/finger.html', {'form': form, 'qnum':5, 'hand':person.handedness})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_reading(request):
@@ -281,7 +294,7 @@ def add_reading(request):
                 return HttpResponseRedirect('add_gender')
         else:
             form = ReadingForm(instance=person)
-            return render(request, 'questionnaire/reading.html', {'form': form, 'qnum':5})
+            return render(request, 'questionnaire/reading.html', {'form': form, 'qnum':6})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_gender(request):
@@ -294,7 +307,7 @@ def add_gender(request):
                 return HttpResponseRedirect('add_age')
         else:
             form = GenderForm(instance=person)
-            return render(request, 'questionnaire/gender.html', {'form': form, 'qnum':6})
+            return render(request, 'questionnaire/gender.html', {'form': form, 'qnum':7})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_age(request):
@@ -315,7 +328,7 @@ def add_age(request):
                 return HttpResponseRedirect('add_age')
         else:
             form = AgeForm(instance=person)
-            return render(request, 'questionnaire/age.html', {'form': form, 'qnum':7})
+            return render(request, 'questionnaire/age.html', {'form': form, 'qnum':8})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_nationality(request):
@@ -332,7 +345,7 @@ def add_nationality(request):
                     return HttpResponseRedirect('add_usedALP')
         else:
             form = NationalityForm(instance=person)
-            return render(request, 'questionnaire/nationality.html', {'form': form, 'qnum':8})
+            return render(request, 'questionnaire/nationality.html', {'form': form, 'qnum':9})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_usedALP(request):
@@ -345,7 +358,7 @@ def add_usedALP(request):
                 return HttpResponseRedirect('add_useScreenlock')
         else:
             form = UsedALPForm(instance=person)
-            return render(request, 'questionnaire/usedALP.html', {'form': form, 'qnum':9})
+            return render(request, 'questionnaire/usedALP.html', {'form': form, 'qnum':10})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_useScreenlock(request):
@@ -361,7 +374,7 @@ def add_useScreenlock(request):
                     return HttpResponseRedirect('add_mobileOS')
         else:
             form = UseScreenlockForm(instance=person)
-            return render(request, 'questionnaire/useScreenlock.html', {'form': form, 'qnum':10})
+            return render(request, 'questionnaire/useScreenlock.html', {'form': form, 'qnum':11})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_screenlock(request):
@@ -374,7 +387,7 @@ def add_screenlock(request):
                 return HttpResponseRedirect('add_mobileOS')
         else:
             form = ScreenlockForm(instance=person)
-            return render(request, 'questionnaire/screenlock.html', {'form': form, 'qnum':11})
+            return render(request, 'questionnaire/screenlock.html', {'form': form, 'qnum':12})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_mobileOS(request):
@@ -387,7 +400,7 @@ def add_mobileOS(request):
                 return HttpResponseRedirect('add_experience')
         else:
             form = OSForm(instance=person)
-            return render(request, 'questionnaire/mobileOS.html', {'form': form, 'qnum':12})
+            return render(request, 'questionnaire/mobileOS.html', {'form': form, 'qnum':13})
     return render(request, 'questionnaire/nomobile.html')
 
 def add_experience(request):
@@ -400,7 +413,7 @@ def add_experience(request):
                 return HttpResponseRedirect('finish')
         else:
             form = ExperienceForm(instance=person)
-            return render(request, 'questionnaire/experience.html', {'form': form, 'qnum':13})
+            return render(request, 'questionnaire/experience.html', {'form': form, 'qnum':14})
     return render(request, 'questionnaire/nomobile.html')
 
 def finish(request):

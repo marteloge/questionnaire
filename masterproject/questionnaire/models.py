@@ -75,6 +75,7 @@ class Person(models.Model):
 	gender = models.CharField(max_length=1, default=0, choices=GENDER_CHOICES)
 	nationality = models.CharField(max_length=40, default=0)
 	handedness = models.CharField(max_length=1, default=0, choices=HANDEDNESS_CHOICES)
+	handedness2 = models.CharField(max_length=1, default=0, choices=HANDEDNESS_CHOICES)
 	used_ALP = models.CharField(max_length=1, default=0, choices=YESNO_CHOICES)
 	use_screenlock = models.CharField(max_length=1, default=0, choices=YESNO_CHOICES)
 	screenlock = models.CharField(max_length=20, default=0, choices=SCREENLOCK_CHOICES)

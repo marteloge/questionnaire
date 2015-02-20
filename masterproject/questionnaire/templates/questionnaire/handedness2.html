@@ -3,7 +3,7 @@
 {% block header %}
   <div id="header" class="row">
     <div class="col-xs-12">
-      <h2>Do you use screen lock on your smartphone?</h2>
+      <h2>Are you left or right handed?</h2>
     </div>
   </div>
 {% endblock %}
@@ -12,14 +12,14 @@
   <div id="answers" class="margin-top-20">
     <div class="row">
       <div class="col-xs-12">
-        <img id="yes" class="svg img-responsive icon-45" alt="Responsive image" src="/static/images/icons/yes.svg"/>
-        <img id="no" class="svg img-responsive icon-35" alt="Responsive image" src="/static/images/icons/no.svg"/>
+        <img id="left" class="svg img-responsive icon-45 margin-right-5" alt="Responsive image" src="/static/images/icons/handedness-left.svg"/>
+        <img id="right" class="svg img-responsive icon-45" alt="Responsive image" src="/static/images/icons/handedness-right.svg"/>
       </div>
     </div>
   </div>
   <form action="" method="post">
     {% csrf_token %}
-    {{ form.use_screenlock.as_hidden }}  
+    {{ form.handedness2.as_hidden }} 
     <input id="btn-post" type="Submit" value="Submit" />
   </form>
 {% endblock %}
@@ -28,16 +28,17 @@
   <div id="navigation" class="row">
     <div class="col-xs-2"></div>
     <div class="col-xs-8"><h2> {{ qnum }} / 14 </h2></div>
-    <div class="col-xs-2"></div></div>
+    <div class="col-xs-2"></div>
+  </div>
 {% endblock %}
 
 {% block javascript %}
-  <script type="text/javascript">
+	<script type="text/javascript">
     $( document ).ready(function() {
       qs.bindForm({
-        'yes': 'Y',
-        'no': 'N'
-      }, 'id_use_screenlock');
+      'left': 'L',
+      'right': 'R',
+      }, 'id_handedness2');
     });
   </script>
 {% endblock %}
