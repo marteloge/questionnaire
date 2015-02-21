@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="59" height="15">
-    <desc iVinci="yes" version="4.5" gridStep="20" showGrid="no" snapToGrid="no" codePlatform="0"/>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="59px" height="15px" viewBox="0 0 59 15" enable-background="new 0 0 59 15" xml:space="preserve">
     <g id="Layer1" opacity="1">
         <g id="Shape1">
             <path id="shapePath1" d="M7.418,2.962 C4.961,2.962 2.961,4.961 2.961,7.418 C2.961,9.875 4.961,11.874 7.418,11.874 C9.873,11.874 11.873,9.875 11.873,7.418 C11.873,4.961 9.874,2.962 7.418,2.962 M7.418,10.25 C5.858,10.25 4.586,8.98 4.586,7.419 C4.586,5.858 5.858,4.588 7.418,4.588 C8.979,4.588 10.248,5.858 10.248,7.419 C10.248,8.98 8.979,10.25 7.418,10.25 Z" style="stroke:none;fill-rule:evenodd;fill:#008000;fill-opacity:1;"/>
