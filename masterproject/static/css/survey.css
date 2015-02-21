@@ -64,8 +64,9 @@ form {
 	padding-bottom: 10%;
 }
 
-.fixed {
-	position: absolute;
+.fixed {position: absolute;}
+p#reading {
+	text-align: left;
 }
 
 #patternlist {text-align: left;}
@@ -93,6 +94,7 @@ label#mobile-label {font-size: 20px;}
 .padding-top-5 {padding-top: 5%;}
 .padding-top-10 {padding-top: 10%;}
 .margin-top-2 {margin-top: 2%;}
+.margin-top-3 {margin-top: 3%;}
 .margin-top-5 {margin-top: 5%;}
 .margin-top-7 {margin-top: 7%;}
 .margin-top-10 {margin-top: 10%;}

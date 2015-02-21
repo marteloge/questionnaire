@@ -3,7 +3,7 @@
 {% block header %}
   <div id="header" class="row">
     <div class="col-xs-12">
-      <h2>What is your main reading and writing orientation?</h2>
+      <h2>In which direction do you read/write?</h2>
     </div>
   </div>
 {% endblock %}
@@ -11,18 +11,27 @@
 {% block content %}
   <div id="answers">
     <div class="row">
-      <div class="col-xs-12">
-        <img id="right" class="svg img-responsive icon-30" alt="Responsive image" src="/static/images/icons/right.svg"/>
+      <div class="col-xs-5 col-xs-offset-1 margin-top-2">
+        <img id="right" class="svg img-responsive icon-75" alt="Responsive image" src="/static/images/icons/right.svg"/>
+      </div>
+      <div class="col-xs-5 margin-top-3">
+        <p id="reading">From left to right <b>(e.g english)</b></p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 margin-top-10">
-        <img id="left" class="svg img-responsive icon-30" alt="Responsive image" src="/static/images/icons/left.svg"/>
+    <div class="row margin-top-10">
+      <div class="col-xs-5 col-xs-offset-1">
+        <img id="left" class="svg img-responsive icon-75" alt="Responsive image" src="/static/images/icons/left.svg"/>
+      </div>
+      <div class="col-xs-5 margin-top-3">
+        <p id="reading">From right to left <b>(e.g arabic)</b></p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 margin-top-10">
-        <img id="top" class="svg img-responsive icon-20" alt="Responsive image" src="/static/images/icons/down.svg"/>
+    <div class="row margin-top-10">
+      <div class="col-xs-5 col-xs-offset-1">
+        <img id="top" class="svg img-responsive icon-55" alt="Responsive image" src="/static/images/icons/down.svg"/>
+      </div>
+      <div class="col-xs-5 margin-top-3">
+        <p id="reading">From top to bottom <b>(e.g chinese, japanese)</b></p>
       </div>
     </div>
   </div>
