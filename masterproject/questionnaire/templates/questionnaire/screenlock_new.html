@@ -1,0 +1,58 @@
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+  <div id="header" class="row">
+    <div class="col-xs-12">
+      <h2>What kind of screen lock do you use?</h2>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div id="answers">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <select id="screenlock" class="" style="width:100%;" tabindex="-1">
+          <option value="pattern">Android Pattern Lock</option>
+          <option value="PIN">PIN code (4 digits)</option>
+          <option value="fingerprint">Fingerprint</option>
+          <option value="password">Password (letters and numbers)</option>
+          <option value="other">Other</option>
+        </select> 
+      </div>
+    </div>
+  </div>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.screenlock.as_hidden }}
+    <input id="btn-post" type="Submit" value="Submit" />
+  </form>
+{% endblock %}
+
+{% block navigation %}
+  <div id="navigation" class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8"><h2> {{ qnum }} / 14 </h2></div>
+    <div class="col-xs-2"></div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  <script type="text/javascript">
+    
+    $('#screenlock').select2(
+      minimumResultsForSearch=10,
+      );
+
+    $( document ).ready(function() {
+      qs.bindForm({
+        'pattern': 'pattern',
+        'fingerprint': 'fingerprint',
+        'PIN':'PIN',
+        'slide':'slide',
+        'other':'other',
+        'password':'password',
+      }, 'id_screenlock');
+    });
+  </script>
+{% endblock %}
