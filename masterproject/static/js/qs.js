@@ -42,9 +42,37 @@ function addCountry() {
   });
 
   $('#submit_nationality').click(function() {
-    $('#btn-post').click();
+    $( "#wrapper").fadeOut( "slow", function() {
+      $('#btn-post').click();
+    });
   });
+}
 
+function addScreenlock(){
+    $('#submit_screenlock').attr("disabled", true);
+    $('#id_screenlock').val('');
+    
+    $('#screenlock').select2({
+      minimumResultsForSearch: 10,
+      placeholder: "Select screenlock",
+    });
+
+    $('#screenlock').change(function(val) {
+      $('#id_screenlock').val($("#screenlock").val());
+      $('#submit_screenlock').attr("disabled", false);
+      
+      $(".description").each(function() {
+        $(this).addClass('hidden');
+      });
+
+      $('#' + $('#screenlock').val()).removeClass('hidden');
+    });
+
+    $('#submit_screenlock').click(function() {
+      $( "#wrapper").fadeOut( "slow", function() {
+        $('#btn-post').click();
+      });
+    });
 }
 
 function retypePattern() {
