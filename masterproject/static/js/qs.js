@@ -256,7 +256,10 @@ function getMobileOperatingSystem() {
 function addAge() {
     $('#submitAge').click(function() {
       $("#id_age").val($("#age").val());
-      $('#btn-post').click();
+      
+      $( "#wrapper").fadeOut( "slow", function() {
+        $('#btn-post').click();
+      });
     });
 };
 
