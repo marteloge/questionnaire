@@ -1,0 +1,30 @@
+{% extends "questionnaire/base.html" %}
+
+{% block header %}
+    <div id="header" class="row">
+      <div class="col-xs-12">
+        <h1>Survey - Mobile Security</h1>
+      </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+  <div id="answers">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>This survey will not log your IP, so your answers will not be traceable. The survey stores one cookie, but is only used to be sure that you will be able to answer the survey. The collected data is only available to the research group consisting of Marte Løge and her supervisor and co-supervisor. If you have any questions, please <a href="https://marteloge.no/#contact" target="_blank">contact</a> the researcher. </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block navigation %}
+  <div id="navigation" class="row">
+    <div class="col-xs-12">
+      <a href="/" role="button" class="btn-full-width btn btn-success">Back to survey</a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

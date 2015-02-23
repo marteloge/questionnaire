@@ -29,5 +29,6 @@ urlpatterns = patterns('',
     url(r'^add_experience', views.add_experience, name='add_experience'),
     url(r'^finish', views.finish, name='finish'),
     url(r'^contact', views.contact, name='contact'),
+    url(r'^privacy', views.privacy, name='privacy'),
     url(r'^$', views.index, name='index'),
 )

@@ -147,7 +147,7 @@ label#mobile-label {font-size: 20px;}
 	}
 	.fa-facebook-square:before, .fa-twitter-square:before, 
 	.fa-google-plus-square:before, .fa-linkedin-square:before, .fa-reddit-square:before {font-size: 3em}
-	.alert-danger {font-size: 15px;}
+	.alert-danger {font-size: 11px;}
 	.dropdown {font-size: 15px; height: 10%;}
 	.ui.dropdown .menu>.item {font-size: 15px;}
 	.ui.search.dropdown .menu {max-height: 200px;}
@@ -164,7 +164,7 @@ label#mobile-label {font-size: 20px;}
 	}
 	.fa-facebook-square:before, .fa-twitter-square:before, 
 	.fa-google-plus-square:before, .fa-linkedin-square:before, .fa-reddit-square:before {font-size: 3em}
-	.alert-danger {font-size: 15px;}
+	.alert-danger {font-size: 11px;}
 	.dropdown {font-size: 15px;}
 	.ui.dropdown .menu>.item {font-size: 15px;}
 	.ui.search.dropdown .menu {max-height: 250px;}
@@ -182,7 +182,7 @@ label#mobile-label {font-size: 20px;}
 	.fa-facebook-square:before, .fa-twitter-square:before, 
 	.fa-google-plus-square:before, .fa-linkedin-square:before, .fa-reddit-square:before {font-size: 4em}
 	.dropdown {font-size: 20px;}
-	.ui.dropdown .menu>.item {font-size: 20px;}
+	.ui.dropdown .menu>.item {font-size: 13px;}
 	.ui.search.dropdown .menu {max-height: 300px;}
 	.flag-icon {margin-right: 10px;}
 	.alert-danger {font-size: 15px;}
@@ -201,7 +201,7 @@ label#mobile-label {font-size: 20px;}
 	.fa-facebook-square:before, .fa-twitter-square:before, 
 	.fa-google-plus-square:before, .fa-linkedin-square:before, .fa-reddit-square:before {font-size: 5em}
 	.dropdown {font-size: 20px;}
-	.ui.dropdown .menu>.item {font-size: 20px;}
+	.ui.dropdown .menu>.item {font-size: 15px;}
 	.ui.search.dropdown .menu {max-height: 300px;}
 	.flag-icon {margin-right: 10px;}
 }

@@ -27,6 +27,9 @@ def custom_404(request):
 def custom_500(request):
     return render(request, 'questionnaire/500.html')
 
+def privacy(request):
+    return render(request, 'questionnaire/privacy.html')
+
 def index(request):
     if settings.DEBUG == True:
         if request.mobile and not request.tablet:
